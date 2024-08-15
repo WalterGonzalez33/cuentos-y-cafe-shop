@@ -9,6 +9,7 @@
 /* módulos */
 
 @import url(./cssModules/module.css);
+@import url(./cssModules/admin.css);
 
 /* variables */
 
@@ -31,4 +32,11 @@ body {
 }
 main {
   flex-grow: 1;
+}
+
+header{
+  z-index: 9;
+}
+footer{
+  z-index: 9;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,11 +30,332 @@
     <title>Cuentos y Café</title>
   </head>
   <body>
-    <header></header>
-    <main>
-      <h1>...</h1>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container main-container">
+
+      <section>
+        <article class="p-4 d-flex flex-row align-items-center justify-content-between">
+          <h3 class="text-dark fw-bolder">Libros</h3>
+
+          <form class="d-flex" role="search">
+            <input class="form-control me-2 focus-ring focus-ring-dark border-white" type="search" placeholder="Titulo" aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Buscar</button>
+          </form>
+
+          <button class="btn btn-outline-dark btn-add-admin">
+            <i class="fs-3 bi bi-plus"></i>
+            <i class="fs-4 bi bi-book"></i>
+          </button>
+        </article>
+      </section>
+
+      <!-- tabla de administración -->
+      <section class="mt-5 table-responsive">
+        <table class="table table-striped">
+          <thead class="head-table-admin table-dark">
+            <tr class="align-middle row-table-admin">
+              <th scope="col">#</th>
+              <th scope="col">PORTADA</th>
+              <th scope="col">TITULO</th>
+              <th scope="col">AUTOR</th>
+              <th scope="col">ISBN</th>
+              <th scope="col">EDICIÓN</th>
+              <th scope="col">PAGINAS</th>
+              <th scope="col">DESCRIPCIÓN</th>
+              <th scope="col">DIMENSIONES</th>
+              <th scope="col">PRECIO</th>
+              <th scope="col">STOCK</th>
+              <th scope="col"><i class="bi bi-gear fs-3 ms-2"></i></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr
+              class="align-middle table-group-divider row-table-admin rounded rounded-3"
+            >
+              <th scope="row">1</th>
+              <td>
+                <img
+                  src="https://editorialverbum.es/wp-content/uploads/2016/11/El-Lazarillo-de-Tormes.jpg"
+                  alt="libro"
+                  class="img-thumbnail img-product-admin"
+                />
+              </td>
+              <td><span>El Lazarillo de Tormes</span></td>
+              <td><span>Anónimo</span></td>
+              <td><span class="isbn">978-15-8977-002-7</span></td>
+              <td>
+                <p class="text-edition-admin">
+                  Club Verbum, Colección Narrativa
+                </p>
+              </td>
+              <td><span>140</span></td>
+              <td>
+                <p class="text-description-admin">
+                  La vida de Lazarillo de Tormes y de sus fortunas y
+                  adversidades (más conocida como El Lazarillo de Tormes) es la
+                  primera novela picaresca de la literatura española y una de
+                  las más populares de su historia. El Lazarillo de Tormes,
+                  publicada en 1554, es un esbozo irónico y despiadado de la
+                  sociedad del momento, de la que se muestran sus vicios y
+                  actitudes hipócritas
+                </p>
+              </td>
+              <td><span>14 x 19 cm</span></td>
+              <td><span>$ 8.900</span></td>
+              <td><span>8 ud</span></td>
+              <td>
+                <div class="d-flex flex-column">
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5 btn-trash">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="align-middle row-table-admin rounded rounded-3">
+              <th scope="row">2</th>
+              <td>
+                <img
+                  src="https://www.emanantial.com.ar/archivos/portadas/portadaid889.jpg"
+                  alt="libro"
+                  class="img-thumbnail img-product-admin"
+                />
+              </td>
+              <td><span>El Hombre en Busca del Sentido</span></td>
+              <td><span>Viktor E. Frankl</span></td>
+              <td><span class="isbn">978-84-2543-989-6</span></td>
+              <td>
+                <p class="text-edition-admin">Herder Editorial · Tapa Dura</p>
+              </td>
+              <td><span>168</span></td>
+              <td>
+                <p class="text-description-admin">
+                  El hombre en busca de sentido es el estremecedor relato en el
+                  que Viktor Frankl nos narra su experiencia en los campos de
+                  concentración. Durante todos esos años de sufrimiento, sintió
+                  en su propio ser lo que significaba una existencia desnuda,
+                  absolutamente desprovista de todo, salvo de la existencia
+                  misma. Él, que todo lo había perdido, que padeció hambre, frío
+                  y brutalidades, que tantas veces estuvo a punto de ser
+                  ejecutado, pudo reconocer que, pese a todo, la vida es digna
+                  de ser vivida y que la libertad interior y la dignidad humana
+                  son indestructibles. En su condición de psiquiatra y
+                  prisionero, Frankl reflexiona con palabras de sorprendente
+                  esperanza sobre la capacidad humana de trascender las
+                  dificultades y descubrir una verdad profunda que nos orienta y
+                  da sentido a nuestras vidas. La logoterapia, método
+                  psicoterapéutico creado por el propio Frankl, se centra
+                  precisamente en el sentido de la existencia y en la búsqueda
+                  de ese sentido por parte del hombre, que asume la
+                  responsabilidad ante sí mismo, ante los demás y ante la vida.
+                  ¿Qué espera la vida de nosotros? El hombre en busca de sentido
+                  es mucho más que el testimonio de un psiquiatra sobre los
+                  hechos y los acontecimientos vividos en un campo de
+                  concentración, es una lección existencial. Traducido a medio
+                  centenar de idiomas, se han vendido millones de ejemplares en
+                  todo el mundo. Según la Library of Congress de Washington, es
+                  uno de los diez libros de mayor influencia en Estados Unidos.
+                  «Uno de los pocos grandes libros de la humanidad». Karl
+                  Jaspers
+                </p>
+              </td>
+              <td><span>14 x 21 cm</span></td>
+              <td><span>$ 7.000</span></td>
+              <td><span>3 ud</span></td>
+              <td>
+                <div class="d-flex flex-column">
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5 btn-trash">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="align-middle row-table-admin rounded rounded-3">
+              <th scope="row">3</th>
+              <td>
+                <img
+                  src="https://images.cdn2.buscalibre.com/fit-in/360x360/2e/79/2e799fbf359688775b9e79ab1d2f8c35.jpg"
+                  alt="libro"
+                  class="img-thumbnail img-product-admin"
+                />
+              </td>
+              <td><span>Distancia De Rescate</span></td>
+              <td><span>Samanta Schweblin</span></td>
+              <td><span class="isbn">097-89-8776-909-34</span></td>
+              <td>
+                <p class="text-edition-admin">
+                  LITERATURA RANDOM HOUSE · Tapa Blanda
+                </p>
+              </td>
+              <td><span>128</span></td>
+              <td>
+                <p class="text-description-admin">
+                  El campo ha cambiado frente a nuestros ojos sin que nadie se
+                  diera cuenta. Y quizá no se trate solo de sequías y
+                  herbicidas; quizá se trate del hilo vital y filoso que nos ata
+                  a nuestros hijos; y del veneno que echamos sobre ellos.
+                  Distancia de rescate sigue esta vertiginosa fatalidad en la
+                  que; sin saberlo; damos el paso en falso que finalmente nos
+                  condena. Esta novela; premiada en todo el mundo; se ha
+                  convertido en un relato urgente y perdurable. La destreza
+                  literaria de Samanta Schweblin logra atravesarnos de forma
+                  implacable; mantenernos inevitablemente atrapados y
+                  sumergirnos en un universo ficcional estremecedor.
+                </p>
+              </td>
+              <td><span>22.9 x 13.5 cm</span></td>
+              <td><span>$ 6.400</span></td>
+              <td><span>10 ud</span></td>
+              <td>
+                <div class="d-flex flex-column">
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5 btn-trash">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+
+            <tr class="align-middle row-table-admin rounded rounded-3">
+              <th scope="row">4</th>
+              <td>
+                <img
+                  src="https://editorialelateneo.com.ar/productos/temp/MEDITACIONES_A_1.jpg"
+                  alt="libro"
+                  class="img-thumbnail img-product-admin"
+                />
+              </td>
+              <td><span>Meditaciones</span></td>
+              <td><span>Marco Aurelio</span></td>
+              <td><span class="isbn">978-95-0021-501-5</span></td>
+              <td>
+                <p class="text-edition-admin">
+                  Encuadernación: Rústica
+                </p>
+              </td>
+              <td><span>320</span></td>
+              <td>
+                <p class="text-description-admin">
+                  “No consumas la parte de la vida que te queda en conjeturar sobre otras personas”.
+“Todo lo que acontece, acontece justamente”.
+“Nunca consideres útil para ti lo que un día te obligue a transgredir la palabra dada”.
+
+Marco Aurelio
+
+Con el fin de tener presente estos y otros principios, Marco Aurelio, filósofo estoico y emperador romano (161-180), escribió una serie de reflexiones acerca de la naturaleza, la vida, el paso del tiempo, la muerte, la justicia, el bien y el mal, entre tantas otras.
+Hoy en día, sus Meditaciones están más vigentes que nunca y Nico Grupe, coach, speaker internacional y admirador de esta filosofía, nos comparte sus propias interpretaciones. Además, nos guía con ejercicios y preguntas disparadoras para aplicar estas máximas en la vida cotidiana y convertirnos en verdaderos estoicos del siglo xxi.
+                </p>
+              </td>
+              <td><span>15,5 cm x 22 cm</span></td>
+              <td><span>$ 21.100</span></td>
+              <td><span>5 ud</span></td>
+              <td>
+                <div class="d-flex flex-column">
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5">
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                  <button class="btn btn-table-admin fs-5 btn-trash">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
-    <footer></footer>
+
+    <!-- footer -->
+    <footer class="bg-dark text-light">
+      <div class="container">
+        <div class="w-100 text-center p-4">
+          <p>&copy; Todos los derechos reservados</p>
+        </div>
+      </div>
+    </footer>
 
     <!-- scripts -->
     <script
