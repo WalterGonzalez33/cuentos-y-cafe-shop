@@ -16,7 +16,7 @@
   --color-primary: #405d72;
   --color-secondary: #758694;
   --color-bg-primary: #f7e7dc;
-  --color-bg-secondary: #f7e7dc;
+  --color-bg-secondary: #FFF8F3;
   --font-primary: "Playfair Display", serif;
 }
 
@@ -31,4 +31,8 @@ body {
 }
 main {
   flex-grow: 1;
+}
+
+.font-number{
+  font-family: "Courier New", Courier, monospace
 }
