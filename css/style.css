@@ -34,6 +34,10 @@ main {
   flex-grow: 1;
 }
 
+.font-number{
+  font-family: "Courier New", Courier, monospace
+}
+
 header{
   z-index: 9;
 }
