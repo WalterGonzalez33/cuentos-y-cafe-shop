@@ -36,16 +36,22 @@ main {
 .bannerImg {
   height: 300px;
   object-fit: cover;
-  
 }
 
-#imgBanner2{
-object-position: 80%;
+#imgBanner2 {
+  object-position: 80%;
 }
-#imgBanner3{
-object-position: 5%;
+#imgBanner3 {
+  object-position: 5%;
 }
-.colorFondoInput{
-  background-color: transparent;
+.colorBorde{
   border-color: var(--color-primary);
+
+}
+.colorFondo {
+  background-color: transparent;
+}
+.card-img-top {
+ height: 300px;
+ object-fit: contain;
 }
