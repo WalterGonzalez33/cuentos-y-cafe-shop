@@ -35,5 +35,17 @@ main {
 
 .bannerImg {
   height: 300px;
-  object-fit: contain;
+  object-fit: cover;
+  
+}
+
+#imgBanner2{
+object-position: 80%;
+}
+#imgBanner3{
+object-position: 5%;
+}
+.colorFondoInput{
+  background-color: transparent;
+  border-color: var(--color-primary);
 }
