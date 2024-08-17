@@ -32,3 +32,8 @@ body {
 main {
   flex-grow: 1;
 }
+
+.bannerImg {
+  height: 300px;
+  object-fit: contain;
+}
