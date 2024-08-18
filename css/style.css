@@ -33,25 +33,25 @@ main {
   flex-grow: 1;
 }
 
-.bannerImg {
+.banner-Img {
   height: 300px;
   object-fit: cover;
 }
 
-#imgBanner2 {
+#img-Banner-2 {
   object-position: 80%;
 }
-#imgBanner3 {
+#img-Banner-3 {
   object-position: 5%;
 }
-.colorBorde{
+.color-Borde{
   border-color: var(--color-primary);
 
 }
-.colorFondo {
+.color-Fondo {
   background-color: transparent;
 }
-.colorFondo2{
+.color-Fondo-2{
   background-color: var(--color-primary);
 }
 .card-img-top {
