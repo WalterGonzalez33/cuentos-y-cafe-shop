@@ -1,6 +1,5 @@
 "use strict";
 
-const formAdmin = document.querySelector("#formAdmin");
 const inputFromBookUrl = document.querySelector("#fromBookUrl");
 const inputTitle = document.querySelector("#title");
 const inputAuthor = document.querySelector("#author");
@@ -10,6 +9,7 @@ const inputDimensions = document.querySelector("#dimensions");
 const inputPrice = document.querySelector("#price");
 const inputStock = document.querySelector("#stock");
 const inputDescription = document.querySelector("#description");
+const inputEditorial = document.querySelector("#editorial");
 
 // fn --> crea un div con un mensaje de error en el input
 const msjInvalidInput = (msj, childNode, createMsj = true) => {
@@ -66,6 +66,8 @@ const validateLength = (
     }
   }
 
+  msjInvalidInput("N/D", input, false);
+  input.className = "form-control";
   return true;
 };
 
@@ -148,7 +150,7 @@ const validateFormDimensions = (input) => {
 };
 
 // fn --> valida todos los input del formulario y devuelve un booleano dependiendo
-const validateFormAdmin = () => {
+export const validateFormAdmin = () => {
   const validateFromBookUrl =
     validateLength("link", inputFromBookUrl, 8, 100, false) &&
     validateUrl(inputFromBookUrl);
@@ -167,8 +169,22 @@ const validateFormAdmin = () => {
   const validateDimensions =
     validateLength("formato de dimension", inputDimensions, 6, 15, true) &&
     validateFormDimensions(inputDimensions);
-  const validateTitle = validateLength("titulo", inputTitle, 2, 30, true);
-  const validateAuthor = validateLength("autor", inputAuthor, 2, 30, true);
+  const validateTitle = validateLength("titulo", inputTitle, 2, 60, true);
+  const validateAuthor = validateLength("autor", inputAuthor, 2, 60, true);
+  const validateDescription = validateLength(
+    "párrafo de descripción",
+    inputDescription,
+    10,
+    1000,
+    true
+  );
+  const validateEditorial = validateLength(
+    "nombre de la editorial",
+    inputEditorial,
+    3,
+    60,
+    false
+  );
 
   if (
     validateFromBookUrl &&
@@ -178,16 +194,12 @@ const validateFormAdmin = () => {
     validatePags &&
     validatePrice &&
     validateStock &&
-    validateDimensions
+    validateDimensions &&
+    validateDescription &&
+    validateEditorial
   ) {
     return true;
   }
-};
 
-const handlerSubmit = (form) => {
-  form.preventDefault();
-  if (validateFormAdmin()) {
-    console.log(`datos enviados`);
-  }
+  return false;
 };
-formAdmin.addEventListener("submit", handlerSubmit);
