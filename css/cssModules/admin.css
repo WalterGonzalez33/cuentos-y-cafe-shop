@@ -2,7 +2,7 @@ body {
   background-image: url("../../assets/bg-img.jpg");
   background-size: cover;
 
-  &::after {
+  /* &::after {
     content: "";
     display: block;
     width: 100%;
@@ -10,12 +10,11 @@ body {
     position: fixed;
     background-color: rgba(255, 255, 255, 0.151);
     backdrop-filter: blur(1px);
-  }
+  } */
 }
 .main-container {
   background-color: var(--color-bg-primary);
   min-height: 100vh;
-  z-index: 9;
 }
 
 .input-search-admin {
@@ -111,6 +110,23 @@ body {
 
   &:hover {
     color: #ffffffaf;
+  }
+}
+
+/* estilos de la ventana modal */
+
+.modal-admin-content{
+  background-color: var(--color-bg-primary);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.modal-header-custom{
+  background-color: var(--color-primary);
+}
+.btn-submit-admin{
+  background-color: var(--color-primary);
+
+  &:hover{
+    background-color: var(--color-secondary);
   }
 }
 

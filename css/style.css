@@ -20,7 +20,7 @@
   --color-bg-primary: #f7e7dc;
   --color-bg-secondary: #FFF8F3;
   --font-primary: "Playfair Display", serif;
-  --font-secondary: "Moderustic", sans-serif;;
+  --font-secondary: "Moderustic", sans-serif;
 }
 
 /* estilos generales */
@@ -40,9 +40,7 @@ main {
   font-family: "Courier New", Courier, monospace
 }
 
-header{
-  z-index: 9;
+.txt-secondary{
+  font-family: var(--font-secondary);
 }
-footer{
-  z-index: 9;
-}
+

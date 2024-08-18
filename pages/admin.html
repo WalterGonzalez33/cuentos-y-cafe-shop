@@ -97,10 +97,10 @@
         <article
           class="p-4 d-flex flex-column-reverse gap-4 flex-md-row align-items-center justify-content-between"
         >
-          <div>
+          <div class="text-center text-md-start">
             <h3 class="text-dark fw-bolder">Productos</h3>
-            <h5 class="text-secondary">Libros 5</h5>
-            <h5 class="text-secondary">43 ud</h5>
+            <h5 class="text-secondary txt-secondary">Libros 5</h5>
+            <h5 class="text-secondary txt-secondary">43 ud</h5>
           </div>
 
           <form class="d-flex" role="search">
@@ -110,7 +110,7 @@
               placeholder="Titulo"
               aria-label="Search"
             />
-            <button class="btn btn-outline-dark btn-search-admin" type="submit">
+            <button class="btn btn-outline-dark rounded-0 btn-search-admin" type="submit">
               Buscar
             </button>
           </form>
@@ -120,6 +120,67 @@
             <i class="fs-4 bi bi-book"></i>
           </button>
         </article>
+
+        <!-- modal de registrar libro -->
+
+        <div class="modal fade" data-bs-theme="light" id="createBook" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createBookLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content modal-admin-content rounded rounded-0">
+              <div class="modal-header rounded-0 modal-header-custom">
+                <h1 class="modal-title fs-5" id="createBookLabel">Crea un libros<span class="ms-1"><i class="fa-solid fa-book"></i></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form class="row">
+                  <div class="col-12 mb-3">
+                    <label for="fromBookUrl" class="form-label text-black">Portada ( URL ) *</label>
+                    <input type="text" class="form-control" id="fromBookUrl" placeholder="https://mifoto.jpg" maxlength="150" minlength="10" required>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="title" class="form-label text-black">Titulo *</label>
+                    <input type="text" class="form-control" id="title" placeholder="'Cuentos De La Selva'" maxlength="60" minlength="1" required>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="author" class="form-label text-black">Autor *</label>
+                    <input type="text" class="form-control" id="author" placeholder="Horacio Quiroga" maxlength="60" minlength="1" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="isbn" class="form-label text-black">ISBN *</label>
+                    <input type="text" class="form-control" id="isbn" placeholder="000-00-0000-000-0" maxlength="15" minlength="1" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="editorial" class="form-label text-black">Editorial</label>
+                    <input type="text" class="form-control" id="editorial" placeholder="Book Editorial" maxlength="60" minlength="1">
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="pags" class="form-label text-black">Paginas *</label>
+                    <input type="tel" class="form-control" id="pags" placeholder="300" maxlength="5" minlength="1" required>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="dimensions" class="form-label text-black">Dimensiones *</label>
+                    <input type="text" class="form-control" id="dimensions" placeholder="15 x 20" maxlength="20" minlength="2" required>
+                  </div>
+
+                  <div class="col-6 mb-3">
+                    <label for="price" class="form-label text-black">Precio *</label>
+                    <input type="tel" class="form-control" id="price" placeholder="1.500" maxlength="20" minlength="1" required>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="stock" class="form-label text-black">Stock *</label>
+                    <input type="text" class="form-control" id="stock" placeholder="30" maxlength="30" minlength="1" required>
+                  </div>
+                  <label for="description" class="form-label text-black">Descripción</label>
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Descripción del libro" id="description" style="height: 100px"></textarea>
+                  </div>
+                  <div class="my-3 text-center">
+                    <button type="submit" class="btn rounded-0 border-0 btn-dark btn-submit-admin">CREAR</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- tabla de administración -->
@@ -133,7 +194,7 @@
                 <th scope="col">TITULO</th>
                 <th scope="col">AUTOR</th>
                 <th scope="col">ISBN</th>
-                <th scope="col">EDICIÓN</th>
+                <th scope="col">EDITORIAL</th>
                 <th scope="col">PAGINAS</th>
                 <th scope="col">DESCRIPCIÓN</th>
                 <th scope="col">DIMENSIONES</th>
@@ -181,7 +242,7 @@
                     <button class="btn btn-table-admin fs-5">
                       <i class="bi bi-eye"></i>
                     </button>
-                    <button class="btn btn-table-admin fs-5">
+                    <button class="btn btn-table-admin btn-edit-book fs-5">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button class="btn btn-table-admin fs-5 btn-trash">
@@ -246,7 +307,7 @@
                     <button class="btn btn-table-admin fs-5">
                       <i class="bi bi-eye"></i>
                     </button>
-                    <button class="btn btn-table-admin fs-5">
+                    <button class="btn btn-table-admin btn-edit-book fs-5">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button class="btn btn-table-admin fs-5 btn-trash">
@@ -350,7 +411,7 @@
                     <button class="btn btn-table-admin fs-5">
                       <i class="bi bi-eye"></i>
                     </button>
-                    <button class="btn btn-table-admin fs-5">
+                    <button class="btn btn-table-admin btn-edit-book fs-5">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button class="btn btn-table-admin fs-5 btn-trash">
@@ -409,7 +470,7 @@
                     <button class="btn btn-table-admin fs-5">
                       <i class="bi bi-eye"></i>
                     </button>
-                    <button class="btn btn-table-admin fs-5">
+                    <button class="btn btn-table-admin btn-edit-book fs-5">
                       <i class="bi bi-pencil-square"></i>
                     </button>
                     <button class="btn btn-table-admin fs-5 btn-trash">
@@ -448,6 +509,6 @@
       src="https://kit.fontawesome.com/314c3815b6.js"
       crossorigin="anonymous"
     ></script>
-    <script src="../js/main.js" type="module"></script>
+    <script src="../js/admin.js" type="module"></script>
   </body>
 </html>
