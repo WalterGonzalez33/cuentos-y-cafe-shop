@@ -51,6 +51,9 @@ main {
 .colorFondo {
   background-color: transparent;
 }
+.colorFondo2{
+  background-color: var(--color-primary);
+}
 .card-img-top {
  height: 300px;
  object-fit: contain;
