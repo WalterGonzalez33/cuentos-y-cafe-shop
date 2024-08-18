@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>Cuentos y Café</title>
   </head>
-  <body>
+  <body class="body-admin">
     <header>
       <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
@@ -110,7 +110,10 @@
               placeholder="Titulo"
               aria-label="Search"
             />
-            <button class="btn btn-outline-dark rounded-0 btn-search-admin" type="submit">
+            <button
+              class="btn btn-outline-dark rounded-0 btn-search-admin"
+              type="submit"
+            >
               Buscar
             </button>
           </form>
@@ -123,58 +126,178 @@
 
         <!-- modal de registrar libro -->
 
-        <div class="modal fade" data-bs-theme="light" id="createBook" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createBookLabel" aria-hidden="true">
+        <div
+          class="modal fade"
+          data-bs-theme="light"
+          id="createBook"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="createBookLabel"
+          aria-hidden="true"
+        >
           <div class="modal-dialog">
             <div class="modal-content modal-admin-content rounded rounded-0">
               <div class="modal-header rounded-0 modal-header-custom">
-                <h1 class="modal-title fs-5" id="createBookLabel">Crea un libros<span class="ms-1"><i class="fa-solid fa-book"></i></h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="createBookLabel">
+                  Crea un libros<span class="ms-1"
+                    ><i class="fa-solid fa-book"></i
+                  ></span>
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
               <div class="modal-body">
                 <form class="row">
                   <div class="col-12 mb-3">
-                    <label for="fromBookUrl" class="form-label text-black">Portada ( URL ) *</label>
-                    <input type="text" class="form-control" id="fromBookUrl" placeholder="https://mifoto.jpg" maxlength="150" minlength="10" required>
+                    <label for="fromBookUrl" class="form-label text-black"
+                      >Portada ( URL )</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fromBookUrl"
+                      placeholder="https://mifoto.jpg"
+                      maxlength="150"
+                      minlength="10"
+                    />
                   </div>
                   <div class="col-6 mb-3">
-                    <label for="title" class="form-label text-black">Titulo *</label>
-                    <input type="text" class="form-control" id="title" placeholder="'Cuentos De La Selva'" maxlength="60" minlength="1" required>
+                    <label for="title" class="form-label text-black"
+                      >Titulo *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="title"
+                      placeholder="'Cuentos De La Selva'"
+                      maxlength="60"
+                      minlength="1"
+                      required
+                    />
                   </div>
                   <div class="col-6 mb-3">
-                    <label for="author" class="form-label text-black">Autor *</label>
-                    <input type="text" class="form-control" id="author" placeholder="Horacio Quiroga" maxlength="60" minlength="1" required>
+                    <label for="author" class="form-label text-black"
+                      >Autor *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="author"
+                      placeholder="Horacio Quiroga"
+                      maxlength="60"
+                      minlength="1"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="isbn" class="form-label text-black">ISBN *</label>
-                    <input type="text" class="form-control" id="isbn" placeholder="000-00-0000-000-0" maxlength="15" minlength="1" required>
+                    <label for="isbn" class="form-label text-black"
+                      >ISBN *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="isbn"
+                      placeholder="000-00-0000-000-0"
+                      maxlength="15"
+                      minlength="1"
+                      required
+                    />
                   </div>
                   <div class="mb-3">
-                    <label for="editorial" class="form-label text-black">Editorial</label>
-                    <input type="text" class="form-control" id="editorial" placeholder="Book Editorial" maxlength="60" minlength="1">
+                    <label for="editorial" class="form-label text-black"
+                      >Editorial</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editorial"
+                      placeholder="Book Editorial"
+                      maxlength="60"
+                      minlength="1"
+                    />
                   </div>
                   <div class="col-6 mb-3">
-                    <label for="pags" class="form-label text-black">Paginas *</label>
-                    <input type="tel" class="form-control" id="pags" placeholder="300" maxlength="5" minlength="1" required>
+                    <label for="pags" class="form-label text-black"
+                      >Paginas *</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="pags"
+                      placeholder="300"
+                      maxlength="5"
+                      minlength="1"
+                      required
+                    />
                   </div>
                   <div class="col-6 mb-3">
-                    <label for="dimensions" class="form-label text-black">Dimensiones *</label>
-                    <input type="text" class="form-control" id="dimensions" placeholder="15 x 20" maxlength="20" minlength="2" required>
+                    <label for="dimensions" class="form-label text-black"
+                      >Dimensiones *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="dimensions"
+                      placeholder="15 x 20"
+                      maxlength="20"
+                      minlength="2"
+                      required
+                    />
                   </div>
 
                   <div class="col-6 mb-3">
-                    <label for="price" class="form-label text-black">Precio *</label>
-                    <input type="tel" class="form-control" id="price" placeholder="1.500" maxlength="20" minlength="1" required>
+                    <label for="price" class="form-label text-black"
+                      >Precio *</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="price"
+                      placeholder="1.500"
+                      maxlength="20"
+                      minlength="1"
+                      required
+                    />
                   </div>
                   <div class="col-6 mb-3">
-                    <label for="stock" class="form-label text-black">Stock *</label>
-                    <input type="text" class="form-control" id="stock" placeholder="30" maxlength="30" minlength="1" required>
+                    <label for="stock" class="form-label text-black"
+                      >Stock *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="stock"
+                      placeholder="30"
+                      maxlength="30"
+                      minlength="1"
+                      required
+                    />
                   </div>
-                  <label for="description" class="form-label text-black">Descripción</label>
+                  <label for="description" class="form-label text-black"
+                    >Descripción</label
+                  >
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Descripción del libro" id="description" style="height: 100px"></textarea>
+                    <textarea
+                      class="form-control"
+                      placeholder="Descripción del libro"
+                      maxlength="1000"
+                      minlength="20"
+                      id="description"
+                      style="height: 100px"
+                    ></textarea>
                   </div>
                   <div class="my-3 text-center">
-                    <button type="submit" class="btn rounded-0 border-0 btn-dark btn-submit-admin">CREAR</button>
+                    <button
+                      type="submit"
+                      class="btn rounded-0 border-0 btn-dark btn-submit-admin"
+                    >
+                      CREAR
+                    </button>
                   </div>
                 </form>
               </div>
@@ -328,7 +451,9 @@
                 </td>
                 <td><span>Distancia De Rescate</span></td>
                 <td><span>Samanta Schweblin</span></td>
-                <td><span class="isbn font-number">097-89-8776-909-34</span></td>
+                <td>
+                  <span class="isbn font-number">097-89-8776-909-34</span>
+                </td>
                 <td>
                   <p class="text-edition-admin">
                     LITERATURA RANDOM HOUSE · Tapa Blanda

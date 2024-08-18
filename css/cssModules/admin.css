@@ -1,4 +1,4 @@
-body {
+.body-admin {
   background-image: url("../../assets/bg-img.jpg");
   background-size: cover;
 
@@ -37,7 +37,7 @@ body {
 
 .table-container-admin {
   max-height: 650px;
-  font-size: .83rem;
+  font-size: 0.83rem;
   position: relative;
   overflow: hidden;
   overflow-y: scroll;
@@ -70,7 +70,7 @@ body {
 
   th,
   td {
-    padding: calc(0.70rem * 1.1);
+    padding: calc(0.7rem * 1.1);
   }
 }
 
@@ -115,31 +115,31 @@ body {
 
 /* estilos de la ventana modal */
 
-.modal-admin-content{
+.modal-admin-content {
   background-color: var(--color-bg-primary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-.modal-header-custom{
+.modal-header-custom {
   background-color: var(--color-primary);
 }
-.btn-submit-admin{
+.btn-submit-admin {
   background-color: var(--color-primary);
 
-  &:hover{
+  &:hover {
     background-color: var(--color-secondary);
   }
 }
 
 @media (max-width: 992px) {
-  .table-container-admin{
-    font-size: .8rem;
+  .table-container-admin {
+    font-size: 0.8rem;
     max-height: 650px;
     overflow-x: scroll;
   }
 }
 
 @media (min-width: 577px) and (max-width: 992px) {
-  .table-container-admin{
+  .table-container-admin {
     max-height: 800px;
     overflow-x: scroll;
   }
