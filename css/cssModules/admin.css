@@ -1,6 +1,7 @@
 .body-admin {
   background-image: url("../../assets/bg-img.jpg");
   background-size: cover;
+  backdrop-filter: blur(5px);
 
   /* &::after {
     content: "";
