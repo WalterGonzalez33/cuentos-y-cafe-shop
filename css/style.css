@@ -58,3 +58,7 @@ main {
  height: 300px;
  object-fit: contain;
 }
+
+.card {
+  border: none;
+}
