@@ -114,7 +114,6 @@
 }
 
 /* estilos de la ventana modal */
-
 .modal-admin-content {
   background-color: var(--color-bg-primary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -128,6 +127,22 @@
   &:hover {
     background-color: var(--color-secondary);
   }
+}
+
+#description{
+    /* scroll bar personalized */
+    &::-webkit-scrollbar {
+      background-color: #ffffff00;
+      width: 5px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-primary);
+      border-radius: 20px;
+    }
+}
+.form-control {
+  font-family: var(--font-secondary);
 }
 
 @media (max-width: 992px) {
