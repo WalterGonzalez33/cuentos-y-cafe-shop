@@ -1,21 +1,299 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="E-commerce de libros, ventas al menor y mayor" />
-    <meta name="author" content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Name" />
-    <meta name="keywords" content="E-commerce libros cuentos historia romance acción cuentos y café" />
-    <link rel="shortcut icon" href="./assets/logoIcon.png" type="image/x-icon" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="E-commerce de libros, ventas al menor y mayor"
+    />
+    <meta
+      name="author"
+      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Name"
+    />
+    <meta
+      name="keywords"
+      content="E-commerce libros cuentos historia romance acción cuentos y café"
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/logoIcon.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Cuentos y Café</title>
-</head>
-<body>
+  </head>
+  <body>
     <header></header>
     <main>
-        <h1 class="fs-1 p-4">Suerte en el desarrollo equipo 🎉</h1>
+      <h1 class="titulo fs-1 text-center px-3 my-4">Cuentos y Café</h1>
+      <div class="row container-fluid w-100 my-2">
+        <h6 class="text-center text-secondary">
+          Ingresá el nombre del libro o categoría que buscás.
+        </h6>
+        <form class="d-flex col-md-8 col-lg-6 mx-auto">
+          <input
+            class="form-control me-2 color-Fondo color-Borde"
+            type="search"
+            placeholder="Ej: 'Cuando la tormenta pase'"
+            aria-label="Buscar"
+          />
+          <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+      <section
+        id="carouselLibreria"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselLibreria"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselLibreria"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselLibreria"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <article class="carousel-item active">
+            <img
+              src="./assets/Playfair Display.png"
+              class="d-block w-100 banner-Img"
+              alt="imagen de banner de bienvenida de cuentos y café"
+            />
+          </article>
+          <article class="carousel-item">
+            <img
+              id="img-Banner-2"
+              src="./assets/banner2.webp"
+              class="d-block w-100 banner-Img"
+              alt="imagen sobre un libro sobre mitologia china"
+            />
+            <div
+              class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-3"
+            >
+              <h5>Descubre la Riqueza de la Mitología China</h5>
+              <p>
+                Sumérgete en las antiguas leyendas y mitos de la China clásica.
+                Próximamente disponible. ¡No te lo pierdas!
+              </p>
+            </div>
+          </article>
+          <article class="carousel-item">
+            <img
+              id="img-Banner-3"
+              src="./assets/banner3.webp"
+              class="d-block w-100 banner-Img"
+              alt="imagen sobre descuentos en la compra de libros"
+            />
+            <div
+              class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-3"
+            >
+              <h5>¡Compra Fácilmente en 3 Cuotas Sin Interés!</h5>
+              <p>
+                Ahora todos los libros están al alcance de tu mano. Lleva a casa
+                las mejores historias sin preocuparte por el costo. ¡No dejes
+                pasar esta oportunidad!
+              </p>
+            </div>
+          </article>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselLibreria"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselLibreria"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </section>
+      <section
+        class="row container-fluid text-center border border-none m-auto"
+      >
+        <h2 class="my-4 m-auto">Novedades</h2>
+        <div class="col-md-4 col-lg-3 mb-3">
+          <div class="card h-100 color-Fondo">
+            <img
+              src="https://www.andeslibreria.com/12188/mitologia-clasica-china-de-gabriel-garcia-noblejas-libro-impreso-9788481646030.jpg"
+              class="card-img-top mt-3"
+              alt="imagen del libro 'Mitologia clásica china'"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Mitología Clásica China</h4>
+              <p class="fw-bolder text-info-emphasis">
+                Gabriel García-Noblejas Sánchez-Cendal
+              </p>
+              <p class="fw-semibold">Género: Ensayo</p>
+              <p class="fw-semibold">Editorial: Trotta</p>
+              <p class="fw-semibold">Año: 2004</p>
+            </div>
+            <div class="color-Fondo card-footer text-body-secondary">
+              <a class="btn btn-secondary">Proximamente...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-3">
+          <div class="card h-100 color-Fondo">
+            <img
+              src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
+              class="card-img-top mt-3"
+              alt="imagen del libro 'La Materia de Las Sombras'"
+            />
+            <div class="card-body">
+              <h4 class="card-title">La Materia de Las Sombras</h4>
+              <p class="fw-bolder text-info-emphasis">Antonio Runa</p>
+              <p class="fw-semibold">Genero: Terror</p>
+              <p class="fw-semibold">Editorial: Minotauro</p>
+              <p class="fw-semibold">Año: 2024</p>
+            </div>
+            <div class="color-Fondo card-footer text-body-secondary">
+              <a class="btn btn-secondary">Proximamente...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3 mb-3">
+          <div class="card h-100 color-Fondo">
+            <img
+              src="https://www.lavanguardia.com/libros/images/posters/2024/6/9788408290049-image.webp?v=1"
+              class="card-img-top mt-3"
+              alt="imagen del libro 'Cuando la tormenta pase'"
+            />
+            <div class="card-body">
+              <h4 class="card-title">Cuando La Tormenta Pase</h4>
+              <p class="fw-bolder text-info-emphasis">Manuel Loureiro</p>
+              <p class="fw-semibold">Genero: Suspenso</p>
+              <p class="fw-semibold">Editorial: Trotta</p>
+              <p class="fw-semibold">Año: 2024</p>
+            </div>
+            <div class="color-Fondo card-footer text-body-secondary">
+              <a class="btn btn-secondary">Proximamente...</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-3 mb-3">
+          <div class="card h-100 color-Fondo">
+            <img
+              src="https://proassetspdlcom.cdnstatics2.com/usuaris/libros/thumbs/e02c5c44-06a9-491d-821b-28405c12aded/d_1200_1200/portada_el-angel-de-la-ciudad_eva-garcia-saenz-de-urturi_202402091328.webp"
+              class="card-img-top mt-3"
+              alt="imagen del libro 'El angel de la ciudad'"
+            />
+            <div class="card-body">
+              <h4 class="card-title">El Ángel De La Ciudad</h4>
+              <p class="fw-bolder text-info-emphasis">
+                Eva García Sáenz de Urturi
+              </p>
+              <p class="fw-semibold">Genero: Novela Contemporánea</p>
+              <p class="fw-semibold">Editorial: Booket</p>
+              <p class="fw-semibold">Año: 2024</p>
+            </div>
+            <div class="color-Fondo card-footer text-body-secondary">
+              <a class="btn btn-secondary">Proximamente...</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="row container-fluid m-auto color-Fondo-2 text-white">
+        <h2 class="text-center my-3">Los Más Vendidos</h2>
+        <article class="col-md-6 col-lg-3 my-4">
+          <img
+            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
+            <p class="card-text fs-5">$ 18.699</p>
+            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
+          </div>
+        </article>
+        <article class="col-md-6 col-lg-3 my-4">
+          <img
+            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
+            <p class="card-text fs-5">$ 18.699</p>
+            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
+          </div>
+        </article>
+        <article class="col-md-6 col-lg-3 my-4">
+          <img
+            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
+            <p class="card-text fs-5">$ 18.699</p>
+            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
+          </div>
+        </article>
+        <article class="col-md-6 col-lg-3 my-4">
+          <img
+            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
+            class="card-img-top"
+            alt=""
+          />
+          <div class="card-body text-center">
+            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
+            <p class="card-text fs-5">$ 18.699</p>
+            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
+          </div>
+        </article>
+      </section>
+      <section class="row container-fluid m-auto">
+        <h2 class="text-center fw-bolder my-4">¡Visítanos en Nuestra Tienda Física!</h2>
+        <div class="col-lg-6 col-md-6">
+          <img
+            src="./assets/cuentosycafe.png"
+            class="w-100"
+            alt="imagen de la tienda de libros cuentos y cafe"
+          />
+        </div>
+        <div class="col-lg-6 col-md-6">
+            <iframe
+              class="w-100 h-100"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16934.83210600945!2d-65.20719947955266!3d-26.836456506162495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses-419!2sar!4v1718139302521!5m2!1ses-419!2sar"
+              height="450"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+      </section>
     </main>
+    <footer></footer>
     <footer class="pt-5 pb-3 footer-container">
         <div class="container p-3 text-center text-md-start">
             <div class="row">
@@ -76,7 +354,11 @@
     
 
     <!-- scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/main.js" type="module"></script>
-</body>
+  </body>
 </html>
