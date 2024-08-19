@@ -1,6 +1,7 @@
 /* tipografías */
 
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 /* bootstrap icon */
 
@@ -16,8 +17,9 @@
   --color-primary: #405d72;
   --color-secondary: #758694;
   --color-bg-primary: #f7e7dc;
-  --color-bg-secondary: #f7e7dc;
+  --color-bg-secondary: #FFF8F3;
   --font-primary: "Playfair Display", serif;
+  --font-secondary: "Moderustic", sans-serif;;
 }
 
 /* estilos generales */
@@ -25,7 +27,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-secondary);
   font-family: var(--font-primary);
   min-height: 100vh;
 }
@@ -33,6 +35,16 @@ main {
   flex-grow: 1;
 }
 
+.font-number{
+  font-family: "Courier New", Courier, monospace
+}
+
+.footer-container{
+  background-color: var(--color-bg-primary);
+}
+.footer-logo{
+ max-width: 140px;
+}
 .banner-Img {
   height: 300px;
   object-fit: cover;
