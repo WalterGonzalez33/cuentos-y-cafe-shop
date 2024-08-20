@@ -1,0 +1,38 @@
+[
+  {
+    "fromBookUrl": "https://libreriayachaywasi.com/wp-content/uploads/2024/02/YACH-PAL99ADER630189786123250300.jpg",
+    "title": "not title",
+    "author": "pedrito peloso",
+    "isbn": "000-00-00-00-0",
+    "editorial": "pedrito in",
+    "dimensions": "25,0 x 30,0",
+    "price": "1.500",
+    "stock": 90,
+    "description": "lorem",
+    "pagNumbers": 300
+  },
+  {
+    "fromBookUrl": "https://libreriayachaywasi.com/wp-content/uploads/2024/02/YACH-PAL99ADER630189786123250300.jpg",
+    "title": "not title",
+    "author": "pedrito peloso",
+    "isbn": "000-00-00-00-0",
+    "editorial": "pedrito in",
+    "dimensions": "25,0 x 30,0",
+    "price": "1.500",
+    "stock": 90,
+    "description": "lorem",
+    "pagNumbers": 300
+  },
+  {
+    "fromBookUrl": "https://libreriayachaywasi.com/wp-content/uploads/2024/02/YACH-PAL99ADER630189786123250300.jpg",
+    "title": "not title",
+    "author": "pedrito peloso",
+    "isbn": "000-00-00-00-0",
+    "editorial": "pedrito in",
+    "dimensions": "25,0 x 30,0",
+    "price": "1.800",
+    "stock": 90,
+    "description": "lorem",
+    "pagNumbers": 300
+  }
+]
