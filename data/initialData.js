@@ -17,7 +17,8 @@ const createBooks = (booksList) => {
         book.price,
         book.stock,
         book.description,
-        book.pagNumbers
+        book.pagNumbers,
+        book.genre,
       )
     );
   });
