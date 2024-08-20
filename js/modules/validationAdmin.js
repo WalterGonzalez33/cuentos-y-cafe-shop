@@ -3,6 +3,7 @@
 const inputFromBookUrl = document.querySelector("#fromBookUrl");
 const inputTitle = document.querySelector("#title");
 const inputAuthor = document.querySelector("#author");
+const inputGenre = document.querySelector("#genre");
 const inputIsbn = document.querySelector("#isbn");
 const inputPags = document.querySelector("#pags");
 const inputDimensions = document.querySelector("#dimensions");
@@ -171,6 +172,13 @@ export const validateFormAdmin = () => {
     validateFormDimensions(inputDimensions);
   const validateTitle = validateLength("titulo", inputTitle, 2, 60, true);
   const validateAuthor = validateLength("autor", inputAuthor, 2, 60, true);
+  const validateGenre = validateLength(
+    "tipo de genero",
+    inputGenre,
+    2,
+    50,
+    false
+  );
   const validateDescription = validateLength(
     "párrafo de descripción",
     inputDescription,
@@ -196,7 +204,8 @@ export const validateFormAdmin = () => {
     validateStock &&
     validateDimensions &&
     validateDescription &&
-    validateEditorial
+    validateEditorial &&
+    validateGenre
   ) {
     return true;
   }

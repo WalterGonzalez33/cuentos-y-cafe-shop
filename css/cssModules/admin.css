@@ -129,6 +129,9 @@
     background-color: var(--color-secondary);
   }
 }
+.input-genre{
+  font-family: var(--font-secondary);
+}
 
 #description{
     /* scroll bar personalized */

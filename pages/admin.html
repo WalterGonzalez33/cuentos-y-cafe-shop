@@ -194,6 +194,33 @@
                       required
                     />
                   </div>
+                  <div class="col-5 mb-3">
+                    <label for="genre" class="form-label text-black"
+                    >Genero</label
+                  >
+                    <select id="genre" class="form-select input-genre" aria-label="genero del libro">
+                      <option selected>No especificado</option>
+                      <option value="1">Ciencias y tecnología</option>
+                      <option value="2">fantasía</option>
+                      <option value="3">Ciencia ficción</option>
+                      <option value="4">Terror</option>
+                      <option value="5">Misterio</option>
+                      <option value="6">Espiritualidad</option>
+                    </select>
+                  </div>
+                  <div class="col-7 mb-3">
+                    <label for="editorial" class="form-label text-black"
+                      >Editorial</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editorial"
+                      placeholder="Book Editorial"
+                      maxlength="60"
+                      minlength="1"
+                    />
+                  </div>
                   <div class="mb-3">
                     <label for="isbn" class="form-label text-black"
                       >ISBN *</label
@@ -206,19 +233,6 @@
                       maxlength="20"
                       minlength="13"
                       required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="editorial" class="form-label text-black"
-                      >Editorial</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="editorial"
-                      placeholder="Book Editorial"
-                      maxlength="60"
-                      minlength="1"
                     />
                   </div>
                   <div class="col-6 mb-3">
