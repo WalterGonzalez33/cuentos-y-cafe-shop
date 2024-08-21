@@ -25,7 +25,6 @@
     background-color: var(--color-secondary);
   }
 }
-
 .table-container-admin {
   max-height: 550px;
   font-size: 0.83rem;
@@ -47,7 +46,9 @@
     border-radius: 20px;
   }
 }
-
+.table-admin{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
 .modal-dialog{
   width: 100%;
   max-width: 500px;

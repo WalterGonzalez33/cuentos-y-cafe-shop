@@ -1,5 +1,4 @@
 'use strict'
-import Book from './classBook.js';
 
 const tbodyTableAdmin = document.querySelector('.tbody-table-admin')
 
@@ -50,7 +49,7 @@ const tdTextCreate = (text, tagName, classSpan = false) => {
     td.appendChild(span)
     return td
 }
-const CreateRowBookAdmin = (book, index) => {
+export const createRowBookAdmin = (book, index) => {
     const tr = document.createElement("tr");
     const th = document.createElement("th");
     const contentTextIndex = document.createTextNode(`${ index + 1 }`);
@@ -72,41 +71,3 @@ const CreateRowBookAdmin = (book, index) => {
     tbodyTableAdmin.appendChild(tr)
     
 }
-
-CreateRowBookAdmin(new Book(
-    "https://www.penguinlibros.com/ar/2192261-thickbox_default/tecnoceno.jpg",
-    'Tecnoceno',
-    "Flavia Costa",
-    "9789877370669",
-    "TAURUS",
-    "22,0 x 15,5",
-    '9.300,00',
-    9,
-    "Chernóbil, la crisis financiera de 2008, los incendios en el Amazonas o la pandemia de coronavirus no son eventos aislados. Son 'accidentes normales', síntomas del crecimiento y la destrucción acelerados",
-    230,
-), 1+1)
-
-CreateRowBookAdmin(new Book(
-    "https://www.penguinlibros.com/ar/2192261-thickbox_default/tecnoceno.jpg",
-    'Tecnoceno',
-    "Flavia Costa",
-    "9789877370669",
-    "TAURUS",
-    "22,0 x 15,5",
-    '9.300,00',
-    9,
-    "Chernóbil, la crisis financiera de 2008, los incendios en el Amazonas o la pandemia de coronavirus no son eventos aislados. Son 'accidentes normales', síntomas del crecimiento y la destrucción acelerados",
-    230,
-), 1+1)
-CreateRowBookAdmin(new Book(
-    "https://www.penguinlibros.com/ar/2192261-thickbox_default/tecnoceno.jpg",
-    'Tecnoceno',
-    "Flavia Costa",
-    "9789877370669",
-    "TAURUS",
-    "22,0 x 15,5",
-    '9.300,00',
-    9,
-    "Chernóbil, la crisis financiera de 2008, los incendios en el Amazonas o la pandemia de coronavirus no son eventos aislados. Son 'accidentes normales', síntomas del crecimiento y la destrucción acelerados",
-    230,
-), 1+1)
