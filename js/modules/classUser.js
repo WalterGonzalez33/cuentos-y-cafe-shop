@@ -40,5 +40,4 @@ class User {
   }
 }
 
-const inviteUser = new User("invite", "invitePassword");
-const adminUser = new User("admin", "adminPassword", true);
+export default User;
