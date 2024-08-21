@@ -29,7 +29,8 @@ const createNodeBtn = () => {
 // fn --> crea una card de producto
 export const createCardProduct = ({fromBookUrl, title, price}) => {
   const divCardContainer = document.createElement('div')
-  divCardContainer.className = 'col-6 col-lg-4 mt-2 mt-md-0 p-0 card card-product';
+  divCardContainer.setAttribute('data-aos', 'fade-up');
+  divCardContainer.className = 'col-6 col-lg-4 mt-2 m-auto m-lg-0 mt-md-0 p-0 card card-product';
 
   const divImgCardContainer = document.createElement('div')
   divImgCardContainer.className = 'img-card-container'
