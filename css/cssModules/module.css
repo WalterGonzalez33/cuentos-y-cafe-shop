@@ -1,0 +1,11 @@
+.navbar-color{
+  background-color: var(--color-primary);
+}
+
+.navbar2-color{
+  background-color: var(--color-secondary);
+}
+
+.modal-color{
+  background-color: var(--color-bg-primary);
+}
