@@ -1,5 +1,6 @@
 "use strict";
 
+import { renderQuantityBooks } from "../admin.js";
 import { books } from "../main.js";
 import { hideModal, showModalEdit } from "./modalAdmin.js";
 import {
@@ -42,7 +43,7 @@ const editAllDataBook = (indexBook) => {
   books[indexBook].editorial = editorial;
   books[indexBook].genre = genre;
 
-  localStorage.setItem('books', JSON.stringify(books))
+  localStorage.setItem("books", JSON.stringify(books));
 };
 const editDataBook = (id, btnEdit) => {
   const findIndexBook = books.findIndex((book) => book.id === id);
@@ -50,20 +51,39 @@ const editDataBook = (id, btnEdit) => {
   if (isEditBook && validateFormAdmin()) {
     editAllDataBook(findIndexBook);
     const trEdit = btnEdit.parentNode.parentNode.parentNode;
-    trEdit.before(createRowBookAdmin(books[findIndexBook], `<i class="bi bi-pen"></i>`, false, true));
+    trEdit.before(
+      createRowBookAdmin(
+        books[findIndexBook],
+        `<i class="bi bi-pen"></i>`,
+        false,
+        true
+      )
+    );
     trEdit.remove();
     hideModal();
+    renderQuantityBooks();
+
     isEditBook = false;
     currentBookId = null;
     currentBtnEdit = null;
+
+    Swal.fire({
+      title: "Libro editado correctamente",
+      icon: "success",
+      confirmButtonText: "ok",
+      customClass: {
+        popup: "custom-alert",
+        confirmButton: "btn-confirm",
+      },
+    });
   }
 };
 const handleFormSubmit = (event) => {
-    event.preventDefault();
-    if (currentBookId !== null && currentBtnEdit !== null) {
-      editDataBook(currentBookId, currentBtnEdit);
-    }
-  };
+  event.preventDefault();
+  if (currentBookId !== null && currentBtnEdit !== null) {
+    editDataBook(currentBookId, currentBtnEdit);
+  }
+};
 
 formAdmin.removeEventListener("submit", handleFormSubmit);
 formAdmin.addEventListener("submit", handleFormSubmit);
@@ -71,7 +91,7 @@ formAdmin.addEventListener("submit", handleFormSubmit);
 const editBook = (book, btnEdit) => {
   showModalEdit();
   setInputsValue(book);
-  
+
   currentBookId = book.id;
   currentBtnEdit = btnEdit;
 };
@@ -107,7 +127,7 @@ const tdActionsBtn = (book) => {
     isEditBook = true;
     editBook(book, buttonEditBook);
   });
-  
+
   return td;
 };
 const tdImgCreate = (urlImage, textAlt) => {
@@ -145,9 +165,9 @@ export const createRowBookAdmin = (
 ) => {
   const tr = document.createElement("tr");
   const th = document.createElement("th");
-  const spanIndex = document.createElement('span')
+  const spanIndex = document.createElement("span");
 
-  spanIndex.innerHTML = `${typeof index === "number" ? index + 1 : index}`
+  spanIndex.innerHTML = `${typeof index === "number" ? index + 1 : index}`;
   tr.id = book.id;
   tr.className = "align-middle row-table-admin rounded rounded-3";
   th.appendChild(spanIndex);

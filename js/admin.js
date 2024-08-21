@@ -9,6 +9,8 @@ import { createRowBookAdmin } from "./modules/createRowAdmin.js";
 import { books } from "./main.js";
 import Book from "./modules/classBook.js";
 
+const textQuantityBooks = document.querySelector(".text-quantity-books");
+const textQuantityStock = document.querySelector(".text-quantity-stock");
 const btnAddBook = document.querySelector(".btn-add-admin");
 const formAdmin = document.querySelector("#formAdmin");
 const viewMoreContainer = document.querySelector(".viewMoreContainer");
@@ -66,6 +68,7 @@ const insetNewBook = () => {
       confirmButton: "btn-confirm",
     },
   });
+  renderQuantityBooks();
 };
 const handlerSubmit = (form) => {
   form.preventDefault();
@@ -89,6 +92,14 @@ const handlerViewMore = () => {
   renderRowsAdmin(books, indexRenderRows);
 };
 
+// fn --> renderiza en pantalla la cantidad de libros hay y su stock
+export const renderQuantityBooks = () => {
+  const quantityStock = books.reduce((stock, book) => {
+    return stock + parseInt(book.stock);
+  }, 0);
+  textQuantityBooks.innerHTML = `Libros: ${books.length + 1}`;
+  textQuantityStock.innerHTML = `Stock: ${quantityStock} ud`;
+};
 // fn --> renderiza 5 libros en la tabla
 const renderRowsAdmin = (booksList, indexStart) => {
   for (let i = indexStart; i < indexStart + 5; i++) {
@@ -111,4 +122,5 @@ btnAddBook.addEventListener("click", handlerClickAddBook);
 formAdmin.removeEventListener("submit", handlerSubmit);
 formAdmin.addEventListener("submit", handlerSubmit);
 btnViewMore.addEventListener("click", handlerViewMore);
+renderQuantityBooks();
 renderRowsAdmin(books, indexRenderRows);
