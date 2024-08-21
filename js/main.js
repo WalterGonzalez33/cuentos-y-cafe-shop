@@ -3,7 +3,7 @@
 import { setBooksInLocalStorage } from "../data/initialData.js";
 import User from "./modules/classUser.js";
 
-const books = JSON.parse(localStorage.getItem('books')) || setBooksInLocalStorage();
+export const books = JSON.parse(localStorage.getItem('books')) || setBooksInLocalStorage();
 
 const adminUser = new User("admin", "adminPassword", true);
 

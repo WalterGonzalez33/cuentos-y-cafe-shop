@@ -1,0 +1,159 @@
+.body-admin {
+  background-image: url("../../assets/bg-img.jpg");
+  background-size: cover;
+  backdrop-filter: blur(0px);
+}
+.main-container {
+  background-color: var(--color-bg-primary);
+  min-height: 100vh;
+}
+
+.input-search-admin {
+  background-color: var(--color-secondary);
+  border-color: white;
+  &:focus {
+    background-color: var(--color-secondary);
+  }
+}
+.btn-search-admin {
+  &:hover {
+    background-color: var(--color-primary);
+  }
+}
+.btn-add-admin {
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+}
+.table-container-admin {
+  max-height: 550px;
+  font-size: 0.83rem;
+  position: relative;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-bottom: 2px solid #727272;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+
+  /* scroll bar personalized */
+  &::-webkit-scrollbar {
+    background-color: #212529;
+    width: 8px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-primary);
+    border-radius: 20px;
+  }
+}
+.table-admin{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.head-table-admin {
+  background-color: var(--color-primary);
+  --bs-table-bg: none;
+  position: sticky;
+  top: 0px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+.row-table-admin {
+  margin-bottom: 10px;
+
+  th,
+  td {
+    padding: calc(0.7rem * 1.1);
+  }
+}
+
+.img-product-admin {
+  max-width: 88px;
+}
+
+.isbn {
+  min-width: 200px;
+}
+.text-edition-admin {
+  max-width: 110px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-align: start;
+}
+.text-description-admin {
+  max-width: 200px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-align: start;
+}
+
+.btn-table-admin {
+  color: var(--color-secondary);
+
+  &.btn-trash:hover {
+    color: #ef5353;
+  }
+}
+.btn-viewMore {
+  cursor: pointer;
+
+  &:hover {
+    color: #ffffffaf;
+  }
+}
+
+.reset-text-container{
+  display: none;
+}
+/* estilos de la ventana modal */
+.modal-admin-content {
+  background-color: var(--color-bg-primary);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.modal-header-custom {
+  background-color: var(--color-primary);
+}
+.btn-submit-admin {
+  background-color: var(--color-primary);
+
+  &:hover {
+    background-color: var(--color-secondary);
+  }
+}
+.input-genre{
+  font-family: var(--font-secondary);
+}
+
+#description{
+    /* scroll bar personalized */
+    &::-webkit-scrollbar {
+      background-color: #ffffff00;
+      width: 5px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--color-primary);
+      border-radius: 20px;
+    }
+}
+.form-control {
+  font-family: var(--font-secondary);
+}
+
+@media (max-width: 992px) {
+  .table-container-admin {
+    font-size: 0.8rem;
+    max-height: 650px;
+    overflow-x: scroll;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .table-container-admin {
+    max-height: 800px;
+    overflow-x: scroll;
+  }
+}
