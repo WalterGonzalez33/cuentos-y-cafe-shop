@@ -3,29 +3,33 @@
 import { renderQuantityBooks, renderRowsAdmin, showResetBooksList } from "../admin.js";
 import { books } from "../main.js";
 import { hideModal, showModalEdit } from "./modalAdmin.js";
+import { setScrollTableTop } from "./searchBookAdmin.js";
 import {
   getInputsValue,
   setInputsValue,
   validateFormAdmin,
 } from "./validationAdmin.js";
 
-const tbodyTableAdmin = document.querySelector(".tbody-table-admin");
+export const tbodyTableAdmin = document.querySelector(".tbody-table-admin");
 const formAdmin = document.querySelector("#formAdmin");
 
+let indexRendering = 0
 let isEditBook = false;
 let currentBookId = null;
 let currentBtnEdit = null;
 
-const deleteBook = (bookParam, btnDelete) => {
+const deleteBook = (bookParam) => {
   const deleteDateBook = () => {
     // eliminar del local storage
     const findIndexBook = books.findIndex((book) => book.id === bookParam.id);
     books.splice(findIndexBook, 1);
     localStorage.setItem("books", JSON.stringify(books));
 
-    // eliminar de la tabla
-    const trDelete = btnDelete.parentNode.parentNode.parentNode;
-    trDelete.remove();
+    // renderizar la tabla
+    tbodyTableAdmin.innerHTML = ''
+    indexRendering = renderRowsAdmin(books,indexRendering, indexRendering)
+    indexRendering = 0;
+    setScrollTableTop()
   };
 
   Swal.fire({
