@@ -447,8 +447,33 @@
               <h2 class="modal-title fs-5 text-light" id="modalIniciaSesionLabel">Iniciá Sesión</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              ...
+            <div class="modal-body modal-color">
+                <form>                  
+                    <div class="mb-2">
+                      <label for="email" class="form-label">Correo Electrónico</label>
+                      <input
+                        id="email"
+                        type="email"
+                        class="form-control"
+                        placeholder="Ej: rolling@mail.com"
+                        minlength="10"
+                        maxlength="320"
+                        required
+                      />
+                    </div>
+                    <div class="mb-2">
+                      <label for="clave" class="form-label">Contraseña</label>
+                      <input
+                        id="clave"
+                        type="password"
+                        class="form-control"
+                        placeholder="Ej: abc-123"
+                        minlength="5"
+                        maxlength="50"
+                        required
+                      />
+                    </div>
+                </form>
             </div>
             <div class="modal-footer container-fluid justify-content-center navbar2-color">  
                 <button type="submit" class="btn btn-outline-light">Ingresar</button>
