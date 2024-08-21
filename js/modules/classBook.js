@@ -16,6 +16,7 @@ class Book {
   #stock;
   #description;
   #pagNumbers;
+  #genre;
 
   constructor(
     fromBookUrl = "https://libreriayachaywasi.com/wp-content/uploads/2024/02/YACH-PAL99ADER630189786123250300.jpg",
@@ -27,7 +28,8 @@ class Book {
     price = "15.000",
     stock = 30,
     description = "Descripción del libro",
-    pagNumbers = 0
+    pagNumbers = 0,
+    genre = "acción"
   ) {
     this.#ID = uuidv4();
     this.#fromBookUrl = fromBookUrl;
@@ -40,6 +42,7 @@ class Book {
     this.#stock = stock;
     this.#description = description;
     this.#pagNumbers = pagNumbers;
+    this.genre = genre;
   }
 
   // getters
@@ -77,6 +80,9 @@ class Book {
   get pagNumbers() {
     return this.#pagNumbers;
   }
+  get genre() {
+    return this.#genre;
+  }
 
   // setters
 
@@ -112,6 +118,9 @@ class Book {
   set pagNumbers(newPagNumbers) {
     this.#pagNumbers = newPagNumbers;
   }
+  set genre(newGenre) {
+    this.#genre = newGenre;
+  }
 
   toJSON() {
     return {
@@ -126,6 +135,7 @@ class Book {
       dimensions: this.dimensions,
       editorial: this.editorial,
       pagNumbers: this.pagNumbers,
+      genre: this.genre,
     };
   }
 }
