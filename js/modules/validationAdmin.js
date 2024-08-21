@@ -153,7 +153,7 @@ const validateFormDimensions = (input) => {
 // fn --> valida todos los input del formulario y devuelve un booleano dependiendo
 export const validateFormAdmin = () => {
   const validateFromBookUrl =
-    validateLength("link", inputFromBookUrl, 8, 100, false) &&
+    validateLength("link", inputFromBookUrl, 8, 500, false) &&
     validateUrl(inputFromBookUrl);
   const validateIsbn =
     validateLength("ISBN", inputIsbn, 13, 20, true) &&
@@ -170,8 +170,8 @@ export const validateFormAdmin = () => {
   const validateDimensions =
     validateLength("formato de dimension", inputDimensions, 6, 15, true) &&
     validateFormDimensions(inputDimensions);
-  const validateTitle = validateLength("titulo", inputTitle, 2, 60, true);
-  const validateAuthor = validateLength("autor", inputAuthor, 2, 60, true);
+  const validateTitle = validateLength("titulo", inputTitle, 2, 300, true);
+  const validateAuthor = validateLength("autor", inputAuthor, 2, 300, true);
   const validateGenre = validateLength(
     "tipo de genero",
     inputGenre,
@@ -183,7 +183,7 @@ export const validateFormAdmin = () => {
     "párrafo de descripción",
     inputDescription,
     10,
-    1000,
+    10000,
     true
   );
   const validateEditorial = validateLength(

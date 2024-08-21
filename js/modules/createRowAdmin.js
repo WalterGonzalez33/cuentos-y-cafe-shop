@@ -1,8 +1,84 @@
 "use strict";
 
-const tbodyTableAdmin = document.querySelector(".tbody-table-admin");
+import { books } from "../main.js";
+import { hideModal, showModalEdit } from "./modalAdmin.js";
+import {
+  getInputsValue,
+  setInputsValue,
+  validateFormAdmin,
+} from "./validationAdmin.js";
 
-const tdActionsBtn = (id) => {
+const tbodyTableAdmin = document.querySelector(".tbody-table-admin");
+const formAdmin = document.querySelector("#formAdmin");
+
+let isEditBook = false;
+let currentBookId = null;
+let currentBtnEdit = null;
+
+const editAllDataBook = (indexBook) => {
+  const {
+    fromBookUrl,
+    title,
+    author,
+    isbn,
+    pags,
+    price,
+    stock,
+    dimensions,
+    description,
+    editorial,
+    genre,
+  } = getInputsValue();
+
+  books[indexBook].fromBookUrl = fromBookUrl;
+  books[indexBook].title = title;
+  books[indexBook].author = author;
+  books[indexBook].isbn = isbn;
+  books[indexBook].pagNumbers = pags;
+  books[indexBook].price = price;
+  books[indexBook].stock = stock;
+  books[indexBook].dimensions = dimensions;
+  books[indexBook].description = description;
+  books[indexBook].editorial = editorial;
+  books[indexBook].genre = genre;
+
+  localStorage.setItem('books', JSON.stringify(books))
+};
+const editDataBook = (id, btnEdit) => {
+  const findIndexBook = books.findIndex((book) => book.id === id);
+
+  if (isEditBook && validateFormAdmin()) {
+    editAllDataBook(findIndexBook);
+    const trEdit = btnEdit.parentNode.parentNode.parentNode;
+    trEdit.before(createRowBookAdmin(books[findIndexBook], `<i class="bi bi-pen"></i>`, false, true));
+    trEdit.remove();
+    hideModal();
+    isEditBook = false;
+    currentBookId = null;
+    currentBtnEdit = null;
+  }
+};
+const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (currentBookId !== null && currentBtnEdit !== null) {
+      editDataBook(currentBookId, currentBtnEdit);
+    }
+  };
+
+formAdmin.removeEventListener("submit", handleFormSubmit);
+formAdmin.addEventListener("submit", handleFormSubmit);
+
+const editBook = (book, btnEdit) => {
+  showModalEdit();
+  setInputsValue(book);
+  
+  currentBookId = book.id;
+  currentBtnEdit = btnEdit;
+};
+
+// fns --> funciones que crean el nodo 'td' para la tabla del admin
+
+const tdActionsBtn = (book) => {
   const td = document.createElement("td");
   const divContainer = document.createElement("div");
   const buttonViewBook = document.createElement("button");
@@ -26,6 +102,12 @@ const tdActionsBtn = (id) => {
   buttonDeleteBook.appendChild(iconDeleteBook);
   divContainer.appendChild(buttonDeleteBook);
   td.appendChild(divContainer);
+
+  buttonEditBook.addEventListener("click", () => {
+    isEditBook = true;
+    editBook(book, buttonEditBook);
+  });
+  
   return td;
 };
 const tdImgCreate = (urlImage, textAlt) => {
@@ -53,13 +135,22 @@ const tdTextCreate = (text, tagName, classSpan = false) => {
   td.appendChild(span);
   return td;
 };
-export const createRowBookAdmin = (book, index, addFirst = false) => {
+
+// fn --> crea una fila a lo ultimo del tbody de la tabla del admin
+export const createRowBookAdmin = (
+  book,
+  index,
+  addFirst = false,
+  returnNode = false
+) => {
   const tr = document.createElement("tr");
   const th = document.createElement("th");
-  const contentTextIndex = document.createTextNode(`${index != '#' ? index + 1 : index}`);
+  const spanIndex = document.createElement('span')
+  spanIndex.innerHTML = `${typeof index === "Number" ? (1 + index) : index}`
+
   tr.id = book.id;
   tr.className = "align-middle row-table-admin rounded rounded-3";
-  th.appendChild(contentTextIndex);
+  th.appendChild(spanIndex);
   tr.appendChild(th);
   tr.appendChild(tdImgCreate(book.fromBookUrl, book.title));
   tr.appendChild(tdTextCreate(book.title));
@@ -73,11 +164,15 @@ export const createRowBookAdmin = (book, index, addFirst = false) => {
   tr.appendChild(tdTextCreate(book.dimensions));
   tr.appendChild(tdTextCreate(book.price, "span", "font-number"));
   tr.appendChild(tdTextCreate(`${book.stock} ud`, "span", "font-number"));
-  tr.appendChild(tdActionsBtn(book.id));
+  tr.appendChild(tdActionsBtn(book));
 
-  if(addFirst){
-    tbodyTableAdmin.prepend(tr)
-  }else{
-    tbodyTableAdmin.appendChild(tr);
+  if (!returnNode) {
+    if (addFirst) {
+      tbodyTableAdmin.prepend(tr);
+    } else {
+      tbodyTableAdmin.appendChild(tr);
+    }
+  } else {
+    return tr;
   }
 };

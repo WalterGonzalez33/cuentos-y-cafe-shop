@@ -6,6 +6,7 @@ import {
 } from "./modules/validationAdmin.js";
 import { hideModal, showModal } from "./modules/modalAdmin.js";
 import { createRowBookAdmin } from "./modules/createRowAdmin.js";
+import { books } from "./main.js";
 import Book from "./modules/classBook.js";
 
 const btnAddBook = document.querySelector(".btn-add-admin");
@@ -13,8 +14,7 @@ const formAdmin = document.querySelector("#formAdmin");
 const viewMoreContainer = document.querySelector(".viewMoreContainer");
 const btnViewMore = document.querySelector(".btn-viewMore");
 
-const books = JSON.parse(localStorage.getItem("books"));
-
+let isCreateBook = false;
 let indexRenderRows = 0;
 
 const createNewBook = () => {
@@ -48,21 +48,25 @@ const createNewBook = () => {
   return newBookCreate;
 };
 
+const insetNewBook = () => {
+  const newBook = createNewBook();
+  books.unshift(newBook);
+  localStorage.setItem("books", JSON.stringify(books));
+  formAdmin.reset();
+  hideModal();
+  createRowBookAdmin(newBook, `<i class="bi bi-check2"></i>`, true);
+  indexRenderRows++;
+  Swal.fire({
+    title: "Libro añadido correctamente",
+    icon: "success",
+    color: "#405d72",
+  });
+};
 const handlerSubmit = (form) => {
   form.preventDefault();
-  if (validateFormAdmin()) {
-    const newBook = createNewBook();
-    books.unshift(newBook);
-    localStorage.setItem("books", JSON.stringify(books));
-    formAdmin.reset();
-    hideModal();
-    createRowBookAdmin(newBook, "#", true);
-    indexRenderRows++;
-    Swal.fire({
-      title: "Libro añadido correctamente",
-      icon: "success",
-      color: '#405d72'
-    });
+  if (isCreateBook && validateFormAdmin()) {
+    insetNewBook();
+    isCreateBook = false;
   }
 };
 
@@ -93,7 +97,12 @@ const renderRowsAdmin = (booksList, indexStart) => {
   }
 };
 
-btnAddBook.addEventListener("click", showModal);
+const handlerClickAddBook = () => {
+  isCreateBook = true;
+  showModal();
+};
+
+btnAddBook.addEventListener("click", handlerClickAddBook);
 formAdmin.addEventListener("submit", handlerSubmit);
 btnViewMore.addEventListener("click", handlerViewMore);
 renderRowsAdmin(books, indexRenderRows);
