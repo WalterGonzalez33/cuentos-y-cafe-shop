@@ -18,6 +18,11 @@ let isEditBook = false;
 let currentBookId = null;
 let currentBtnEdit = null;
 
+const redirectionDetailProduct = (id) => {
+  window.location.href = `/pages/detalle.html?id=${id}`
+}
+
+// fn --> elimina un libro de la lista y los vuelve a renderizar
 const deleteBook = (bookParam) => {
   const deleteDateBook = () => {
     // eliminar del local storage
@@ -168,6 +173,9 @@ const tdActionsBtn = (book) => {
   divContainer.appendChild(buttonDeleteBook);
   td.appendChild(divContainer);
 
+  buttonViewBook.addEventListener('click', () => {
+    redirectionDetailProduct(book.id)
+  })
   buttonEditBook.addEventListener("click", () => {
     isEditBook = true;
     editBook(book, buttonEditBook);
