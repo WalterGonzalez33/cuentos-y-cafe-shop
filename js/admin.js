@@ -58,8 +58,13 @@ const insetNewBook = () => {
   indexRenderRows++;
   Swal.fire({
     title: "Libro añadido correctamente",
+    text: "El libro creado aparecerá al comienzo de la tabla",
     icon: "success",
-    color: "#405d72",
+    confirmButtonText: "ok",
+    customClass: {
+      popup: "custom-alert",
+      confirmButton: "btn-confirm",
+    },
   });
 };
 const handlerSubmit = (form) => {
@@ -103,6 +108,7 @@ const handlerClickAddBook = () => {
 };
 
 btnAddBook.addEventListener("click", handlerClickAddBook);
+formAdmin.removeEventListener("submit", handlerSubmit);
 formAdmin.addEventListener("submit", handlerSubmit);
 btnViewMore.addEventListener("click", handlerViewMore);
 renderRowsAdmin(books, indexRenderRows);

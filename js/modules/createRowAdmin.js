@@ -146,8 +146,8 @@ export const createRowBookAdmin = (
   const tr = document.createElement("tr");
   const th = document.createElement("th");
   const spanIndex = document.createElement('span')
-  spanIndex.innerHTML = `${typeof index === "Number" ? (1 + index) : index}`
 
+  spanIndex.innerHTML = `${typeof index === "number" ? index + 1 : index}`
   tr.id = book.id;
   tr.className = "align-middle row-table-admin rounded rounded-3";
   th.appendChild(spanIndex);

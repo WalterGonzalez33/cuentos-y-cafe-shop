@@ -49,10 +49,6 @@
 .table-admin{
   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
 }
-.modal-dialog{
-  width: 100%;
-  max-width: 500px;
-}
 .head-table-admin {
   background-color: var(--color-primary);
   --bs-table-bg: none;
