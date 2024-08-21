@@ -165,7 +165,7 @@ export const validateFormAdmin = () => {
     validateLength("total de paginas", inputPags, 1, 6, true) &&
     validateNumber(inputPags);
   const validatePrice =
-    validateLength("precio", inputPrice, 1, 7, true) &&
+    validateLength("precio", inputPrice, 1, 20, true) &&
     validateNumber(inputPrice);
   const validateDimensions =
     validateLength("formato de dimension", inputDimensions, 6, 15, true) &&
@@ -175,7 +175,7 @@ export const validateFormAdmin = () => {
   const validateGenre = validateLength(
     "tipo de genero",
     inputGenre,
-    2,
+    1,
     50,
     false
   );
@@ -212,3 +212,31 @@ export const validateFormAdmin = () => {
 
   return false;
 };
+export const setInputsValue = (bookData) => {
+  inputFromBookUrl.value = bookData.fromBookUrl;
+  inputTitle.value = bookData.title;
+  inputAuthor.value = bookData.author;
+  inputIsbn.value = bookData.isbn;
+  inputPags.value = bookData.pagNumbers;
+  inputPrice.value = bookData.price;
+  inputStock.value = bookData.stock;
+  inputDimensions.value = bookData.dimensions;
+  inputDescription.value = bookData.description;
+  inputEditorial.value = bookData.editorial;
+  inputGenre.value = bookData.genre;
+}
+export const getInputsValue = () => {
+  return {
+    fromBookUrl: inputFromBookUrl.value,
+    title: inputTitle.value,
+    author: inputAuthor.value,
+    isbn: inputIsbn.value,
+    pags: inputPags.value,
+    price: inputPrice.value,
+    stock: inputStock.value,
+    dimensions: inputDimensions.value,
+    description: inputDescription.value,
+    editorial: inputEditorial.value,
+    genre: inputGenre.value
+  }
+}
