@@ -4,7 +4,13 @@ const formFilter = document.querySelector('.form-filter-products')
 const inputMinFilter = document.querySelector('.min-price')
 const inputMaxFilter = document.querySelector('.max-price')
 
+const renderCardsContainer = document.querySelector('.render-cards-container')
+
+const renderAllProducts = () => {
+  
+}
 const handlerSubmitFilter = (event) => {
   event.preventDefault()
 }
 formFilter.addEventListener('submit',handlerSubmitFilter )
+
