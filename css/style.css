@@ -11,6 +11,7 @@
 
 @import url(./cssModules/module.css);
 @import url(./cssModules/admin.css);
+@import url(./cssModules/customAlerts.css);
 
 /* variables */
 
@@ -42,4 +43,41 @@ main {
 
 .txt-secondary {
   font-family: var(--font-secondary);
+}
+
+
+.footer-container{
+  background-color: var(--color-bg-primary);
+}
+.footer-logo{
+ max-width: 140px;
+}
+.banner-Img {
+  height: 300px;
+  object-fit: cover;
+}
+
+#img-Banner-2 {
+  object-position: 80%;
+}
+#img-Banner-3 {
+  object-position: 5%;
+}
+.color-Borde{
+  border-color: var(--color-primary);
+
+}
+.color-Fondo {
+  background-color: transparent;
+}
+.color-Fondo-2{
+  background-color: var(--color-primary);
+}
+.card-img-top {
+ height: 300px;
+ object-fit: contain;
+}
+
+.card {
+  border: none;
 }

@@ -21,6 +21,12 @@
       type="image/x-icon"
     />
     <link
+      href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
+"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -99,15 +105,15 @@
         >
           <div class="text-center text-md-start">
             <h3 class="text-dark fw-bolder">Productos</h3>
-            <h5 class="text-secondary txt-secondary">Libros 5</h5>
-            <h5 class="text-secondary txt-secondary">43 ud</h5>
+            <h5 class="text-secondary txt-secondary text-quantity-books"></h5>
+            <h5 class="text-secondary txt-secondary text-quantity-stock">43 ud</h5>
           </div>
 
-          <form class="d-flex" role="search">
+          <form id="form-search-admin" class="d-flex" role="search">
             <input
-              class="form-control me-2 focus-ring focus-ring-dark border-secondary-subtle input-search-admin"
+              class="form-control me-2 focus-ring focus-ring-dark border-1 rounded-0 border-secondary-subtle input-search-admin"
               type="search"
-              placeholder="Titulo"
+              placeholder="Titulo o ISBN"
               aria-label="Search"
             />
             <button
@@ -118,7 +124,7 @@
             </button>
           </form>
 
-          <button class="btn btn-outline-dark btn-add-admin border-2">
+          <button class="btn btn-outline-dark btn-add-admin border-2 rounded-0">
             <i class="fs-3 bi bi-plus"></i>
             <i class="fs-4 bi bi-book"></i>
           </button>
@@ -139,11 +145,7 @@
           <div class="modal-dialog">
             <div class="modal-content modal-admin-content rounded rounded-0">
               <div class="modal-header rounded-0 modal-header-custom">
-                <h1 class="modal-title fs-5" id="createBookLabel">
-                  Crea un libros<span class="ms-1"
-                    ><i class="fa-solid fa-book"></i
-                  ></span>
-                </h1>
+                <h1 class="modal-title fs-5" id="createBookLabel"></h1>
                 <button
                   type="button"
                   class="btn-close"
@@ -194,6 +196,37 @@
                       required
                     />
                   </div>
+                  <div class="col-5 mb-3">
+                    <label for="genre" class="form-label text-black"
+                      >Genero</label
+                    >
+                    <select
+                      id="genre"
+                      class="form-select input-genre"
+                      aria-label="genero del libro"
+                    >
+                      <option selected>No especificado</option>
+                      <option value="1">Ciencias y tecnología</option>
+                      <option value="2">fantasía</option>
+                      <option value="3">Ciencia ficción</option>
+                      <option value="4">Terror</option>
+                      <option value="5">Misterio</option>
+                      <option value="6">Espiritualidad</option>
+                    </select>
+                  </div>
+                  <div class="col-7 mb-3">
+                    <label for="editorial" class="form-label text-black"
+                      >Editorial</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editorial"
+                      placeholder="Book Editorial"
+                      maxlength="60"
+                      minlength="1"
+                    />
+                  </div>
                   <div class="mb-3">
                     <label for="isbn" class="form-label text-black"
                       >ISBN *</label
@@ -206,19 +239,6 @@
                       maxlength="20"
                       minlength="13"
                       required
-                    />
-                  </div>
-                  <div class="mb-3">
-                    <label for="editorial" class="form-label text-black"
-                      >Editorial</label
-                    >
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="editorial"
-                      placeholder="Book Editorial"
-                      maxlength="60"
-                      minlength="1"
                     />
                   </div>
                   <div class="col-6 mb-3">
@@ -295,9 +315,7 @@
                     <button
                       type="submit"
                       class="btn rounded-0 border-0 btn-dark btn-submit-admin"
-                    >
-                      CREAR
-                    </button>
+                    ></button>
                   </div>
                 </form>
               </div>
@@ -327,304 +345,25 @@
               </tr>
             </thead>
 
-            <tbody>
-              <tr class="align-middle row-table-admin rounded rounded-3">
-                <th scope="row">1</th>
-                <td>
-                  <img
-                    src="https://editorialverbum.es/wp-content/uploads/2016/11/El-Lazarillo-de-Tormes.jpg"
-                    alt="libro"
-                    class="img-thumbnail img-product-admin"
-                  />
-                </td>
-                <td><span>El Lazarillo de Tormes</span></td>
-                <td><span>Anónimo</span></td>
-                <td><span class="isbn font-number">978-15-8977-002-7</span></td>
-                <td>
-                  <p class="text-edition-admin">
-                    Club Verbum, Colección Narrativa
-                  </p>
-                </td>
-                <td><span class="font-number">140</span></td>
-                <td>
-                  <p class="text-description-admin">
-                    La vida de Lazarillo de Tormes y de sus fortunas y
-                    adversidades (más conocida como El Lazarillo de Tormes) es
-                    la primera novela picaresca de la literatura española y una
-                    de las más populares de su historia. El Lazarillo de Tormes,
-                    publicada en 1554, es un esbozo irónico y despiadado de la
-                    sociedad del momento, de la que se muestran sus vicios y
-                    actitudes hipócritas
-                  </p>
-                </td>
-                <td><span>14 x 19 cm</span></td>
-                <td><span class="font-number">8.900</span></td>
-                <td><span class="font-number">8 ud</span></td>
-                <td>
-                  <div class="d-flex flex-column">
-                    <button class="btn btn-table-admin fs-5">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button class="btn btn-table-admin btn-edit-book fs-5">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-table-admin fs-5 btn-trash">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr class="align-middle row-table-admin rounded rounded-3">
-                <th scope="row">2</th>
-                <td>
-                  <img
-                    src="https://www.emanantial.com.ar/archivos/portadas/portadaid889.jpg"
-                    alt="libro"
-                    class="img-thumbnail img-product-admin"
-                  />
-                </td>
-                <td><span>El Hombre en Busca del Sentido</span></td>
-                <td><span>Viktor E. Frankl</span></td>
-                <td><span class="isbn font-number">978-84-2543-989-6</span></td>
-                <td>
-                  <p class="text-edition-admin">Herder Editorial · Tapa Dura</p>
-                </td>
-                <td><span class="font-number">168</span></td>
-                <td>
-                  <p class="text-description-admin">
-                    El hombre en busca de sentido es el estremecedor relato en
-                    el que Viktor Frankl nos narra su experiencia en los campos
-                    de concentración. Durante todos esos años de sufrimiento,
-                    sintió en su propio ser lo que significaba una existencia
-                    desnuda, absolutamente desprovista de todo, salvo de la
-                    existencia misma. Él, que todo lo había perdido, que padeció
-                    hambre, frío y brutalidades, que tantas veces estuvo a punto
-                    de ser ejecutado, pudo reconocer que, pese a todo, la vida
-                    es digna de ser vivida y que la libertad interior y la
-                    dignidad humana son indestructibles. En su condición de
-                    psiquiatra y prisionero, Frankl reflexiona con palabras de
-                    sorprendente esperanza sobre la capacidad humana de
-                    trascender las dificultades y descubrir una verdad profunda
-                    que nos orienta y da sentido a nuestras vidas. La
-                    logoterapia, método psicoterapéutico creado por el propio
-                    Frankl, se centra precisamente en el sentido de la
-                    existencia y en la búsqueda de ese sentido por parte del
-                    hombre, que asume la responsabilidad ante sí mismo, ante los
-                    demás y ante la vida. ¿Qué espera la vida de nosotros? El
-                    hombre en busca de sentido es mucho más que el testimonio de
-                    un psiquiatra sobre los hechos y los acontecimientos vividos
-                    en un campo de concentración, es una lección existencial.
-                    Traducido a medio centenar de idiomas, se han vendido
-                    millones de ejemplares en todo el mundo. Según la Library of
-                    Congress de Washington, es uno de los diez libros de mayor
-                    influencia en Estados Unidos. «Uno de los pocos grandes
-                    libros de la humanidad». Karl Jaspers
-                  </p>
-                </td>
-                <td><span>14 x 21 cm</span></td>
-                <td><span class="font-number">7.000</span></td>
-                <td><span class="font-number">3 ud</span></td>
-                <td>
-                  <div class="d-flex flex-column">
-                    <button class="btn btn-table-admin fs-5">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button class="btn btn-table-admin btn-edit-book fs-5">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-table-admin fs-5 btn-trash">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr class="align-middle row-table-admin rounded rounded-3">
-                <th scope="row">3</th>
-                <td>
-                  <img
-                    src="https://images.cdn2.buscalibre.com/fit-in/360x360/2e/79/2e799fbf359688775b9e79ab1d2f8c35.jpg"
-                    alt="libro"
-                    class="img-thumbnail img-product-admin"
-                  />
-                </td>
-                <td><span>Distancia De Rescate</span></td>
-                <td><span>Samanta Schweblin</span></td>
-                <td>
-                  <span class="isbn font-number">097-89-8776-909-34</span>
-                </td>
-                <td>
-                  <p class="text-edition-admin">
-                    LITERATURA RANDOM HOUSE · Tapa Blanda
-                  </p>
-                </td>
-                <td><span class="font-number">128</span></td>
-                <td>
-                  <p class="text-description-admin">
-                    El campo ha cambiado frente a nuestros ojos sin que nadie se
-                    diera cuenta. Y quizá no se trate solo de sequías y
-                    herbicidas; quizá se trate del hilo vital y filoso que nos
-                    ata a nuestros hijos; y del veneno que echamos sobre ellos.
-                    Distancia de rescate sigue esta vertiginosa fatalidad en la
-                    que; sin saberlo; damos el paso en falso que finalmente nos
-                    condena. Esta novela; premiada en todo el mundo; se ha
-                    convertido en un relato urgente y perdurable. La destreza
-                    literaria de Samanta Schweblin logra atravesarnos de forma
-                    implacable; mantenernos inevitablemente atrapados y
-                    sumergirnos en un universo ficcional estremecedor.
-                  </p>
-                </td>
-                <td><span>22.9 x 13.5 cm</span></td>
-                <td><span class="font-number">6.400</span></td>
-                <td><span class="font-number">10 ud</span></td>
-                <td>
-                  <div class="d-flex flex-column">
-                    <button class="btn btn-table-admin fs-5">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button class="btn btn-table-admin fs-5">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-table-admin fs-5 btn-trash">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr class="align-middle row-table-admin rounded rounded-3">
-                <th scope="row">4</th>
-                <td>
-                  <img
-                    src="https://editorialelateneo.com.ar/productos/temp/MEDITACIONES_A_1.jpg"
-                    alt="libro"
-                    class="img-thumbnail img-product-admin"
-                  />
-                </td>
-                <td><span>Meditaciones</span></td>
-                <td><span>Marco Aurelio</span></td>
-                <td><span class="isbn font-number">978-95-0021-501-5</span></td>
-                <td>
-                  <p class="text-edition-admin">Encuadernación: Rústica</p>
-                </td>
-                <td><span class="font-number">320</span></td>
-                <td>
-                  <p class="text-description-admin">
-                    “No consumas la parte de la vida que te queda en conjeturar
-                    sobre otras personas”. “Todo lo que acontece, acontece
-                    justamente”. “Nunca consideres útil para ti lo que un día te
-                    obligue a transgredir la palabra dada”. Marco Aurelio Con el
-                    fin de tener presente estos y otros principios, Marco
-                    Aurelio, filósofo estoico y emperador romano (161-180),
-                    escribió una serie de reflexiones acerca de la naturaleza,
-                    la vida, el paso del tiempo, la muerte, la justicia, el bien
-                    y el mal, entre tantas otras. Hoy en día, sus Meditaciones
-                    están más vigentes que nunca y Nico Grupe, coach, speaker
-                    internacional y admirador de esta filosofía, nos comparte
-                    sus propias interpretaciones. Además, nos guía con
-                    ejercicios y preguntas disparadoras para aplicar estas
-                    máximas en la vida cotidiana y convertirnos en verdaderos
-                    estoicos del siglo xxi.
-                  </p>
-                </td>
-                <td><span>15,5 cm x 22 cm</span></td>
-                <td><span class="font-number">21.100</span></td>
-                <td><span class="font-number">5 ud</span></td>
-                <td>
-                  <div class="d-flex flex-column">
-                    <button class="btn btn-table-admin fs-5">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button class="btn btn-table-admin btn-edit-book fs-5">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-table-admin fs-5 btn-trash">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-
-              <tr class="align-middle row-table-admin rounded rounded-3">
-                <th scope="row">5</th>
-                <td>
-                  <img
-                    src="https://www.penguinlibros.com/ar/4229416/si-lo-crees-lo-creas.jpg"
-                    alt="libro"
-                    class="img-thumbnail img-product-admin"
-                  />
-                </td>
-                <td><span>Si lo crees, lo creas</span></td>
-                <td><span>Brian Tracy</span></td>
-                <td><span class="isbn font-number">978-8418053337</span></td>
-                <td>
-                  <p class="text-edition-admin">AGUILAR, tapa blanda</p>
-                </td>
-                <td><span class="font-number">240</span></td>
-                <td>
-                  <p class="text-description-admin">
-                    Descubre los secretos para eliminar pensamientos y conductas
-                    negativas y desbloquear todo tu potencial para el éxito. Si
-                    te sientes atrapado, abrumado o incapaz de escapar de tus
-                    pensamientos negativos, este libro te pondrá en el camino
-                    correcto. Ya sea que esta negatividad provenga de una
-                    relación pasada que terminó mal, un trauma infantil, un
-                    fracaso profesional o simple inseguridad, este libro te
-                    ayudará a reconocer cómo la negatividad consciente (y muchas
-                    veces inconsciente) afecta tu personalidad, tu perspectiva y
-                    tus decisiones. Si lo crees, lo creas está lleno de consejos
-                    reveladores del autor bestseller Brian Tracy, junto con el
-                    asesoramiento de la psicoterapeuta Christina Stein;
-                    aprenderás a identificar y superar patrones e ideas
-                    perjudiciales, a recuperar el control de tus pensamientos,
-                    sentimientos y acciones, a convertir lo negativo en
-                    positivoy a aceptar cambios de vida inesperados sin caer en
-                    viejos patrones negativos para alcanzar tus metas y sentirte
-                    satisfecho. "Recomiendo encarecidamente este libro, sin
-                    importar dónde te encuentres en tu camino al éxito. No sólo
-                    te ayudará a llegar allí, sino que llegarás más rápido". DON
-                    M. GREEN, director ejecutivo de la Fundación Napoleon Hill
-                  </p>
-                </td>
-                <td><span>15 cm x 23 cm</span></td>
-                <td><span class="font-number">6.500</span></td>
-                <td><span class="font-number">17 ud</span></td>
-                <td>
-                  <div class="d-flex flex-column">
-                    <button class="btn btn-table-admin fs-5">
-                      <i class="bi bi-eye"></i>
-                    </button>
-                    <button class="btn btn-table-admin btn-edit-book fs-5">
-                      <i class="bi bi-pencil-square"></i>
-                    </button>
-                    <button class="btn btn-table-admin fs-5 btn-trash">
-                      <i class="bi bi-trash"></i>
-                    </button>
-                  </div>
-                </td>
-              </tr>
-            </tbody>
+            <tbody class="tbody-table-admin"></tbody>
           </table>
-          <div class="w-100 text-center my-2">
+          <div class="w-100 text-center my-5 reset-text-container ">
+            <h3 class=""
+              >No tienes mas libros?</h3>
+              <button class="btn mt-3 btn-dark btn-reset">RESETEAR LIBROS PRE ESTABLECIDOS</button>
+          </div>
+          <div class="w-100 text-center my-2 viewMoreContainer">
             <span class="btn-viewMore"
-              >VER MAS <i class="fa-solid fa-chevron-down"></i
-            ></span>
+              >VER MAS <i class="fa-solid fa-chevron-down"></i></span>
           </div>
         </article>
       </section>
     </main>
 
-    <!-- footer -->
-    <footer class="bg-dark text-light">
-      <div class="container">
-        <div class="w-100 text-center p-4">
-          <p>&copy; Todos los derechos reservados</p>
-        </div>
-      </div>
-    </footer>
-
     <!-- scripts -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+    "></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -634,6 +373,7 @@
       src="https://kit.fontawesome.com/314c3815b6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="../js/main.js" type="module"></script>
     <script src="../js/admin.js" type="module"></script>
   </body>
 </html>

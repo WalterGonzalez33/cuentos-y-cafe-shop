@@ -3,6 +3,7 @@
 const inputFromBookUrl = document.querySelector("#fromBookUrl");
 const inputTitle = document.querySelector("#title");
 const inputAuthor = document.querySelector("#author");
+const inputGenre = document.querySelector("#genre");
 const inputIsbn = document.querySelector("#isbn");
 const inputPags = document.querySelector("#pags");
 const inputDimensions = document.querySelector("#dimensions");
@@ -152,7 +153,7 @@ const validateFormDimensions = (input) => {
 // fn --> valida todos los input del formulario y devuelve un booleano dependiendo
 export const validateFormAdmin = () => {
   const validateFromBookUrl =
-    validateLength("link", inputFromBookUrl, 8, 100, false) &&
+    validateLength("link", inputFromBookUrl, 8, 500, false) &&
     validateUrl(inputFromBookUrl);
   const validateIsbn =
     validateLength("ISBN", inputIsbn, 13, 20, true) &&
@@ -164,18 +165,25 @@ export const validateFormAdmin = () => {
     validateLength("total de paginas", inputPags, 1, 6, true) &&
     validateNumber(inputPags);
   const validatePrice =
-    validateLength("precio", inputPrice, 1, 7, true) &&
+    validateLength("precio", inputPrice, 1, 20, true) &&
     validateNumber(inputPrice);
   const validateDimensions =
     validateLength("formato de dimension", inputDimensions, 6, 15, true) &&
     validateFormDimensions(inputDimensions);
-  const validateTitle = validateLength("titulo", inputTitle, 2, 60, true);
-  const validateAuthor = validateLength("autor", inputAuthor, 2, 60, true);
+  const validateTitle = validateLength("titulo", inputTitle, 2, 300, true);
+  const validateAuthor = validateLength("autor", inputAuthor, 2, 300, true);
+  const validateGenre = validateLength(
+    "tipo de genero",
+    inputGenre,
+    1,
+    50,
+    false
+  );
   const validateDescription = validateLength(
     "párrafo de descripción",
     inputDescription,
     10,
-    1000,
+    10000,
     true
   );
   const validateEditorial = validateLength(
@@ -196,10 +204,39 @@ export const validateFormAdmin = () => {
     validateStock &&
     validateDimensions &&
     validateDescription &&
-    validateEditorial
+    validateEditorial &&
+    validateGenre
   ) {
     return true;
   }
 
   return false;
 };
+export const setInputsValue = (bookData) => {
+  inputFromBookUrl.value = bookData.fromBookUrl;
+  inputTitle.value = bookData.title;
+  inputAuthor.value = bookData.author;
+  inputIsbn.value = bookData.isbn;
+  inputPags.value = bookData.pagNumbers;
+  inputPrice.value = bookData.price;
+  inputStock.value = bookData.stock;
+  inputDimensions.value = bookData.dimensions;
+  inputDescription.value = bookData.description;
+  inputEditorial.value = bookData.editorial;
+  inputGenre.value = bookData.genre;
+}
+export const getInputsValue = () => {
+  return {
+    fromBookUrl: inputFromBookUrl.value,
+    title: inputTitle.value,
+    author: inputAuthor.value,
+    isbn: inputIsbn.value,
+    pags: inputPags.value,
+    price: inputPrice.value,
+    stock: inputStock.value,
+    dimensions: inputDimensions.value,
+    description: inputDescription.value,
+    editorial: inputEditorial.value,
+    genre: inputGenre.value
+  }
+}
