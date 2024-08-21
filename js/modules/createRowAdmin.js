@@ -1,6 +1,6 @@
 "use strict";
 
-import { renderQuantityBooks } from "../admin.js";
+import { renderQuantityBooks, renderRowsAdmin, showResetBooksList } from "../admin.js";
 import { books } from "../main.js";
 import { hideModal, showModalEdit } from "./modalAdmin.js";
 import {
@@ -16,6 +16,47 @@ let isEditBook = false;
 let currentBookId = null;
 let currentBtnEdit = null;
 
+const deleteBook = (bookParam, btnDelete) => {
+  const deleteDateBook = () => {
+    // eliminar del local storage
+    const findIndexBook = books.findIndex((book) => book.id === bookParam.id);
+    books.splice(findIndexBook, 1);
+    localStorage.setItem("books", JSON.stringify(books));
+
+    // eliminar de la tabla
+    const trDelete = btnDelete.parentNode.parentNode.parentNode;
+    trDelete.remove();
+  };
+
+  Swal.fire({
+    title: "Estas seguro que quieres eliminar el libro?",
+    text: "Al hacer esto perderás los datos del mismo",
+    showCancelButton: true,
+    confirmButtonText: "Borrar",
+    cancelButtonText: "Cancelar",
+    customClass: {
+      popup: "custom-alert",
+      confirmButton: "btn-confirm",
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      deleteDateBook();
+      renderQuantityBooks();
+      showResetBooksList()
+      Swal.fire({
+        title: "Libro borrado correctamente",
+        text: "",
+        icon: "success",
+        customClass: {
+          popup: "custom-alert",
+          confirmButton: "btn-confirm",
+        },
+      });
+    }
+  });
+};
+
+// fn --> lógica para editar un libro
 const editAllDataBook = (indexBook) => {
   const {
     fromBookUrl,
@@ -126,6 +167,9 @@ const tdActionsBtn = (book) => {
   buttonEditBook.addEventListener("click", () => {
     isEditBook = true;
     editBook(book, buttonEditBook);
+  });
+  buttonDeleteBook.addEventListener("click", () => {
+    deleteBook(book, buttonDeleteBook);
   });
 
   return td;

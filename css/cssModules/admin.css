@@ -105,6 +105,9 @@
   }
 }
 
+.reset-text-container{
+  display: none;
+}
 /* estilos de la ventana modal */
 .modal-admin-content {
   background-color: var(--color-bg-primary);

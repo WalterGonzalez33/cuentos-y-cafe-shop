@@ -8,7 +8,10 @@ import { hideModal, showModal } from "./modules/modalAdmin.js";
 import { createRowBookAdmin } from "./modules/createRowAdmin.js";
 import { books } from "./main.js";
 import Book from "./modules/classBook.js";
+import { setBooksInLocalStorage } from "../data/initialData.js";
 
+const btnReset = document.querySelector('.btn-reset')
+const btnResetContainer = document.querySelector('.reset-text-container')
 const textQuantityBooks = document.querySelector(".text-quantity-books");
 const textQuantityStock = document.querySelector(".text-quantity-stock");
 const btnAddBook = document.querySelector(".btn-add-admin");
@@ -19,6 +22,17 @@ const btnViewMore = document.querySelector(".btn-viewMore");
 let isCreateBook = false;
 let indexRenderRows = 0;
 
+const resetBooksList = () => {
+  localStorage.setItem("setLocalData", true);
+  setBooksInLocalStorage()
+}
+export const showResetBooksList = () => {
+  if(books.length === 0){
+    btnResetContainer.style.display = 'block'
+  }else{
+    btnResetContainer.style.display = 'none'
+  }
+}
 const createNewBook = () => {
   const {
     fromBookUrl,
@@ -101,7 +115,7 @@ export const renderQuantityBooks = () => {
   textQuantityStock.innerHTML = `Stock: ${quantityStock} ud`;
 };
 // fn --> renderiza 5 libros en la tabla
-const renderRowsAdmin = (booksList, indexStart) => {
+export const renderRowsAdmin = (booksList, indexStart) => {
   for (let i = indexStart; i < indexStart + 5; i++) {
     indexRenderRows++;
     if (booksList[i]) {
@@ -124,3 +138,5 @@ formAdmin.addEventListener("submit", handlerSubmit);
 btnViewMore.addEventListener("click", handlerViewMore);
 renderQuantityBooks();
 renderRowsAdmin(books, indexRenderRows);
+btnReset.addEventListener('click', resetBooksList)
+showResetBooksList()
