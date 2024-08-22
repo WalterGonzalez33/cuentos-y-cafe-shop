@@ -1,0 +1,89 @@
+.body-error404 {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #405D72; 
+    font-family: Arial, sans-serif;
+    color: #F7E7DC;
+}
+
+.container {
+    text-align: center;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.error-image {
+    max-width: 100%;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #758694;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #2c3e50; /* Nuevo color más oscuro que combina con los tonos */
+}
+
+/* Media Queries para responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .back-button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+
+    .error-image {
+        max-width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .back-button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .error-image {
+        max-width: 100%;
+        height: auto;
+    }
+}

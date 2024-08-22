@@ -9,7 +9,7 @@
     />
     <meta
       name="author"
-      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Name"
+      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Neme"
     />
     <meta
       name="keywords"
@@ -30,7 +30,94 @@
     <title>Cuentos y Café</title>
   </head>
   <body>
-    <header></header>
+    <header class="navbar navbar-expand-lg d-flex flex-column sticky-top">
+        <div class="container-fluid navbar-color py-2">
+          <div class="container col-12 col-md-4">
+            <form class="d-flex" role="search">
+              <input
+                class="form-control"
+                type="search"
+                id="navBuscar"
+                placeholder="¿Que estas buscando?"
+                aria-label="Search"
+                minlength="5"
+                maxlength="50"
+                required
+              />
+              <label
+                for="navBuscar"
+                class="input-group-text bg-transparent iconoNav">
+                <i class="bi bi-search text-light"></i>
+              </label>
+            </form>
+          </div>
+          <div class="container col-6 col-md-4 text-center">
+            <a class="navbar-brand fs-1 text-light" href="index.html">Cuentos y Café</a>          
+          </div>
+          <div class="container d-flex justify-content-end col-6 col-md-4">
+              <nav class="navbar navbar-expand-lg navbar-dark">
+                  <div class="container-fluid d-flex justify-content-end">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                      <div class="navbar-nav ms-auto align-items-center">
+                        <a class="nav-link text-center active" data-bs-toggle="modal" data-bs-target="#modalIniciaSesion">Iniciá Sesión</a>
+                        <a class="nav-link text-center" href="#">Registrate</a>
+                        <a class="nav-link text-center" href="#">Consultas</a>
+                        <a class="nav-link text-center disabled" aria-disabled="true">Mi Carrito</a>
+                      </div>
+                    </div>
+                  </div>
+              </nav>
+          </div>        
+        </div>
+        <div class="container-fluid navbar2-color text-light justify-content-evenly">
+            <div class="dropdown col-md-2">
+                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Categorias
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Arte y Diseño</a></li>
+                  <li><a class="dropdown-item" href="#">Autoayuda y Desarrollo Personal</a></li>
+                  <li><a class="dropdown-item" href="#">Computacion y Sistemas</a></li>
+                  <li><a class="dropdown-item" href="#">Deportes</a></li>
+                  <li><a class="dropdown-item" href="#">Derecho y Cs Sociales</a></li>
+                  <li><a class="dropdown-item" href="#">Enciclopedias y Diccionarios</a></li>
+                  <li><a class="dropdown-item" href="#">Ficcion y Literatura</a></li>
+                  <li><a class="dropdown-item" href="#">Gastronomia y Cocina</a></li>
+                  <li><a class="dropdown-item" href="#">Hogar</a></li>
+                  <li><a class="dropdown-item" href="#">Hotelería y Turismo</a></li>
+                  <li><a class="dropdown-item" href="#">Infantil y Juvenil</a></li>
+                  <li><a class="dropdown-item" href="#">Ingeniería y Cs Exactas</a></li>
+                  <li><a class="dropdown-item" href="#">Juegos y Recreación</a></li>
+                  <li><a class="dropdown-item" href="#">Negocios y Economía</a></li>
+                  <li><a class="dropdown-item" href="#">Política y Actualidad</a></li>
+                  <li><a class="dropdown-item" href="#">Salud y Cs Naturales</a></li>              
+                </ul>
+            </div>
+            <div class="col-md-10">
+                <nav class="navbar navbar-expand-md navbar-dark">
+                    <div class="container-fluid">
+                      <a class="nav-link text-center active">Más Vendidas:</a>    
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup2" aria-controls="navbarNavAltMarkup2" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon">   
+                        </span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup2">
+                        <div class="navbar-nav align-items-center">                  
+                          <a class="nav-link text-center" href="#">Ficcion y Literatura</a>
+                          <a class="nav-link text-center" href="#">Política y Actualidad</a>
+                          <a class="nav-link text-center" href="#">Negocios y Economía</a>
+                          <a class="nav-link text-center" href="#">Infantiles y Juveniles</a>
+                          <a class="nav-link text-center" href="#">Hogar</a>
+                        </div>
+                      </div>
+                    </div>
+                </nav>
+            </div>        
+          </div>
+    </header>
     <main>
       <h1 class="titulo fs-1 text-center px-3 my-4">Cuentos y Café</h1>
       <div class="row container-fluid w-100 my-2">
@@ -293,7 +380,6 @@
           </div>
       </section>
     </main>
-    <footer></footer>
     <footer class="pt-5 pb-3 footer-container">
         <div class="container p-3 text-center text-md-start">
             <div class="row">
@@ -351,7 +437,49 @@
             </div>
         </div>
     </footer>
-    
+
+    <!-- modal de login -->
+    <div class="modal fade" id="modalIniciaSesion" tabindex="-1" aria-labelledby="modalIniciaSesionLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header navbar-color">
+              <h2 class="modal-title fs-5 text-light" id="modalIniciaSesionLabel">Iniciá Sesión</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-color">
+                <form>                  
+                    <div class="mb-2">
+                      <label for="email" class="form-label">Correo Electrónico</label>
+                      <input
+                        id="email"
+                        type="email"
+                        class="form-control"
+                        placeholder="Ej: rolling@mail.com"
+                        minlength="10"
+                        maxlength="320"
+                        required
+                      />
+                    </div>
+                    <div class="mb-2">
+                      <label for="clave" class="form-label">Contraseña</label>
+                      <input
+                        id="clave"
+                        type="password"
+                        class="form-control"
+                        placeholder="Ej: abc-123"
+                        minlength="5"
+                        maxlength="50"
+                        required
+                      />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer container-fluid justify-content-center navbar2-color">  
+                <button type="submit" class="btn btn-outline-light">Ingresar</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!-- scripts -->
     <script
