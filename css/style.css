@@ -12,7 +12,8 @@
 @import url(./cssModules/module.css);
 @import url(./cssModules/admin.css);
 @import url(./cssModules/customAlerts.css);
-@import url(./cssModules/detalle.css);
+@import url(./cssModules/navbar.css);
+
 /* variables */
 
 :root {
