@@ -32,21 +32,47 @@
   <body>
     <header></header>
     <main>
-      <section class="row container text-center my-3">
-        <article>
-          <div>
-            <img
-              class="col-12 mx-2"
-              src="https://www.andeslibreria.com/12188/mitologia-clasica-china-de-gabriel-garcia-noblejas-libro-impreso-9788481646030.jpg"
-              alt="imagen libro de prueba"
-            />
-            <h3 class="my-3">Mitologia Clasica China</h3>
-            <h4 class="my-3 text-info-emphasis">Manuel Loureiro</h4>
+      <section class="row container m-auto text-center">
+        <div class="col-md-4">
+          <img
+            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
+            class="img-fluid"
+            alt="Producto"
+          />
+        </div>
+
+        <!-- Información del producto -->
+        <div class="col-lg-4">
+          <h2>La Materia de Las Sombras</h2>
+          <p class="text-muted">Mitologia</p>
+          <p class="text-info-emphasis">Antonio Runa</p>
+          <p class="fw-bold">$ 20.000</p>
+        </div>
+        <!-- Contador de cantidad -->
+        <div class="input-group mb-3">
+          <button class="btn btn-danger" type="button" id="btn-restar">
+            -
+          </button>
+          <input
+            type="text"
+            class="form-control text-center"
+            value="1"
+            id="contadorProducto"
+          />
+          <button class="btn btn-success" type="button" id="btn-sumar">
+            +
+          </button>
+          <div class="col-12 text-center">
+            <button class="btn btn-danger px-5 my-3">Comprar</button>
           </div>
-        </article>
+        </div>
+        <div class="col-12">
+          <h3>Sinopsis</h3>
+          <p></p>
+        </div>
       </section>
     </main>
-    <footer></footer>
+
     <footer class="pt-5 pb-3 footer-container">
       <div class="container p-3 text-center text-md-start">
         <div class="row">

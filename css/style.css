@@ -12,7 +12,7 @@
 @import url(./cssModules/module.css);
 @import url(./cssModules/admin.css);
 @import url(./cssModules/customAlerts.css);
-
+@import url(./cssModules/detalle.css);
 /* variables */
 
 :root {
