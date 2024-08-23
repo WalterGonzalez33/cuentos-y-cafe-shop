@@ -32,71 +32,93 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+      <div class="navbar-fixed">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-body-tertiary navbar-container">
+          <div class="container-fluid flex-row-reverse flex-lg-row">
+  
+            <div class="card-user-mobile">
+              <a class="fs-3 mx-2 iconNav-navbar" data-bs-toggle="modal" data-bs-target="#modalIniciaSesion"><i class="bi bi-person-plus-fill"></i></a>
+              <a class="fs-3 mx-2 iconNav-navbar" href="./Error404.html"><i class="bi bi-basket2-fill"></i></a>
+            </div>
+  
+            <a class="navbar-brand m-auto me-lg-4  icon-brand-mobile" href="../index.html"><img class="icon-navbar ms-3" src="../assets/logo.png" alt="logo"></a>
+  
+            <button class="navbar-toggler rounded-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContentCollapse" aria-controls="navbarContentCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <div class="collapse navbar-collapse justify-content-between" id="navbarContentCollapse">
+  
+              <div class="input-search-navbar-container">
+                <form class="d-flex my-3 my-lg-0 ms-lg-2" role="search">
+                  <input
+                    class="form-control border-0 rounded-0 input-search-navbar"
+                    type="search"
+                    id="navBuscar"
+                    placeholder="¿Que estas buscando?"
+                    aria-label="Search"
+                    minlength="5"
+                    maxlength="50"
+                    required
+                  />
+                  <button
+                    for="navBuscar"
+                    class="p-2 ms-1 bg-transparent icono-nav">
+                    <i class="bi bi-search text-light"></i>
+                  </button>
+                </form>
+              </div>
+  
+              <a class="navbar-brand  me-lg-4 icon-brand-lg" href="../index.html"><img class="icon-navbar" src="../assets/logo.png" alt="logo"></a>
+  
+              <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3">
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="#">Sobre nosotros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="#">Productos</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link text-center" href="#">Administrador</a>
+                </li>
+              </ul>
+            </div>
+            <div class="cart-user-lg">
+              <a class="fs-3 mx-2 iconNav-navbar"><i class="bi bi-person-plus-fill"></i></a>
+              <a class="fs-3 mx-2 me-3 iconNav-navbar" href="./Error404.html"><i class="bi bi-basket2-fill"></i></a>
+            </div>
           </div>
+        </nav>
+  
+        <div class="container-fluid category-container text-light">
+                <div class="navbar-dark">
+                  <div class="text-center py-1 btn-category-collapse">
+                    <h5>Categorías <span class="ms-1"><i class="fa-solid fa-chevron-down"></i></span></h5>
+                  </div>
+  
+                    <div class="category-collapse">
+                        <div class="container my-2 my-lg-0 align-items-center category-list">                  
+                          <span class="nav-link text-center ciencias-tecnologia">Ciencias y tecnología</span>
+                          <span class="nav-link text-center fantasia">Fantasía</span>
+                          <span class="nav-link text-center ciencia-ficcion">Ciencia ficción</span>
+                          <span class="nav-link text-center terror">Terror</span>
+                          <span class="nav-link text-center misterio">Misterio</span>
+                          <span class="nav-link text-center espiritualidad">Espiritualidad</span>
+                        </div>
+                      </div>
+  
+                    </div>
+                </div>      
         </div>
-      </nav>
-    </header>
+      </div>
+  </header>
 
     <main class="main-products">
       <div class="container products-container">
-        <section class="row my-5">
-        <div class="col-12 mx-auto col-md-3 p-3 mt-4 ms-md-4 div-after-filter-container"></div>
+        <section class="row my-5 g-5">
           <article
             class="col-12 mx-auto col-lg-3 p-3 mt-4 ms-xxl-4 border border-3 border-secondary rounded rounded-0 filter-price-container"
           >
@@ -251,6 +273,10 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script
+    src="https://kit.fontawesome.com/314c3815b6.js"
+    crossorigin="anonymous"
+  ></script>
     <script src="../js/main.js" type="module"></script>
     <script src="../js/products.js" type="module"></script>
   </body>

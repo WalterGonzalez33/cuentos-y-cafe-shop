@@ -1,11 +1,138 @@
-.navbar-color{
-  background-color: var(--color-primary);
+.navbar-container{
+  width: 100vw;
+  background-color: var(--color-primary) !important;
+  z-index: 9;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-
+.navbar-fixed{
+  position: fixed;
+  z-index: 99;
+}
 .navbar2-color{
   background-color: var(--color-secondary);
 }
 
 .modal-color{
   background-color: var(--color-bg-secondary);
+}
+
+.icono-nav{
+  border: none;
+  &:active{
+    border: none;
+  }
+}
+.input-search-navbar{
+  width: 400px;
+  max-width: 400px;
+}
+.iconNav-navbar{
+  color: var(--color-bg-tertiary);
+  cursor: pointer;
+  
+  &:hover{
+    color:rgb(196, 197, 197);
+  }
+}
+
+.category-container{
+  background-color: var(--color-secondary);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.btn-category-collapse{
+  background-color: var(--color-secondary);
+  display: none;
+  position: relative;
+  z-index: 9;
+}
+.category-collapse{
+  position: static;
+  background-color: var(--color-secondary);
+  width: 100%;
+  top:130px;
+  left: 0;
+  transition: all .4s ease;
+  z-index: 1;
+}
+.category-list{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  & span{
+    color: rgb(218, 218, 218);
+    cursor: pointer;
+    margin: 8px 50px 8px 50px;
+
+    &:hover{
+      color: aliceblue;
+    }
+  }
+}
+
+.icon-navbar{
+  width: 50px;
+}
+
+.card-user-mobile{
+  display: none;
+}
+.icon-brand-mobile{
+  display: none;
+}
+.icon-brand-lg{
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .navbar-container{
+    box-shadow: none;
+  }
+  .input-search-navbar-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .btn-category-collapse{
+    display: block;
+  }
+  .category-collapse{
+    display: none;
+    position: absolute;
+    background-color: var(--color-secondary);
+    width: 100%;
+    top:130px;
+    left: 0;
+    transition: all .4s ease;
+    z-index: 1;
+  }
+  .category-list{
+    display: flex;
+    flex-direction: column;
+  }
+  .input-search-navbar{
+    width: 400px;
+  }
+  .card-user-mobile{
+    display: block;
+  }
+  .icon-brand-mobile{
+    display: block;
+  }
+  .icon-brand-lg{
+    display: none;
+  }
+  .cart-user-lg{
+    display: none;
+  }
+}
+
+@media (max-width: 576px){
+  .input-search-navbar-container{
+    display: block;
+    width: 100%;
+  }
+  .input-search-navbar{
+    width: 100%;
+  }
 }

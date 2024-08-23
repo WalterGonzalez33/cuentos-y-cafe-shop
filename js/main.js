@@ -1,5 +1,6 @@
 "use strict";
 
+import './app.js'
 import { setBooksInLocalStorage } from "../data/initialData.js";
 import User from "./modules/classUser.js";
 

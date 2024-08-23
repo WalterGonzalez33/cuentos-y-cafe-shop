@@ -31,7 +31,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-tertiary);
   font-family: var(--font-primary);
   min-height: 100vh;
 }
@@ -48,7 +48,8 @@ main {
 }
 
 .footer-container {
-  background-color: var(--color-bg-primary);
+  margin-top: 100px;
+  background-color: var(--color-bg-tertiary);
 }
 .footer-logo {
   max-width: 140px;
