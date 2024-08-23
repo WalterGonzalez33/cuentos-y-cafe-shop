@@ -21,6 +21,7 @@
   --color-secondary: #758694;
   --color-bg-primary: #f7e7dc;
   --color-bg-secondary: #fff8f3;
+  --color-bg-tertiary: #f1f6fb;
   --font-primary: "Playfair Display", serif;
   --font-secondary: "Moderustic", sans-serif;
 }
@@ -46,12 +47,11 @@ main {
   font-family: var(--font-secondary);
 }
 
-
-.footer-container{
+.footer-container {
   background-color: var(--color-bg-primary);
 }
-.footer-logo{
- max-width: 140px;
+.footer-logo {
+  max-width: 140px;
 }
 .banner-Img {
   height: 300px;
@@ -64,19 +64,18 @@ main {
 #img-Banner-3 {
   object-position: 5%;
 }
-.color-Borde{
+.color-Borde {
   border-color: var(--color-primary);
-
 }
 .color-Fondo {
   background-color: transparent;
 }
-.color-Fondo-2{
+.color-Fondo-2 {
   background-color: var(--color-primary);
 }
 .card-img-top {
- height: 300px;
- object-fit: contain;
+  height: 300px;
+  object-fit: contain;
 }
 
 .card {
