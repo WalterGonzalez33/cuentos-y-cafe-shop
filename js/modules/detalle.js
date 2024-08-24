@@ -6,6 +6,10 @@ const paramId = new URLSearchParams(window.location.search).get("id");
  const libroBuscado = books.find(
    (book) => book.id === paramId
  );
+const btnRestar = document.querySelector("#btn-restar");
+const btnSumar = document.querySelector("#btn-sumar");
+const contadorInput = document.querySelector("#contadorProducto");
+let cantidad = parseInt(contadorInput.value);
 
  if (libroBuscado) {
    const imgProducto = document.querySelector(
@@ -24,9 +28,9 @@ const paramId = new URLSearchParams(window.location.search).get("id");
      ".fondo-detalle .table tbody tr"
    );
    const stock = document.querySelector("#stockLibros");
-
-
+   
    imgProducto.src = libroBuscado.fromBookUrl;
+   imgProducto.alt = libroBuscado.title;
    titulo.innerHTML = libroBuscado.title;
    stock.innerHTML = `Quedán ${libroBuscado.stock} Unidades Disponibles`;
    categoria.innerHTML = libroBuscado.genre;
@@ -41,7 +45,19 @@ const paramId = new URLSearchParams(window.location.search).get("id");
    fichaTecnica[4].children[1].innerHTML = libroBuscado.dimensions;
    fichaTecnica[5].children[1].innerHTML = libroBuscado.pagNumbers;
 
-   // Puedes añadir más campos si es necesario
  } else {
    console.error("Libro no encontrado");
  }
+
+ btnRestar.addEventListener('click', ()=> {
+  if (cantidad > 1) {
+    cantidad--;
+    contadorInput.value = cantidad;
+  }
+ });
+ btnSumar.addEventListener('click', ()=>{
+  if (cantidad < libroBuscado.stock) {
+    cantidad++;
+    contadorInput.value = cantidad;
+  }
+ });
