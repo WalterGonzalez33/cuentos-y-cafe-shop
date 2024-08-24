@@ -1,5 +1,6 @@
 "use strict";
 
+import "./modules/renderUIuserLogin.js";
 import "./modules/validationLogin.js";
 import "./modules/filtersNav.js";
 import "./modules/modalLogin.js";
@@ -14,6 +15,10 @@ let heightOfNavbar = btnCategoryCollapse.offsetHeight * 2 + navbar.offsetHeight;
 categoryCollapse.style.top = `-${heightOfNavbar}px`;
 iconArrowUp.style.display = "none";
 let activeCategory = false;
+
+window.onload = function () {
+  window.scrollTo(0, 0);
+};
 
 const handlerCategoryCollapse = () => {
   categoryCollapse.style.display = `block`;
