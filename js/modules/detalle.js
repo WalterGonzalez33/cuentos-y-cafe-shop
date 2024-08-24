@@ -23,9 +23,25 @@ const paramId = new URLSearchParams(window.location.search).get("id");
    const fichaTecnica = document.querySelectorAll(
      ".fondo-detalle .table tbody tr"
    );
+   const stock = document.querySelector("#stockLibros");
 
 
-   
+   imgProducto.src = libroBuscado.fromBookUrl;
+   titulo.innerHTML = libroBuscado.title;
+   stock.innerHTML = `Quedán ${libroBuscado.stock} Unidades Disponibles`;
+   categoria.innerHTML = libroBuscado.genre;
+   autor.innerHTML = libroBuscado.author;
+   precio.innerHTML = `$ ${libroBuscado.price}`;
+   sinopsis.innerHTML = libroBuscado.description;
+
+  
+   fichaTecnica[0].children[1].innerHTML = libroBuscado.genre;
+   fichaTecnica[1].children[1].innerHTML = libroBuscado.editorial;
+   fichaTecnica[2].children[1].innerHTML = libroBuscado.isbn;
+   fichaTecnica[4].children[1].innerHTML = libroBuscado.dimensions;
+   fichaTecnica[5].children[1].innerHTML = libroBuscado.pagNumbers;
+
+   // Puedes añadir más campos si es necesario
  } else {
    console.error("Libro no encontrado");
  }
