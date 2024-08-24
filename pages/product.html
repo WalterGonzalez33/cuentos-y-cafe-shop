@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,13 +9,13 @@
     />
     <meta
       name="author"
-      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Neme"
+      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Name"
     />
     <meta
       name="keywords"
       content="E-commerce libros cuentos historia romance acción cuentos y café"
     />
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
     <link
       href="
 https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
@@ -29,7 +29,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="../css/style.css" />
     <title>Cuentos y Café</title>
   </head>
   <body>
@@ -40,14 +40,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
         >
           <div class="container-fluid flex-row-reverse flex-lg-row">
             <div class="card-user-mobile">
-              <a class="fs-3 mx-2 iconNav-navbar" href="./pages/error404.html"
+              <a class="fs-3 mx-2 iconNav-navbar" href="./error404.html"
                 ><i class="bi bi-basket2-fill"></i
               ></a>
             </div>
 
             <a
               class="navbar-brand m-auto me-lg-4 icon-brand-mobile"
-              href="./index.html"
+              href="../index.html"
               ><img
                 class="icon-navbar ms-3"
                 src="../assets/logo.png"
@@ -91,30 +91,30 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                 </form>
               </div>
 
-              <a class="navbar-brand me-lg-4 icon-brand-lg" href="./index.html"
+              <a class="navbar-brand me-lg-4 icon-brand-lg" href="../index.html"
                 ><img class="icon-navbar" src="../assets/logo.png" alt="logo"
               /></a>
 
               <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3 nav-ul">
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./index.html">Inicio</a>
+                  <a class="nav-link text-center" href="../index.html"
+                    >Inicio</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./pages/error404.html"
+                  <a class="nav-link text-center" href="./error404.html"
                     >Sobre nosotros</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./pages/product.html"
+                  <a class="nav-link text-center" href="./product.html"
                     >Productos</a
                   >
                 </li>
               </ul>
             </div>
             <div class="cart-user-lg">
-              <a
-                class="fs-3 mx-2 me-3 iconNav-navbar"
-                href="pages/error404.html"
+              <a class="fs-3 mx-2 me-3 iconNav-navbar" href="./error404.html"
                 ><i class="bi bi-basket2-fill"></i
               ></a>
             </div>
@@ -234,144 +234,68 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
       </div>
     </header>
 
-    <main class="main-principal-page">
-      <section
-        id="carouselLibreria"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-indicators">
-          <button
-            type="button"
-            data-bs-target="#carouselLibreria"
-            data-bs-slide-to="0"
-            class="active"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselLibreria"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            data-bs-target="#carouselLibreria"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
-        </div>
-        <div class="carousel-inner">
-          <article class="carousel-item active">
-            <img
-              src="./assets/imgCarrousel1.png"
-              class="d-block w-100 banner-Img"
-              alt="imagen de banner de bienvenida de cuentos y café"
-            />
+    <main class="main-products">
+      <div class="container products-container">
+        <section class="row my-5 g-lg-5">
+          <article
+            class="col-12 mx-auto col-lg-3 p-3 mt-4 ms-xxl-4 border border-3 border-secondary rounded rounded-0 filter-price-container"
+          >
+            <h5 class="fs-6 fw-bold text-body-tertiary">Precio</h5>
+            <form class="row p-1 form-filter-products">
+              <div class="col-4 mb-2">
+                <label
+                  for="min-price"
+                  class="form-label fs-6 fw-bold text-body-tertiary"
+                  >Desde</label
+                >
+                <input
+                  type="tel"
+                  class="form-control focus-ring focus-ring-secondary border border-1 border-secondary rounded rounded-0"
+                  id="min-price"
+                  placeholder="2440"
+                />
+              </div>
+              <div class="col-4 mb-2">
+                <label
+                  for="max-price"
+                  class="form-label fs-6 fw-bold text-body-tertiary"
+                  >Asta</label
+                >
+                <input
+                  type="tel"
+                  class="form-control focus-ring focus-ring-secondary border border-1 border-secondary rounded rounded-0"
+                  id="max-price"
+                  placeholder="179400"
+                />
+              </div>
+              <div class="col-4 m-auto position-relative">
+                <div class="after-btn-filter"></div>
+                <div class="m-4"></div>
+                <button
+                  type="submit"
+                  class="btn text-light fw-bold btn-filter-product border border-1 border-secondary rounded rounded-0"
+                >
+                  Filtrar
+                </button>
+              </div>
+            </form>
           </article>
-          <article class="carousel-item">
-            <img
-              id="img-Banner-2"
-              src="./assets/imgCarrousel2.webp"
-              class="d-block w-100 banner-Img"
-              alt="imagen sobre un libro sobre mitologia china"
-            />
+
+          <article class="col-12 col-lg-9 p-3 books-cards-container">
             <div
-              class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-3"
-            >
-              <h5>Descubre la Riqueza de la Mitología China</h5>
-              <p>
-                Sumérgete en las antiguas leyendas y mitos de la China clásica.
-                Próximamente disponible. ¡No te lo pierdas!
-              </p>
-            </div>
+              class="row render-cards-container gap-1 gap-sm-3 gap-lg-4 p-2"
+            ></div>
           </article>
-          <article class="carousel-item">
-            <img
-              id="img-Banner-3"
-              src="./assets/imgCarrousel3.webp"
-              class="d-block w-100 banner-Img"
-              alt="imagen sobre descuentos en la compra de libros"
-            />
-            <div
-              class="carousel-caption d-none d-md-block text-light bg-dark bg-opacity-75 rounded-3"
-            >
-              <h5>¡Compra Fácilmente en 3 Cuotas Sin Interés!</h5>
-              <p>
-                Ahora todos los libros están al alcance de tu mano. Lleva a casa
-                las mejores historias sin preocuparte por el costo. ¡No dejes
-                pasar esta oportunidad!
-              </p>
-            </div>
-          </article>
-        </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselLibreria"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselLibreria"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
-      </section>
-
-      <section class="container my-5 mx-auto">
-        <h2 class="text-center my-3 text-custom">Expande tu imaginación</h2>
-        <article
-          class="row gap-lg-4 justify-content-center first-section-main"
-        ></article>
-      </section>
-
-      <section
-        class="container-fluid mx-auto color-Fondo-2 pt-3 pb-5 text-white"
-      >
-        <h2 class="text-center my-3">Los Más Vendidos</h2>
-        <article
-          class="row gap-lg-4 justify-content-center second-section-main"
-        ></article>
-      </section>
-
-      <section class="container mt-4">
-        <div class="row">
-          <h2 class="col-12 text-center fw-bolder my-4 mb-5">
-            ¡Visítenos en Nuestra Tienda Física!
-          </h2>
-          <div class="col-12 col-lg-6 col-md-6 mb-3">
-            <img
-              src="./assets/cuentosycafe.png"
-              class="img-shop"
-              alt="imagen de la tienda de libros cuentos y cafe"
-            />
-          </div>
-          <div class="col-12 col-lg-6 col-md-6 text-center">
-            <iframe
-              class="w-100 h-100"
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16934.83210600945!2d-65.20719947955266!3d-26.836456506162495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses-419!2sar!4v1718139302521!5m2!1ses-419!2sar"
-              height="450"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
+
     <footer class="pt-5 pb-3 footer-container">
       <div class="container p-3 text-center text-md-start">
         <div class="row">
           <!-- Logo -->
           <div class="col-md-3 mb-4 text-center text-md-start">
-            <img src="./assets/logo.png" alt="Logo" class="mb-3 footer-logo" />
+            <img src="../assets/logo.png" alt="Logo" class="mb-3 footer-logo" />
             <p>
               Tu tienda de libros favorita. Ofrecemos una amplia variedad de
               títulos para todos los gustos.
@@ -427,19 +351,19 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
           <div class="col text-center">
             <h5>Métodos de Pago</h5>
             <img
-              src="./assets/Visa.png"
+              src="../assets/Visa.png"
               alt="Visa"
               class="me-2"
               style="max-width: 50px"
             />
             <img
-              src="./assets/Mastercard.png"
+              src="../assets/Mastercard.png"
               alt="MasterCard"
               class="me-2"
               style="max-width: 50px"
             />
             <img
-              src="./assets/PayPal.png"
+              src="../assets/PayPal.png"
               alt="PayPal"
               style="max-width: 50px"
             />
@@ -471,7 +395,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
       src="https://kit.fontawesome.com/314c3815b6.js"
       crossorigin="anonymous"
     ></script>
-    <script src="./js/main.js" type="module"></script>
-    <script src="./js/indexPag.js" type="module"></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/products.js" type="module"></script>
   </body>
 </html>

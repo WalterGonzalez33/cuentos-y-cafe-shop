@@ -1,0 +1,30 @@
+.main-principal-page {
+  margin-top: 120px;
+}
+
+.banner-Img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.color-Fondo-2 {
+  background-color: var(--color-primary);
+}
+
+.text-custom {
+  color: var(--color-secondary);
+}
+
+.img-shop {
+  max-height: 600px;
+}
+@media (max-width: 576px) {
+  .banner-Img {
+    height: 200px;
+    object-fit: cover;
+  }
+  .img-shop {
+    width: 100%;
+    margin: auto;
+  }
+}

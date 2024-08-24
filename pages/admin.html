@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +9,7 @@
     />
     <meta
       name="author"
-      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Name"
+      content="Luis Avila, Walter Gonzalez, Augusto Britos, Fabricio Neme"
     />
     <meta
       name="keywords"
@@ -21,6 +21,12 @@
       type="image/x-icon"
     />
     <link
+      href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
+"
+      rel="stylesheet"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
@@ -29,19 +35,345 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>Cuentos y Café</title>
   </head>
-  <body>
-    <header></header>
-    <main>
-      <h1>...</h1>
+  <body class="body-admin">
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container main-container">
+      <section class="mt-4">
+        <article
+          class="p-4 d-flex flex-column-reverse gap-4 flex-md-row align-items-center justify-content-between"
+        >
+          <div class="text-center text-md-start">
+            <h3 class="text-dark fw-bolder">Productos</h3>
+            <h5 class="text-secondary txt-secondary text-quantity-books"></h5>
+            <h5 class="text-secondary txt-secondary text-quantity-stock">43 ud</h5>
+          </div>
+
+          <form id="form-search-admin" class="d-flex" role="search">
+            <input
+              class="form-control me-2 focus-ring focus-ring-dark border-1 rounded-0 border-secondary-subtle input-search-admin"
+              type="search"
+              placeholder="Titulo o ISBN"
+              aria-label="Search"
+            />
+            <button
+              class="btn btn-outline-dark rounded-0 btn-search-admin"
+              type="submit"
+            >
+              Buscar
+            </button>
+          </form>
+
+          <button class="btn btn-outline-dark btn-add-admin border-2 rounded-0">
+            <i class="fs-3 bi bi-plus"></i>
+            <i class="fs-4 bi bi-book"></i>
+          </button>
+        </article>
+
+        <!-- modal de registrar libro -->
+
+        <div
+          class="modal fade"
+          data-bs-theme="light"
+          id="createBook"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="createBookLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content modal-admin-content rounded rounded-0">
+              <div class="modal-header rounded-0 modal-header-custom">
+                <h1 class="modal-title fs-5" id="createBookLabel"></h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="formAdmin" class="row">
+                  <div class="col-12 mb-3">
+                    <label for="fromBookUrl" class="form-label text-black"
+                      >Portada ( URL )</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="fromBookUrl"
+                      placeholder="https://mifoto.jpg"
+                      maxlength="150"
+                      minlength="10"
+                    />
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="title" class="form-label text-black"
+                      >Titulo *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control in-valid"
+                      id="title"
+                      placeholder="'Cuentos De La Selva'"
+                      maxlength="50"
+                      minlength="2"
+                      required
+                    />
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="author" class="form-label text-black"
+                      >Autor *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="author"
+                      placeholder="Horacio Quiroga"
+                      maxlength="50"
+                      minlength="2"
+                      required
+                    />
+                  </div>
+                  <div class="col-5 mb-3">
+                    <label for="genre" class="form-label text-black"
+                      >Genero</label
+                    >
+                    <select
+                      id="genre"
+                      class="form-select input-genre"
+                      aria-label="genero del libro"
+                    >
+                      <option selected>No especificado</option>
+                      <option value="1">Ciencias y tecnología</option>
+                      <option value="2">fantasía</option>
+                      <option value="3">Ciencia ficción</option>
+                      <option value="4">Terror</option>
+                      <option value="5">Misterio</option>
+                      <option value="6">Espiritualidad</option>
+                    </select>
+                  </div>
+                  <div class="col-7 mb-3">
+                    <label for="editorial" class="form-label text-black"
+                      >Editorial</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="editorial"
+                      placeholder="Book Editorial"
+                      maxlength="60"
+                      minlength="1"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="isbn" class="form-label text-black"
+                      >ISBN *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="isbn"
+                      placeholder="000-00-0000-000-0"
+                      maxlength="20"
+                      minlength="13"
+                      required
+                    />
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="pags" class="form-label text-black"
+                      >Paginas *</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="pags"
+                      placeholder="300"
+                      maxlength="5"
+                      minlength="1"
+                      required
+                    />
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="dimensions" class="form-label text-black"
+                      >Dimensiones *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="dimensions"
+                      placeholder="15,0 x 20,0"
+                      maxlength="20"
+                      minlength="2"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-6 mb-3">
+                    <label for="price" class="form-label text-black"
+                      >Precio *</label
+                    >
+                    <input
+                      type="tel"
+                      class="form-control"
+                      id="price"
+                      placeholder="1.500"
+                      maxlength="20"
+                      minlength="1"
+                      required
+                    />
+                  </div>
+                  <div class="col-6 mb-3">
+                    <label for="stock" class="form-label text-black"
+                      >Stock *</label
+                    >
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="stock"
+                      placeholder="30"
+                      maxlength="30"
+                      minlength="1"
+                      required
+                    />
+                  </div>
+                  <label for="description" class="form-label text-black"
+                    >Descripción *</label
+                  >
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="Descripción del libro"
+                      maxlength="1000"
+                      minlength="20"
+                      id="description"
+                      style="height: 100px"
+                    ></textarea>
+                  </div>
+                  <div class="my-3 text-center">
+                    <button
+                      type="submit"
+                      class="btn rounded-0 border-0 btn-dark btn-submit-admin"
+                    ></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- tabla de administración -->
+      <section class="mt-1 mb-4 table-responsive">
+        <article class="table-container-admin bg-black">
+          <table class="table table-striped table-admin">
+            <thead class="head-table-admin table-dark">
+              <tr class="align-middle row-table-admin">
+                <th scope="col">#</th>
+                <th scope="col">PORTADA</th>
+                <th scope="col">TITULO</th>
+                <th scope="col">AUTOR</th>
+                <th scope="col">ISBN</th>
+                <th scope="col">EDITORIAL</th>
+                <th scope="col">PAGINAS</th>
+                <th scope="col">DESCRIPCIÓN</th>
+                <th scope="col">DIMENSIONES</th>
+                <th scope="col">PRECIO</th>
+                <th scope="col">STOCK</th>
+                <th scope="col"><i class="bi bi-gear fs-3 ms-2"></i></th>
+              </tr>
+            </thead>
+
+            <tbody class="tbody-table-admin"></tbody>
+          </table>
+          <div class="w-100 text-center my-5 reset-text-container ">
+            <h3 class=""
+              >No tienes mas libros?</h3>
+              <button class="btn mt-3 btn-dark btn-reset">RESETEAR LIBROS PRE ESTABLECIDOS</button>
+          </div>
+          <div class="w-100 text-center my-2 viewMoreContainer">
+            <span class="btn-viewMore"
+              >VER MAS <i class="fa-solid fa-chevron-down"></i></span>
+          </div>
+        </article>
+      </section>
     </main>
-    <footer></footer>
 
     <!-- scripts -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+    "></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/314c3815b6.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../js/main.js" type="module"></script>
+    <script src="../js/admin.js" type="module"></script>
   </body>
 </html>

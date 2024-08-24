@@ -1,0 +1,16 @@
+.custom-alert {
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid #000000b0;
+  border-radius: 2px;
+  font-family: var(--font-primary);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.custom-alert-mixin {
+  background-color: var(--color-bg-secondary);
+  border-radius: 2px;
+}
+.btn-confirm {
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 2px;
+}
