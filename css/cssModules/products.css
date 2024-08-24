@@ -1,17 +1,16 @@
 .main-products {
   min-height: 100vh;
   background-color: #f1f6fb;
+  margin-top: 100px;
 }
 
 .products-container {
   font-family: var(--font-secondary);
 }
 
-.div-after-filter-container {
-  width: 290px;
-}
 .filter-price-container {
-  position: fixed;
+  position: sticky;
+  top: 150px;
   max-width: 290px;
   max-height: 150px;
 }
@@ -93,7 +92,7 @@
   }
 }
 
-@media (max-width: 1439px) {
+@media (max-width: 1000px) {
   .div-after-filter-container {
     display: none;
   }

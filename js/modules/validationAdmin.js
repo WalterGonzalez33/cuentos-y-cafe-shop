@@ -13,7 +13,7 @@ const inputDescription = document.querySelector("#description");
 const inputEditorial = document.querySelector("#editorial");
 
 // fn --> crea un div con un mensaje de error en el input
-const msjInvalidInput = (msj, childNode, createMsj = true) => {
+export const msjInvalidInput = (msj, childNode, createMsj = true) => {
   const parentNode = childNode.parentNode;
 
   //verifica si el div del msj ya existe, si existe lo elimina
@@ -34,7 +34,7 @@ const msjInvalidInput = (msj, childNode, createMsj = true) => {
 };
 
 // fn --> valida la longitud del input enviado como parámetro y si es requerido o no
-const validateLength = (
+export const validateLength = (
   nameInput = "input",
   input,
   minLength,

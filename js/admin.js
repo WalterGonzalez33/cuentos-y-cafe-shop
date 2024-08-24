@@ -18,7 +18,6 @@ const textQuantityStock = document.querySelector(".text-quantity-stock");
 const btnAddBook = document.querySelector(".btn-add-admin");
 const formAdmin = document.querySelector("#formAdmin");
 const viewMoreContainer = document.querySelector(".viewMoreContainer");
-const btnViewMore = document.querySelector(".btn-viewMore");
 
 let isCreateBook = false;
 let indexRenderRows = 0;

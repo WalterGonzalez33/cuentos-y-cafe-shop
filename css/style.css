@@ -9,6 +9,7 @@
 
 /* módulos */
 
+@import url(./cssModules/main.css);
 @import url(./cssModules/products.css);
 @import url(./cssModules/admin.css);
 @import url(./cssModules/customAlerts.css);
@@ -32,7 +33,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: var(--color-bg-secondary);
+  background-color: var(--color-bg-tertiary);
   font-family: var(--font-primary);
   min-height: 100vh;
 }
@@ -49,14 +50,12 @@ main {
 }
 
 .footer-container {
-  background-color: var(--color-bg-primary);
+  margin-top: 150px;
+  background-color: var(--color-bg-tertiary);
 }
 .footer-logo {
-  max-width: 140px;
-}
-.banner-Img {
-  height: 300px;
-  object-fit: cover;
+  max-width: 150px;
+  padding-bottom: 20px;
 }
 
 #img-Banner-2 {
@@ -71,14 +70,9 @@ main {
 .color-Fondo {
   background-color: transparent;
 }
-.color-Fondo-2 {
-  background-color: var(--color-primary);
-}
-.card-img-top {
-  height: 300px;
-  object-fit: contain;
-}
 
-.card {
-  border: none;
+@media (max-width: 576px) {
+  .footer-logo {
+    max-width: 120px;
+  }
 }
