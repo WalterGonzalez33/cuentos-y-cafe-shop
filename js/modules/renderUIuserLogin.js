@@ -91,6 +91,21 @@ const createLiIsFavorite = () => {
   return nodeLi;
 };
 
+const createLiIsLogin = () => {
+  const nodeLi = document.createElement("li");
+  nodeLi.classList = "nav-item";
+  const nodeA = document.createElement("a");
+  nodeA.className = "nav-link text-center nav-custom";
+  const textNode = document.createTextNode("Acceder");
+  nodeA.appendChild(textNode);
+
+  nodeA.addEventListener("click", () => {
+    showModalLogin()
+  });
+  nodeLi.appendChild(nodeA);
+  return nodeLi;
+};
+
 const currentUserIsAdmin = () => {
   const isAdmin = users.find((user) => {
     if (
@@ -118,6 +133,7 @@ if (currentUser) {
     ulNavbar.appendChild(createLiIsFavorite());
   }
 } else {
+  ulNavbar.appendChild(createLiIsLogin())
   cartUserMobile.prepend(createIconLogin());
   cartUserDesktop.prepend(createIconLogin());
 }

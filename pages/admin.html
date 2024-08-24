@@ -17,7 +17,7 @@
     />
     <link
       rel="shortcut icon"
-      href="../assets/logoIcon.png"
+      href="../assets/logo.png"
       type="image/x-icon"
     />
     <link
@@ -36,66 +36,208 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
     <title>Cuentos y Café</title>
   </head>
   <body class="body-admin">
+
     <header>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+      <div class="navbar-fixed">
+        <nav
+          class="navbar navbar-dark navbar-expand-lg bg-body-tertiary navbar-container"
+        >
+          <div class="container-fluid flex-row-reverse flex-lg-row">
+            <div class="card-user-mobile">
+              <a class="fs-3 mx-2 iconNav-navbar" href="./error404.html"
+                ><i class="bi bi-basket2-fill"></i
+              ></a>
+            </div>
+
+            <a
+              class="navbar-brand m-auto me-lg-4 icon-brand-mobile"
+              href="../index.html"
+              ><img
+                class="icon-navbar ms-3"
+                src="../assets/logo.png"
+                alt="logo"
+            /></a>
+
+            <button
+              class="navbar-toggler rounded-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContentCollapse"
+              aria-controls="navbarContentCollapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse justify-content-between"
+              id="navbarContentCollapse"
+            >
+              <div class="input-search-navbar-container">
+                <form class="d-flex my-3 my-lg-0 ms-lg-2" role="search">
+                  <input
+                    class="form-control border-0 rounded-0 input-search-navbar"
+                    type="search"
+                    id="navBuscar"
+                    placeholder="¿Que estas buscando?"
+                    aria-label="Search"
+                    minlength="5"
+                    maxlength="50"
+                    required
+                  />
+                  <button
+                    for="navBuscar"
+                    class="p-2 ms-1 bg-transparent icono-nav"
+                  >
+                    <i class="bi bi-search text-light"></i>
+                  </button>
+                </form>
+              </div>
+
+              <a class="navbar-brand me-lg-4 icon-brand-lg" href="../index.html"
+                ><img class="icon-navbar" src="../assets/logo.png" alt="logo"
+              /></a>
+
+              <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3 nav-ul">
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="../index.html"
+                    >Inicio</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./error404.html"
+                    >Sobre nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./product.html"
+                    >Productos</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="cart-user-lg">
+              <a class="fs-3 mx-2 me-3 iconNav-navbar" href="./error404.html"
+                ><i class="bi bi-basket2-fill"></i
+              ></a>
+            </div>
+          </div>
+        </nav>
+        <div>
+          <div class="container-fluid category-container text-light">
+            <div class="navbar-dark">
+              <div class="text-center py-1 btn-category-collapse">
+                <h5>
+                  Categorías
+                  <span class="ms-1">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-down"></i
+                  ></span>
+                </h5>
+              </div>
+
+              <div class="category-collapse">
+                <div
+                  class="container my-2 my-lg-0 align-items-center category-list"
                 >
-                  Dropdown
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-            </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+                  <span class="nav-link text-center ciencias-tecnologia link-filter"
+                    >Ciencias y tecnología</span
+                  >
+                  <span class="nav-link text-center fantasia link-filter">Fantasía</span>
+                  <span class="nav-link text-center ciencia-ficcion link-filter"
+                    >Ciencia ficción</span
+                  >
+                  <span class="nav-link text-center terror link-filter">Terror</span>
+                  <span class="nav-link text-center misterio link-filter">Misterio</span>
+                  <span class="nav-link text-center espiritualidad link-filter"
+                    >Espiritualidad</span
+                  >
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modalLogin"
+        data-bs-theme="dark"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-navbar">
+          <div class="img-brand-login">
+            <img src="../assets/logo.png" class="img-fluid" alt="logo" />
+          </div>
+          <div class="modal-content modal-content-navbar rounded-0">
+            <div class="modal-header border-0">
+              <h1
+                class="modal-title fs-5 fw-bold text-light"
+                id="modalLoginLabel"
+              >
+                INICIA SESION
+              </h1>
+              <button
+                type="button"
+                class="btn-close btn-close-modal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body modal-body-navbar">
+              <form id="form-login" class="mt-5">
+                <div class="mb-4">
+                  <label for="userNameLogin" class="form-label label-login"
+                    >NOMBRE DE USUARIO</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin"
+                    id="userNameLogin"
+                    placeholder="Juan@123"
+                    autocomplete="username"
+                    minlength="3"
+                    maxlength="50"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="userPasswordLogin" class="form-label label-login"
+                    >CONTRASEÑA</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control form-control-navbar text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
+                    id="userPasswordLogin"
+                    placeholder="Ejemplo1@"
+                    autocomplete="current-password"
+                    minlength="8"
+                    maxlength="20"
+                    required
+                  />
+                  <div id="password-help" class="form-text">
+                    Al menos 8 caracteres y máximo 20, una mayúscula, una
+                    minúscula, un número y un carácter especial (@$!%*?&)
+                  </div>
+                </div>
+                <div class="not-user-container my-2"></div>
+                <button
+                  type="submit"
+                  class="btn text-light rounded-0 btn-login"
+                >
+                  INGRESAR
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
     <main class="container main-container">
@@ -106,7 +248,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
           <div class="text-center text-md-start">
             <h3 class="text-dark fw-bolder">Productos</h3>
             <h5 class="text-secondary txt-secondary text-quantity-books"></h5>
-            <h5 class="text-secondary txt-secondary text-quantity-stock">43 ud</h5>
+            <h5 class="text-secondary txt-secondary text-quantity-stock">
+              43 ud
+            </h5>
           </div>
 
           <form id="form-search-admin" class="d-flex" role="search">
@@ -145,7 +289,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
           <div class="modal-dialog">
             <div class="modal-content modal-admin-content rounded rounded-0">
               <div class="modal-header rounded-0 modal-header-custom">
-                <h1 class="modal-title fs-5" id="createBookLabel"></h1>
+                <h1 class="modal-title modal-title-admin text-light fs-5" id="createBookLabel"></h1>
                 <button
                   type="button"
                   class="btn-close"
@@ -161,7 +305,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="fromBookUrl"
                       placeholder="https://mifoto.jpg"
                       maxlength="150"
@@ -174,7 +318,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control in-valid"
+                      class="form-control in-valid input-modal-admin"
                       id="title"
                       placeholder="'Cuentos De La Selva'"
                       maxlength="50"
@@ -188,7 +332,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="author"
                       placeholder="Horacio Quiroga"
                       maxlength="50"
@@ -202,7 +346,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <select
                       id="genre"
-                      class="form-select input-genre"
+                      class="form-select form-control input-genre input-modal-admin"
                       aria-label="genero del libro"
                     >
                       <option selected>No especificado</option>
@@ -220,7 +364,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="editorial"
                       placeholder="Book Editorial"
                       maxlength="60"
@@ -233,7 +377,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="isbn"
                       placeholder="000-00-0000-000-0"
                       maxlength="20"
@@ -247,7 +391,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="tel"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="pags"
                       placeholder="300"
                       maxlength="5"
@@ -261,7 +405,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="dimensions"
                       placeholder="15,0 x 20,0"
                       maxlength="20"
@@ -276,7 +420,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="tel"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="price"
                       placeholder="1.500"
                       maxlength="20"
@@ -290,7 +434,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     >
                     <input
                       type="text"
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       id="stock"
                       placeholder="30"
                       maxlength="30"
@@ -303,7 +447,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                   >
                   <div class="form-floating">
                     <textarea
-                      class="form-control"
+                      class="form-control input-modal-admin"
                       placeholder="Descripción del libro"
                       maxlength="1000"
                       minlength="20"
@@ -347,14 +491,16 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
 
             <tbody class="tbody-table-admin"></tbody>
           </table>
-          <div class="w-100 text-center my-5 reset-text-container ">
-            <h3 class=""
-              >No tienes mas libros?</h3>
-              <button class="btn mt-3 btn-dark btn-reset">RESETEAR LIBROS PRE ESTABLECIDOS</button>
+          <div class="w-100 text-center my-5 reset-text-container">
+            <h3 class="">No tienes mas libros?</h3>
+            <button class="btn mt-3 btn-dark btn-reset">
+              RESETEAR LIBROS PRE ESTABLECIDOS
+            </button>
           </div>
           <div class="w-100 text-center my-2 viewMoreContainer">
             <span class="btn-viewMore"
-              >VER MAS <i class="fa-solid fa-chevron-down"></i></span>
+              >VER MAS <i class="fa-solid fa-chevron-down"></i
+            ></span>
           </div>
         </article>
       </section>

@@ -1,19 +1,31 @@
 .body-admin {
-  background-image: url("../../assets/bg-img.jpg");
+  background-color: var(--color-bg-tertiary);
   background-size: cover;
   backdrop-filter: blur(0px);
 }
 .main-container {
-  background-color: var(--color-bg-primary);
+  margin-top: 110px;
+  background-color: var(--color-bg-tertiary);
   min-height: 100vh;
 }
 
 .input-search-admin {
-  background-color: var(--color-secondary);
-  border-color: white;
-  &:focus {
-    background-color: var(--color-secondary);
+  background-color: aliceblue !important;
+  color: black;
+  &:focus{
+    background-color: aliceblue;
+    color: black;
   }
+  &:not(:focus){
+    background-color: aliceblue;
+    color: black;
+  }
+  &::placeholder{
+    color: rgba(73, 73, 73, 0.5);
+  }
+}
+.input-modal-admin{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .btn-search-admin {
   &:hover {
@@ -110,7 +122,7 @@
 }
 /* estilos de la ventana modal */
 .modal-admin-content {
-  background-color: var(--color-bg-primary);
+  background-color: var(--color-bg-tertiary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .modal-header-custom {
