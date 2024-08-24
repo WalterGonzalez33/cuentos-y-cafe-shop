@@ -8,3 +8,16 @@
 .main-detalle {
     margin-top: 180px;
 }
+
+.img-container {
+    height: 500px;
+    overflow: hidden;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
