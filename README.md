@@ -17,7 +17,7 @@ Navega por nuestro catálogo y encuentra el libro que has estado buscando. ¡Sum
 
 Este proyecto ha sido desarrollado por:
 
-| [![Walter Gonzalez](https://avatars.githubusercontent.com/u/83594534?v=4)](https://github.com/WalterGonzalez33) | [![Avatar de Luis](https://avatars.githubusercontent.com/u/173578020?v=4)](https://github.com/avila78) | [![Avatar de Augusto](https://avatars.githubusercontent.com/u/134075862?v=4)](https://github.com/BritoAugusto) | [![Avatar de Fabricio](https://gravatar.com/userimage/254779667/03608cf67feb2c28059e913844cbb5d5.jpeg?size=256)](https://github.com/FabricioNeme) |
+| [![Walter Gonzalez](https://i.postimg.cc/Z5jx9Lpj/imagen-Walter.jpg)](https://github.com/WalterGonzalez33) | [![Avatar de Luis](https://i.postimg.cc/5tR5gNPC/imagen-Luis.jpg)](https://github.com/avila78) | [![Augusto Brito](https://i.postimg.cc/C5yGyrpM/imagen-Augusto.jpg)](https://github.com/BritoAugusto) | [![Avatar de Fabricio](https://i.postimg.cc/PxvWRscF/ImgFabri.jpg)](https://github.com/FabricioNeme) |
 |:---:|:---:|:---:|:---:|
 | **Walter Gonzalez**  | **Luis Avila**  | **Augusto Brito**  | **Fabricio Neme**  |
 
