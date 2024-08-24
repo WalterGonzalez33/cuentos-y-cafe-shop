@@ -15,11 +15,14 @@
       name="keywords"
       content="E-commerce libros cuentos historia romance acción cuentos y café"
     />
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
     <link
-      rel="shortcut icon"
-      href="./assets/logoIcon.png"
-      type="image/x-icon"
+      href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
+"
+      rel="stylesheet"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,92 +33,208 @@
     <title>Cuentos y Café</title>
   </head>
   <body>
+    <header>
+      <div class="navbar-fixed">
+        <nav
+          class="navbar navbar-dark navbar-expand-lg bg-body-tertiary navbar-container"
+        >
+          <div class="container-fluid flex-row-reverse flex-lg-row">
+            <div class="card-user-mobile">
+              <a class="fs-3 mx-2 iconNav-navbar" href="./pages/error404.html"
+                ><i class="bi bi-basket2-fill"></i
+              ></a>
+            </div>
 
-    <header class="navbar navbar-expand-lg d-flex flex-column">
-        <div class="container-fluid navbar-color py-2">
-          <div class="container col-12 col-md-4">
+            <a
+              class="navbar-brand m-auto me-lg-4 icon-brand-mobile"
+              href="./index.html"
+              ><img
+                class="icon-navbar ms-3"
+                src="../assets/logo.png"
+                alt="logo"
+            /></a>
 
-            <form class="d-flex" role="search">
-              <input
-                class="form-control border-0 rounded-0"
-                type="search"
-                id="navBuscar"
-                placeholder="¿Que estas buscando?"
-                aria-label="Search"
-                minlength="5"
-                maxlength="50"
-                required
-              />
-              <button
-                for="navBuscar"
-                class="p-2 ms-1 bg-transparent icono-nav">
-                <i class="bi bi-search text-light"></i>
-              </button>
-            </form>
+            <button
+              class="navbar-toggler rounded-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContentCollapse"
+              aria-controls="navbarContentCollapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse justify-content-between"
+              id="navbarContentCollapse"
+            >
+              <div class="input-search-navbar-container">
+                <form class="d-flex my-3 my-lg-0 ms-lg-2" role="search">
+                  <input
+                    class="form-control border-0 rounded-0 input-search-navbar"
+                    type="search"
+                    id="navBuscar"
+                    placeholder="¿Que estas buscando?"
+                    aria-label="Search"
+                    minlength="5"
+                    maxlength="50"
+                    required
+                  />
+                  <button
+                    for="navBuscar"
+                    class="p-2 ms-1 bg-transparent icono-nav"
+                  >
+                    <i class="bi bi-search text-light"></i>
+                  </button>
+                </form>
+              </div>
+
+              <a class="navbar-brand me-lg-4 icon-brand-lg" href="./index.html"
+                ><img class="icon-navbar" src="../assets/logo.png" alt="logo"
+              /></a>
+
+              <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3 nav-ul">
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./pages/error404.html"
+                    >Sobre nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./pages/product.html"
+                    >Productos</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="cart-user-lg">
+              <a
+                class="fs-3 mx-2 me-3 iconNav-navbar"
+                href="pages/error404.html"
+                ><i class="bi bi-basket2-fill"></i
+              ></a>
+            </div>
           </div>
-          
-          <div class="container col-6 col-md-4 text-center">
-            <a class=" fs-1 text-light" href="./index.html"><img class="img-fluid icon-navbar" src="./assets/logo.png" alt="logo"></a>          
-          </div>
+        </nav>
+        <div>
+          <div class="container-fluid category-container text-light">
+            <div class="navbar-dark">
+              <div class="text-center py-1 btn-category-collapse">
+                <h5>
+                  Categorías
+                  <span class="ms-1">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-down"></i
+                  ></span>
+                </h5>
+              </div>
 
-          <div class="container d-flex justify-content-end col-6 col-md-4">
-              <nav class="navbar navbar-expand-lg navbar-dark">
-                  <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav ms-auto align-items-center">
-                        <a class="nav-link text-center" href="#">Inicio</a>
-                        <a class="nav-link text-center" href="#">Productos</a>
-                        <a class="nav-link text-center" href="#">Administrador</a>
-                        <a class="fs-4 nav-link text-center" data-bs-toggle="modal" data-bs-target="#modalIniciaSesion"><i class="bi bi-person-circle"></i></a>
-                        <a class="fs-4 nav-link text-center"><i class="bi bi-basket2-fill"></i></a>
-                      </div>
-                    </div>
-                  </div>
-              </nav>
-          </div>        
+              <div class="category-collapse">
+                <div
+                  class="container my-2 my-lg-0 align-items-center category-list"
+                >
+                  <span class="nav-link text-center ciencias-tecnologia"
+                    >Ciencias y tecnología</span
+                  >
+                  <span class="nav-link text-center fantasia">Fantasía</span>
+                  <span class="nav-link text-center ciencia-ficcion"
+                    >Ciencia ficción</span
+                  >
+                  <span class="nav-link text-center terror">Terror</span>
+                  <span class="nav-link text-center misterio">Misterio</span>
+                  <span class="nav-link text-center espiritualidad"
+                    >Espiritualidad</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="container-fluid navbar2-color text-light justify-content-evenly">
-            <div class="col-md-10">
-                <nav class="navbar navbar-expand-md navbar-dark">
-                    <div class="container-fluid">
-                      <a class="nav-link text-center active">Más Vendidas:</a>    
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup2" aria-controls="navbarNavAltMarkup2" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon">   
-                        </span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup2">
-                        <div class="navbar-nav align-items-center">                  
-                          <a class="nav-link text-center" href="#">Ficcion y Literatura</a>
-                          <a class="nav-link text-center" href="#">Política y Actualidad</a>
-                          <a class="nav-link text-center" href="#">Negocios y Economía</a>
-                          <a class="nav-link text-center" href="#">Infantiles y Juveniles</a>
-                          <a class="nav-link text-center" href="#">Hogar</a>
-                        </div>
-                      </div>
-                    </div>
-                </nav>
-            </div>        
-          </div>
-    </header>
-    <main>
-      <h1 class="titulo fs-1 text-center px-3 my-4">Cuentos y Café</h1>
-      <div class="row container-fluid w-100 my-2">
-        <h6 class="text-center text-secondary">
-          Ingresá el nombre del libro o categoría que buscás.
-        </h6>
-        <form class="d-flex col-md-8 col-lg-6 mx-auto">
-          <input
-            class="form-control me-2 color-Fondo color-Borde"
-            type="search"
-            placeholder="Ej: 'Cuando la tormenta pase'"
-            aria-label="Buscar"
-          />
-          <button class="btn btn-outline-success" type="submit">Buscar</button>
-        </form>
       </div>
+
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="modalLogin"
+        data-bs-theme="dark"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="img-brand-login">
+            <img src="../assets/logo.png" class="img-fluid" alt="logo" />
+          </div>
+          <div class="modal-content rounded-0">
+            <div class="modal-header border-0">
+              <h1
+                class="modal-title fs-5 fw-bold text-light"
+                id="modalLoginLabel"
+              >
+                INICIA SESION
+              </h1>
+              <button
+                type="button"
+                class="btn-close btn-close-modal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="form-login" class="mt-5">
+                <div class="mb-4">
+                  <label for="userNameLogin" class="form-label label-login"
+                    >NOMBRE DE USUARIO</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control text-dark rounded-0 focus-ring focus-ring-light inputLogin"
+                    id="userNameLogin"
+                    placeholder="Juan@123"
+                    minlength="3"
+                    maxlength="50"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="userPasswordLogin" class="form-label label-login"
+                    >CONTRASEÑA</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
+                    id="userPasswordLogin"
+                    placeholder="Ejemplo1@"
+                    minlength="8"
+                    maxlength="20"
+                    required
+                  />
+                  <div id="password-help" class="form-text">
+                    Al menos 8 caracteres y máximo 20, una mayúscula, una
+                    minúscula, un número y un carácter especial (@$!%*?&)
+                  </div>
+                </div>
+                <div class="not-user-container my-2"></div>
+                <button
+                  type="submit"
+                  class="btn text-light rounded-0 btn-login"
+                >
+                  INGRESAR
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-principal-page">
       <section
         id="carouselLibreria"
         class="carousel slide"
@@ -146,7 +265,7 @@
         <div class="carousel-inner">
           <article class="carousel-item active">
             <img
-              src="./assets/Playfair Display.png"
+              src="./assets/imgCarrousel1.png"
               class="d-block w-100 banner-Img"
               alt="imagen de banner de bienvenida de cuentos y café"
             />
@@ -154,7 +273,7 @@
           <article class="carousel-item">
             <img
               id="img-Banner-2"
-              src="./assets/banner2.webp"
+              src="./assets/imgCarrousel2.webp"
               class="d-block w-100 banner-Img"
               alt="imagen sobre un libro sobre mitologia china"
             />
@@ -171,7 +290,7 @@
           <article class="carousel-item">
             <img
               id="img-Banner-3"
-              src="./assets/banner3.webp"
+              src="./assets/imgCarrousel3.webp"
               class="d-block w-100 banner-Img"
               alt="imagen sobre descuentos en la compra de libros"
             />
@@ -206,152 +325,36 @@
           <span class="visually-hidden">Siguiente</span>
         </button>
       </section>
+
+      <section class="container my-5 mx-auto">
+        <h2 class="text-center my-3 text-custom">Expande tu imaginación</h2>
+        <article
+          class="row gap-lg-4 justify-content-center first-section-main"
+        ></article>
+      </section>
+
       <section
-        class="row container-fluid text-center border border-none m-auto"
+        class="container-fluid mx-auto color-Fondo-2 pt-3 pb-5 text-white"
       >
-        <h2 class="my-4 m-auto">Novedades</h2>
-        <div class="col-md-4 col-lg-3 mb-3">
-          <div class="card h-100 color-Fondo">
-            <img
-              src="https://www.andeslibreria.com/12188/mitologia-clasica-china-de-gabriel-garcia-noblejas-libro-impreso-9788481646030.jpg"
-              class="card-img-top mt-3"
-              alt="imagen del libro 'Mitologia clásica china'"
-            />
-            <div class="card-body">
-              <h4 class="card-title">Mitología Clásica China</h4>
-              <p class="fw-bolder text-info-emphasis">
-                Gabriel García-Noblejas Sánchez-Cendal
-              </p>
-              <p class="fw-semibold">Género: Ensayo</p>
-              <p class="fw-semibold">Editorial: Trotta</p>
-              <p class="fw-semibold">Año: 2004</p>
-            </div>
-            <div class="color-Fondo card-footer text-body-secondary">
-              <a class="btn btn-secondary">Proximamente...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-3 mb-3">
-          <div class="card h-100 color-Fondo">
-            <img
-              src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
-              class="card-img-top mt-3"
-              alt="imagen del libro 'La Materia de Las Sombras'"
-            />
-            <div class="card-body">
-              <h4 class="card-title">La Materia de Las Sombras</h4>
-              <p class="fw-bolder text-info-emphasis">Antonio Runa</p>
-              <p class="fw-semibold">Genero: Terror</p>
-              <p class="fw-semibold">Editorial: Minotauro</p>
-              <p class="fw-semibold">Año: 2024</p>
-            </div>
-            <div class="color-Fondo card-footer text-body-secondary">
-              <a class="btn btn-secondary">Proximamente...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-lg-3 mb-3">
-          <div class="card h-100 color-Fondo">
-            <img
-              src="https://www.lavanguardia.com/libros/images/posters/2024/6/9788408290049-image.webp?v=1"
-              class="card-img-top mt-3"
-              alt="imagen del libro 'Cuando la tormenta pase'"
-            />
-            <div class="card-body">
-              <h4 class="card-title">Cuando La Tormenta Pase</h4>
-              <p class="fw-bolder text-info-emphasis">Manuel Loureiro</p>
-              <p class="fw-semibold">Genero: Suspenso</p>
-              <p class="fw-semibold">Editorial: Trotta</p>
-              <p class="fw-semibold">Año: 2024</p>
-            </div>
-            <div class="color-Fondo card-footer text-body-secondary">
-              <a class="btn btn-secondary">Proximamente...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-12 col-lg-3 mb-3">
-          <div class="card h-100 color-Fondo">
-            <img
-              src="https://proassetspdlcom.cdnstatics2.com/usuaris/libros/thumbs/e02c5c44-06a9-491d-821b-28405c12aded/d_1200_1200/portada_el-angel-de-la-ciudad_eva-garcia-saenz-de-urturi_202402091328.webp"
-              class="card-img-top mt-3"
-              alt="imagen del libro 'El angel de la ciudad'"
-            />
-            <div class="card-body">
-              <h4 class="card-title">El Ángel De La Ciudad</h4>
-              <p class="fw-bolder text-info-emphasis">
-                Eva García Sáenz de Urturi
-              </p>
-              <p class="fw-semibold">Genero: Novela Contemporánea</p>
-              <p class="fw-semibold">Editorial: Booket</p>
-              <p class="fw-semibold">Año: 2024</p>
-            </div>
-            <div class="color-Fondo card-footer text-body-secondary">
-              <a class="btn btn-secondary">Proximamente...</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="row container-fluid m-auto color-Fondo-2 text-white">
         <h2 class="text-center my-3">Los Más Vendidos</h2>
-        <article class="col-md-6 col-lg-3 my-4">
-          <img
-            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
-            class="card-img-top"
-            alt=""
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
-            <p class="card-text fs-5">$ 18.699</p>
-            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-3 my-4">
-          <img
-            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
-            class="card-img-top"
-            alt=""
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
-            <p class="card-text fs-5">$ 18.699</p>
-            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-3 my-4">
-          <img
-            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
-            class="card-img-top"
-            alt=""
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
-            <p class="card-text fs-5">$ 18.699</p>
-            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
-          </div>
-        </article>
-        <article class="col-md-6 col-lg-3 my-4">
-          <img
-            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
-            class="card-img-top"
-            alt=""
-          />
-          <div class="card-body text-center">
-            <h5 class="card-title my-2">La Materia de Las Sombras</h5>
-            <p class="card-text fs-5">$ 18.699</p>
-            <a class="btn btn-danger">Comprar <i class="bi bi-basket2"></i></a>
-          </div>
-        </article>
+        <article
+          class="row gap-lg-4 justify-content-center second-section-main"
+        ></article>
       </section>
-      <section class="row container-fluid m-auto">
-        <h2 class="text-center fw-bolder my-4">¡Visítanos en Nuestra Tienda Física!</h2>
-        <div class="col-lg-6 col-md-6">
-          <img
-            src="./assets/cuentosycafe.png"
-            class="w-100"
-            alt="imagen de la tienda de libros cuentos y cafe"
-          />
-        </div>
-        <div class="col-lg-6 col-md-6">
+
+      <section class="container mt-4">
+        <div class="row">
+          <h2 class="col-12 text-center fw-bolder my-4 mb-5">
+            ¡Visítenos en Nuestra Tienda Física!
+          </h2>
+          <div class="col-12 col-lg-6 col-md-6 mb-3">
+            <img
+              src="./assets/cuentosycafe.png"
+              class="img-shop"
+              alt="imagen de la tienda de libros cuentos y cafe"
+            />
+          </div>
+          <div class="col-12 col-lg-6 col-md-6 text-center">
             <iframe
               class="w-100 h-100"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d16934.83210600945!2d-65.20719947955266!3d-26.836456506162495!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225d3ad7f30f1d%3A0xf8606cd659b8e3e4!2sRollingCode%20School!5e0!3m2!1ses-419!2sar!4v1718139302521!5m2!1ses-419!2sar"
@@ -360,115 +363,115 @@
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
+        </div>
       </section>
     </main>
     <footer class="pt-5 pb-3 footer-container">
-        <div class="container p-3 text-center text-md-start">
-            <div class="row">
-                <!-- Logo -->
-                <div class="col-md-3 mb-4 text-center text-md-start">
-                    <img src="./assets/logoIcon.png" alt="Logo" class="mb-3 footer-logo">
-                    <p>Tu tienda de libros favorita. Ofrecemos una amplia variedad de títulos para todos los gustos.</p>
-                </div>
-                <!-- Sobre Nosotros -->
-                <div class="col-md-3 mb-4">
-                    <h5>Sobre Nosotros</h5>
-                    <p>Somos apasionados por la lectura y queremos compartir esa pasión con nuestros clientes.</p>
-                </div>
-                <!-- Enlaces Rápidos -->
-                <div class="col-md-3 mb-4">
-                    <h5>Enlaces Rápidos</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#" class="text-decoration-none">Inicio</a></li>
-                        <li><a href="#" class="text-decoration-none">Ofertas</a></li>
-                        <li><a href="#" class="text-decoration-none">Blog</a></li>
-                        <li><a href="#" class="text-decoration-none">Contacto</a></li>
-                        <li><a href="#" class="text-decoration-none">Catálogo</a></li>
-                    </ul>
-                </div>
-                <!-- Contacto -->
-                <div class="col-md-3 mb-4">
-                    <h5>Contacto</h5>
-                    <p><span><i class="bi bi-geo-alt-fill"></i> Calle Ficticia 123, Ciudad, País</span></p>
-                    <p><span><i class="bi bi-telephone-fill"></i> +123 456 7890</span></p>
-                    <p><span><i class="bi bi-envelope-fill"></i> contacto@tiendalibros.com</span></p>
-                    <!-- Redes Sociales -->
-                    <div class="ms-3">
-                        <a href="#" class="me-3"><i class="bi bi-facebook fs-4"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-twitter fs-4"></i></a>
-                        <a href="#" class="me-3"><i class="bi bi-instagram fs-4"></i></a>
-                    </div>
-                </div>
-            </div>
-            <!-- Métodos de Pago -->
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <h5>Métodos de Pago</h5>
-                    <img src="./assets/Visa.png" alt="Visa" class="me-2" style="max-width: 50px;">
-                    <img src="./assets/Mastercard.png" alt="MasterCard" class="me-2" style="max-width: 50px;">
-                    <img src="./assets/PayPal.png" alt="PayPal" style="max-width: 50px;">
-                </div>
-            </div>
-            <!-- Copyright -->
-            <div class="row mt-4">
-                <div class="col text-center">
-                    <p>&copy; 2024 Tienda de Libros. Todos los derechos reservados.</p>
-                    <a href="#" class=" text-decoration-none">Política de Privacidad</a> | 
-                    <a href="#" class=" text-decoration-none">Términos y Condiciones</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- modal de login -->
-    <div class="modal fade" id="modalIniciaSesion" tabindex="-1" aria-labelledby="modalIniciaSesionLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header navbar-color">
-              <h2 class="modal-title fs-5 text-light" id="modalIniciaSesionLabel">Iniciá Sesión</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body modal-color">
-                <form>                  
-                    <div class="mb-2">
-                      <label for="email" class="form-label">Correo Electrónico</label>
-                      <input
-                        id="email"
-                        type="email"
-                        class="form-control"
-                        placeholder="Ej: rolling@mail.com"
-                        minlength="10"
-                        maxlength="320"
-                        required
-                      />
-                    </div>
-                    <div class="mb-2">
-                      <label for="clave" class="form-label">Contraseña</label>
-                      <input
-                        id="clave"
-                        type="password"
-                        class="form-control"
-                        placeholder="Ej: abc-123"
-                        minlength="5"
-                        maxlength="50"
-                        required
-                      />
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer container-fluid justify-content-center navbar2-color">  
-                <button type="submit" class="btn btn-outline-light">Ingresar</button>
+      <div class="container p-3 text-center text-md-start">
+        <div class="row">
+          <!-- Logo -->
+          <div class="col-md-3 mb-4 text-center text-md-start">
+            <img src="./assets/logo.png" alt="Logo" class="mb-3 footer-logo" />
+            <p>
+              Tu tienda de libros favorita. Ofrecemos una amplia variedad de
+              títulos para todos los gustos.
+            </p>
+          </div>
+          <!-- Sobre Nosotros -->
+          <div class="col-md-3 mb-4">
+            <h5>Sobre Nosotros</h5>
+            <p>
+              Somos apasionados por la lectura y queremos compartir esa pasión
+              con nuestros clientes.
+            </p>
+          </div>
+          <!-- Enlaces Rápidos -->
+          <div class="col-md-3 mb-4">
+            <h5>Enlaces Rápidos</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Inicio</a></li>
+              <li><a href="#" class="text-decoration-none">Ofertas</a></li>
+              <li><a href="#" class="text-decoration-none">Blog</a></li>
+              <li><a href="#" class="text-decoration-none">Contacto</a></li>
+              <li><a href="#" class="text-decoration-none">Catálogo</a></li>
+            </ul>
+          </div>
+          <!-- Contacto -->
+          <div class="col-md-3 mb-4">
+            <h5>Contacto</h5>
+            <p>
+              <span
+                ><i class="bi bi-geo-alt-fill"></i> Calle Ficticia 123, Ciudad,
+                País</span
+              >
+            </p>
+            <p>
+              <span><i class="bi bi-telephone-fill"></i> +123 456 7890</span>
+            </p>
+            <p>
+              <span
+                ><i class="bi bi-envelope-fill"></i>
+                contacto@tiendalibros.com</span
+              >
+            </p>
+            <!-- Redes Sociales -->
+            <div class="ms-3">
+              <a href="#" class="me-3"><i class="bi bi-facebook fs-4"></i></a>
+              <a href="#" class="me-3"><i class="bi bi-twitter fs-4"></i></a>
+              <a href="#" class="me-3"><i class="bi bi-instagram fs-4"></i></a>
             </div>
           </div>
         </div>
+        <!-- Métodos de Pago -->
+        <div class="row mt-4">
+          <div class="col text-center">
+            <h5>Métodos de Pago</h5>
+            <img
+              src="./assets/Visa.png"
+              alt="Visa"
+              class="me-2"
+              style="max-width: 50px"
+            />
+            <img
+              src="./assets/Mastercard.png"
+              alt="MasterCard"
+              class="me-2"
+              style="max-width: 50px"
+            />
+            <img
+              src="./assets/PayPal.png"
+              alt="PayPal"
+              style="max-width: 50px"
+            />
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col text-center">
+            <p>&copy; 2024 Tienda de Libros. Todos los derechos reservados.</p>
+            <a href="#" class="text-decoration-none">Política de Privacidad</a>
+            |
+            <a href="#" class="text-decoration-none">Términos y Condiciones</a>
+          </div>
+        </div>
       </div>
+    </footer>
 
     <!-- scripts -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+    "></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/314c3815b6.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="./js/main.js" type="module"></script>
+    <script src="./js/indexPag.js" type="module"></script>
   </body>
 </html>
