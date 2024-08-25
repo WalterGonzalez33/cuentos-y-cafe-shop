@@ -9,6 +9,7 @@
 
 /* módulos */
 
+@import url(./cssModules/error404.css);
 @import url(./cssModules/main.css);
 @import url(./cssModules/products.css);
 @import url(./cssModules/admin.css);
@@ -51,6 +52,7 @@ main {
 }
 
 .footer-container {
+  color: var(--text-color-primary);
   margin-top: 150px;
   background-color: var(--color-bg-tertiary);
 }
@@ -59,10 +61,10 @@ main {
   padding-bottom: 20px;
 }
 
-#img-Banner-2 {
+.img-Banner-2 {
   object-position: 80%;
 }
-#img-Banner-3 {
+.img-Banner-3 {
   object-position: 5%;
 }
 .color-Borde {
@@ -70,6 +72,16 @@ main {
 }
 .color-Fondo {
   background-color: transparent;
+}
+
+.link-footer{
+  color: var(--color-primary) !important;
+  font-weight: 700;
+  text-decoration: underline !important;
+
+  &:hover{
+    color: var(--color-secondary);
+  }
 }
 
 @media (max-width: 576px) {

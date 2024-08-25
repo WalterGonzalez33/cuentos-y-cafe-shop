@@ -17,6 +17,7 @@ const btnLessStock = document.querySelector('.btn-less-stock')
 const btnMoreStock = document.querySelector('.btn-more-stock')
 const spanStockDetail = document.querySelector('.span-stock-detail')
 const otherBooksRecommendation = document.querySelector('.other-books-recommendation')
+const btnBuyDetail = document.querySelector('.btn-buy-detail')
 
 let currentStock = 0;
 
@@ -112,6 +113,9 @@ btnLessStock.addEventListener('click', () => {
 })
 btnMoreStock.addEventListener('click', () => {
     handlerStockDetail(true, false)
+})
+btnBuyDetail.addEventListener('click',() => {
+  window.location.href = '/pages/error404.html'
 })
 AOS.init({
     duration: 800,
