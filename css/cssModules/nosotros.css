@@ -1,5 +1,4 @@
 /* variables */
-
 :root {
   --color-primary: #405d72;
   --color-secondary: #758694;
@@ -17,7 +16,7 @@ main.sobre-nosotros-body {
   margin: 0;
   padding: 0;
   font-family: var(--font-primary);
-  background-image: url('../img/bg-img.jpg'); /* Imagen de fondo */
+  background-image: url('/assets/bg-img.jpg'); /* Imagen de fondo */
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -37,7 +36,7 @@ main.sobre-nosotros-body::before {
 
 .sobre-nosotros-header {
   text-align: center;
-  padding: 50px;
+  padding: 100px 50px 50px; /* Añadir padding-top de 100px */
   background-color: rgba(117, 134, 148, 0.9); /* Fondo semitransparente */
   margin-bottom: 50px;
   border-radius: 15px; /* Redondear esquinas */
@@ -45,6 +44,7 @@ main.sobre-nosotros-body::before {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .sobre-nosotros-header h1 {
   margin: 0;
@@ -105,4 +105,34 @@ main.sobre-nosotros-body::before {
 
 .miembro-equipo p {
   font-size: 1rem;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .miembro-equipo {
+    width: calc(100% - 20px); /* Miembros en una columna */
+  }
+
+  .sobre-nosotros-header h1 {
+    font-size: 2rem; /* Tamaño del título reducido */
+  }
+
+  .sobre-nosotros-header p {
+    font-size: 1rem; /* Tamaño del texto reducido */
+  }
+}
+
+@media (max-width: 480px) {
+  .miembro-equipo img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sobre-nosotros-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .sobre-nosotros-header p {
+    font-size: 0.9rem;
+  }
 }
