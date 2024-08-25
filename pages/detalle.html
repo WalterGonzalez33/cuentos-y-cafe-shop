@@ -15,11 +15,8 @@
       name="keywords"
       content="E-commerce libros cuentos historia romance acción cuentos y café"
     />
-    <link
-      rel="shortcut icon"
-      href="../assets/logoIcon.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,15 +26,15 @@
     <link rel="stylesheet" href="../css/style.css" />
     <title>Cuentos y Café</title>
   </head>
-  <body class="fondo-detalle ">
-     <header>
+  <body class="fondo-detalle">
+    <header>
       <div class="navbar-fixed">
         <nav
           class="navbar navbar-dark navbar-expand-lg bg-body-tertiary navbar-container"
         >
           <div class="container-fluid flex-row-reverse flex-lg-row">
             <div class="card-user-mobile">
-              <a class="fs-3 mx-2 iconNav-navbar" href="./Error404.html"
+              <a class="fs-3 mx-2 iconNav-navbar" href="./error404.html"
                 ><i class="bi bi-basket2-fill"></i
               ></a>
             </div>
@@ -94,10 +91,12 @@
 
               <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3 nav-ul">
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="../index.html">Inicio</a>
+                  <a class="nav-link text-center" href="../index.html"
+                    >Inicio</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./Error404.html"
+                  <a class="nav-link text-center" href="./error404.html"
                     >Sobre nosotros</a
                   >
                 </li>
@@ -109,9 +108,7 @@
               </ul>
             </div>
             <div class="cart-user-lg">
-              <a
-                class="fs-3 mx-2 me-3 iconNav-navbar"
-                href="./Error404.html"
+              <a class="fs-3 mx-2 me-3 iconNav-navbar" href="./error404.html"
                 ><i class="bi bi-basket2-fill"></i
               ></a>
             </div>
@@ -134,16 +131,23 @@
                 <div
                   class="container my-2 my-lg-0 align-items-center category-list"
                 >
-                  <span class="nav-link text-center ciencias-tecnologia"
+                  <span
+                    class="nav-link text-center ciencias-tecnologia link-filter"
                     >Ciencias y tecnología</span
                   >
-                  <span class="nav-link text-center fantasia">Fantasía</span>
-                  <span class="nav-link text-center ciencia-ficcion"
+                  <span class="nav-link text-center fantasia link-filter"
+                    >Fantasía</span
+                  >
+                  <span class="nav-link text-center ciencia-ficcion link-filter"
                     >Ciencia ficción</span
                   >
-                  <span class="nav-link text-center terror">Terror</span>
-                  <span class="nav-link text-center misterio">Misterio</span>
-                  <span class="nav-link text-center espiritualidad"
+                  <span class="nav-link text-center terror link-filter"
+                    >Terror</span
+                  >
+                  <span class="nav-link text-center misterio link-filter"
+                    >Misterio</span
+                  >
+                  <span class="nav-link text-center espiritualidad link-filter"
                     >Espiritualidad</span
                   >
                 </div>
@@ -155,7 +159,7 @@
 
       <!-- Modal -->
       <div
-        class="modal"
+        class="modal fade"
         id="modalLogin"
         data-bs-theme="dark"
         data-bs-backdrop="static"
@@ -164,11 +168,11 @@
         aria-labelledby="modalLoginLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-navbar">
           <div class="img-brand-login">
             <img src="../assets/logo.png" class="img-fluid" alt="logo" />
           </div>
-          <div class="modal-content rounded-0">
+          <div class="modal-content modal-content-navbar rounded-0">
             <div class="modal-header border-0">
               <h1
                 class="modal-title fs-5 fw-bold text-light"
@@ -183,7 +187,7 @@
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body modal-body-navbar">
               <form id="form-login" class="mt-5">
                 <div class="mb-4">
                   <label for="userNameLogin" class="form-label label-login"
@@ -191,9 +195,10 @@
                   >
                   <input
                     type="text"
-                    class="form-control text-dark rounded-0 focus-ring focus-ring-light inputLogin"
+                    class="form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin"
                     id="userNameLogin"
                     placeholder="Juan@123"
+                    autocomplete="username"
                     minlength="3"
                     maxlength="50"
                     required
@@ -205,9 +210,10 @@
                   >
                   <input
                     type="password"
-                    class="form-control text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
+                    class="form-control form-control-navbar text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
                     id="userPasswordLogin"
                     placeholder="Ejemplo1@"
+                    autocomplete="current-password"
                     minlength="8"
                     maxlength="20"
                     required
@@ -230,117 +236,102 @@
         </div>
       </div>
     </header>
-    <main class="main-detalle">
-      <section class="row container-fluid m-auto text-center">
-        <div class="col-md-3 img-container">
-          <img
-            src=""
-            class="img-fluid h-100 "
-            alt=""
-          />
-        </div>
 
-        <!-- Información del producto -->
-        <div class="col-lg-4 col-md-3 d-flex flex-column align-items-center">
-          <h2 ></h2>
-          <p class="fs-5 text-muted pt-3"></p>
-          <p class="fs-3 text-info-emphasis py-4"></p>
-          <p class="fw-bold fs-4"></p>
-        
-        <!-- Contador de cantidad -->
-        <div class="input-group mb-3 my-5">
-          <button class="btn btn-danger" type="button" id="btn-restar">
-            -
-          </button>
-          <input
-            type="text"
-            class="form-control text-center"
-            value="1"
-            id="contadorProducto"
-          />
-          <button class="btn btn-success" type="button" id="btn-sumar">
-            +
-          </button>
-          
-          </div>
-          <div class="text-md-center me-md-3">
-            <p id="stockLibros" class="fs-6"></p>
-       <a href="./Error404.html" class="btn btn-danger btn-lg mt-4">Comprar</a>
-     </div>
-    </div>
-    <div class="m-auto mt-4 col-12 col-md-6 col-lg-4 mt-lg-0">
-      <h3 class="mt-2 text-danger-emphasis">Sinopsis</h3>
-      <p class="fw-semibold mt-4">
-       
-      </p>
-    </div>
-      </section>
-      <section class="fondo-detalle row container-fluid m-auto mt-3">
-        <h3 class="text-dark my-3 text-lg-start">
-          Ficha Técnica
-        </h3>
-      <div class="col-lg-6 col-md-6">
-        <table class="table table-striped table-responsive ">
-      <tbody>
-          <tr>
-            <th>
-              Tematica
-            </th>
-            <td class="text-info-emphasis">
-              
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Editorial
-            </th>
-            <td class="text-info-emphasis">
-              
-            </td>
-          </tr>
-          <tr>
-            <th>
-              ISBN
-            </th>
-            <td class="text-info-emphasis">
-              
-            </td>
-          </tr>
-      </tbody>
-        </table>
+    <main class="main-detail">
+      <div class="container">
+        <section class="row">
+
+          <article class="col-12 col-lg-4">
+            <div data-aos="fade-right" class="img-book-detail-container">
+              <img
+                class="img-fluid img-book-detail"
+                src="https://www.penguinlibros.com/ar/3193985-thickbox_default/en-agosto-nos-vemos.jpg"
+                alt="libro"
+              />
+            </div>
+          </article>
+
+          <article class="col-12 col-lg-6 mt-3">
+
+            <div class="w-100 d-flex flex-column py-3">
+              <div class="d-flex flex-column position-relative">
+                <div data-aos="fade-left" class="fs-6 position-absolute top-0 end-0 mb-3 editorial-detail">
+                  SUDAMERICANA, March 2024
+                </div>
+
+                <div class="mx-lg-3">
+                  <h3 data-aos="fade-up" class="fs-2 fw-bolder title-detail">En agosto nos vemos</h3>
+                  <h5 data-aos="fade-up" class="fs-5 fw-bold author-detail">Gabriel García Márquez</h5>
+                </div>
+              </div>
+
+              <div class="mx-lg-3">
+                <h5 data-aos="fade-up" class="fs-3 fw-bold mt-3 price-detail">$ 20.000,00</h5>
+
+                <div class="d-flex justify-content-start mt-5">
+                  <div class="p-2 py-3 border border-1 d-flex justify-content-around stock-btn-container">
+                    <button class="btn p-0 btn-stock-detail"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span>10</span>
+                    <button class="btn p-0 btn-stock-detail"><i class="fa-solid fa-chevron-right"></i></button>
+                  </div>
+                  <button class="btn p2 py-3 ms-3 ms-md-2 border-0 rounded-0 btn-buy-detail">COMPRAR</button>
+                </div>
+
+              </div>
+
+              <div class="mx-lg-3 mt-5">
+                <h5 class="fs-5 fw-bold description-title-detail">Descripción</h5>
+                <p class="fs-6 mb-1 description-detail readMore-description-detail!">Cada mes de agosto Ana Magdalena Bach toma el transbordador hasta la isla donde está enterrada su madre para visitar la tumba en la que yace. Esas visitas acaban suponiendo una irresistible invitación a convertirse en una persona distinta durante una noche al año. Escrita en el inconfundible y fascinante estilo de García Márquez, En agosto nos vemos es un canto a la vida, a la resistencia del goce pese al paso del tiempo y al deseo femenino. Un regalo inesperado para los innumerables lectores del Nobel colombiano.</p>
+                <button class="btn-readMore">Leer mas</button>
+              </div>
+
+              <div class="mx-lg-3 mt-5">
+                <div class="py-3 btn-moreDetailProduct-container" data-bs-toggle="collapse" data-bs-target="#moreDetailProduct" aria-expanded="false" aria-controls="moreDetailProduct">
+
+                  <div class="d-flex flex-row justify-content-between align-items-center">
+                    <h5 class="btn fs-6 fw-bold m-0 border-0 btn-moreDetailProduct" type="button"  >
+                      Detalles del producto
+                    </h5>
+                    <i class="fa-solid fa-chevron-down"></i>
+                  </div>
+
+                  <div class="collapse mt-3" id="moreDetailProduct">
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item li-list-detail-product">
+                        <span class="fs-6 fw-bold title-list-detail-product">Editorial</span>
+                        <span class="fs-6 fw-medium value-list-detail-product">SUDAMERICANA, March 2024</span>
+                      </li>
+                      <li class="list-group-item li-list-detail-product">
+                        <span class="fs-6 fw-bold title-list-detail-product">Paginas</span>
+                        <span class="fs-6 fw-medium value-list-detail-product">230</span>
+                      </li>
+                      <li class="list-group-item li-list-detail-product">
+                        <span class="fs-6 fw-bold title-list-detail-product">Genero</span>
+                        <span class="fs-6 fw-medium value-list-detail-product">Fantasia</span>
+                      </li>
+                      <li class="list-group-item li-list-detail-product">
+                        <span class="fs-6 fw-bold title-list-detail-product">Dimensiones</span>
+                        <span class="fs-6 fw-medium value-list-detail-product">23,00 x 12,00</span>
+                      </li>
+                      <li class="list-group-item li-list-detail-product">
+                        <span class="fs-6 fw-bold title-list-detail-product">Idioma</span>
+                        <span class="fs-6 fw-medium value-list-detail-product">ES</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </article>
+        </section>
+
+        <section class="mt-5">
+          <article>
+
+          </article>
+        </section>
       </div>
-        </h3>
-      <div class="col-lg-6 col-md-6">
-        <table class="table table-responsive table-striped">
-      <tbody>
-          <tr>
-            <th>
-              Publicación
-            </th>
-            <td class="text-info-emphasis">
-              27 mar 2024
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Dimensiones
-            </th>
-            <td class="text-info-emphasis">
-              
-            </td>
-          </tr>
-          <tr>
-            <th>
-              Numero de Páginas
-            </th>
-            <td class="text-info-emphasis">
-              
-            </td>
-          </tr>
-      </tbody>
-        </table>
-      </div>
-      </section>
     </main>
 
     <footer class="pt-5 pb-3">
@@ -348,11 +339,7 @@
         <div class="row">
           <!-- Logo -->
           <div class="col-md-3 mb-4 text-center text-md-start">
-            <img
-              src="../assets/logo.png"
-              alt="Logo"
-              class="mb-3 footer-logo"
-            />
+            <img src="../assets/logo.png" alt="Logo" class="mb-3 footer-logo" />
             <p>
               Tu tienda de libros favorita. Ofrecemos una amplia variedad de
               títulos para todos los gustos.
@@ -370,11 +357,27 @@
           <div class="col-md-3 mb-4">
             <h5>Enlaces Rápidos</h5>
             <ul class="list-unstyled">
-              <li><a href="../index.html" class="text-decoration-none">Inicio</a></li>
-              <li><a href="./product.html" class="text-decoration-none">Ofertas</a></li>
-              <li><a href="./Error404.html" class="text-decoration-none">Blog</a></li>
-              <li><a href="./Error404.html" class="text-decoration-none">Contacto</a></li>
-              <li><a href="./product.html" class="text-decoration-none">Catálogo</a></li>
+              <li>
+                <a href="../index.html" class="text-decoration-none">Inicio</a>
+              </li>
+              <li>
+                <a href="./product.html" class="text-decoration-none"
+                  >Ofertas</a
+                >
+              </li>
+              <li>
+                <a href="./error404.html" class="text-decoration-none">Blog</a>
+              </li>
+              <li>
+                <a href="./error404.html" class="text-decoration-none"
+                  >Contacto</a
+                >
+              </li>
+              <li>
+                <a href="./product.html" class="text-decoration-none"
+                  >Catálogo</a
+                >
+              </li>
             </ul>
           </div>
           <!-- Contacto -->
@@ -397,9 +400,15 @@
             </p>
             <!-- Redes Sociales -->
             <div class="ms-3">
-              <a href="./Error404.html" class="me-3"><i class="bi bi-facebook fs-4"></i></a>
-              <a href="./Error404.html" class="me-3"><i class="bi bi-twitter fs-4"></i></a>
-              <a href="./Error404.html" class="me-3"><i class="bi bi-instagram fs-4"></i></a>
+              <a href="./error404.html" class="me-3"
+                ><i class="bi bi-facebook fs-4"></i
+              ></a>
+              <a href="./error404.html" class="me-3"
+                ><i class="bi bi-twitter fs-4"></i
+              ></a>
+              <a href="./error404.html" class="me-3"
+                ><i class="bi bi-instagram fs-4"></i
+              ></a>
             </div>
           </div>
         </div>
@@ -430,21 +439,33 @@
         <div class="row mt-4">
           <div class="col text-center">
             <p>&copy; 2024 Tienda de Libros. Todos los derechos reservados.</p>
-            <a href="./Error404.html" class="text-decoration-none">Política de Privacidad</a>
+            <a href="./error404.html" class="text-decoration-none"
+              >Política de Privacidad</a
+            >
             |
-            <a href="./Error404.html" class="text-decoration-none">Términos y Condiciones</a>
+            <a href="./error404.html" class="text-decoration-none"
+              >Términos y Condiciones</a
+            >
           </div>
         </div>
       </div>
     </footer>
 
     <!-- scripts -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+    "></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/314c3815b6.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="../js/main.js" type="module"></script>
-    <script src="../js/modules/detalle.js" type="module"></script>
+    <script src="../js/detail.js" type="module"></script>
   </body>
 </html>
