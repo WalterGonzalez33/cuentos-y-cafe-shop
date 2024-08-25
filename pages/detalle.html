@@ -30,110 +30,222 @@
     <title>Cuentos y Café</title>
   </head>
   <body class="fondo-detalle ">
-     <header class="navbar navbar-expand-lg d-flex flex-column sticky-top">
-        <div class="container-fluid navbar-color py-2">
-          <div class="container col-12 col-md-4">
-            <form class="d-flex" role="search">
-              <input
-                class="form-control"
-                type="search"
-                id="navBuscar"
-                placeholder="¿Que estas buscando?"
-                aria-label="Search"
-                minlength="5"
-                maxlength="50"
-                required
-              />
-              <label
-                for="navBuscar"
-                class="input-group-text bg-transparent iconoNav">
-                <i class="bi bi-search text-light"></i>
-              </label>
-            </form>
-          </div>
-          <div class="container col-6 col-md-4 text-center">
-            <a class="navbar-brand fs-1 text-light" href="index.html">Cuentos y Café</a>          
-          </div>
-          <div class="container d-flex justify-content-end col-6 col-md-4">
-              <nav class="navbar navbar-expand-lg navbar-dark">
-                  <div class="container-fluid d-flex justify-content-end">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                      <div class="navbar-nav ms-auto align-items-center">
-                        <a class="nav-link text-center active" data-bs-toggle="modal" data-bs-target="#modalIniciaSesion">Iniciá Sesión</a>
-                        <a class="nav-link text-center" href="#">Registrate</a>
-                        <a class="nav-link text-center" href="#">Consultas</a>
-                        <a class="nav-link text-center disabled" aria-disabled="true">Mi Carrito</a>
-                      </div>
-                    </div>
-                  </div>
-              </nav>
-          </div>        
-        </div>
-        <div class="container-fluid navbar2-color text-light justify-content-evenly">
-            <div class="dropdown col-md-2">
-                <button class="btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </button>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Arte y Diseño</a></li>
-                  <li><a class="dropdown-item" href="#">Autoayuda y Desarrollo Personal</a></li>
-                  <li><a class="dropdown-item" href="#">Computacion y Sistemas</a></li>
-                  <li><a class="dropdown-item" href="#">Deportes</a></li>
-                  <li><a class="dropdown-item" href="#">Derecho y Cs Sociales</a></li>
-                  <li><a class="dropdown-item" href="#">Enciclopedias y Diccionarios</a></li>
-                  <li><a class="dropdown-item" href="#">Ficcion y Literatura</a></li>
-                  <li><a class="dropdown-item" href="#">Gastronomia y Cocina</a></li>
-                  <li><a class="dropdown-item" href="#">Hogar</a></li>
-                  <li><a class="dropdown-item" href="#">Hotelería y Turismo</a></li>
-                  <li><a class="dropdown-item" href="#">Infantil y Juvenil</a></li>
-                  <li><a class="dropdown-item" href="#">Ingeniería y Cs Exactas</a></li>
-                  <li><a class="dropdown-item" href="#">Juegos y Recreación</a></li>
-                  <li><a class="dropdown-item" href="#">Negocios y Economía</a></li>
-                  <li><a class="dropdown-item" href="#">Política y Actualidad</a></li>
-                  <li><a class="dropdown-item" href="#">Salud y Cs Naturales</a></li>              
-                </ul>
+     <header>
+      <div class="navbar-fixed">
+        <nav
+          class="navbar navbar-dark navbar-expand-lg bg-body-tertiary navbar-container"
+        >
+          <div class="container-fluid flex-row-reverse flex-lg-row">
+            <div class="card-user-mobile">
+              <a class="fs-3 mx-2 iconNav-navbar" href="./Error404.html"
+                ><i class="bi bi-basket2-fill"></i
+              ></a>
             </div>
-            <div class="col-md-10">
-                <nav class="navbar navbar-expand-md navbar-dark">
-                    <div class="container-fluid">
-                      <a class="nav-link text-center active">Más Vendidas:</a>    
-                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup2" aria-controls="navbarNavAltMarkup2" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon">   
-                        </span>
-                      </button>
-                      <div class="collapse navbar-collapse" id="navbarNavAltMarkup2">
-                        <div class="navbar-nav align-items-center">                  
-                          <a class="nav-link text-center" href="#">Ficcion y Literatura</a>
-                          <a class="nav-link text-center" href="#">Política y Actualidad</a>
-                          <a class="nav-link text-center" href="#">Negocios y Economía</a>
-                          <a class="nav-link text-center" href="#">Infantiles y Juveniles</a>
-                          <a class="nav-link text-center" href="#">Hogar</a>
-                        </div>
-                      </div>
-                    </div>
-                </nav>
-            </div>        
+
+            <a
+              class="navbar-brand m-auto me-lg-4 icon-brand-mobile"
+              href="../index.html"
+              ><img
+                class="icon-navbar ms-3"
+                src="../assets/logo.png"
+                alt="logo"
+            /></a>
+
+            <button
+              class="navbar-toggler rounded-0"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarContentCollapse"
+              aria-controls="navbarContentCollapse"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div
+              class="collapse navbar-collapse justify-content-between"
+              id="navbarContentCollapse"
+            >
+              <div class="input-search-navbar-container">
+                <form class="d-flex my-3 my-lg-0 ms-lg-2" role="search">
+                  <input
+                    class="form-control border-0 rounded-0 input-search-navbar"
+                    type="search"
+                    id="navBuscar"
+                    placeholder="¿Que estas buscando?"
+                    aria-label="Search"
+                    minlength="5"
+                    maxlength="50"
+                    required
+                  />
+                  <button
+                    for="navBuscar"
+                    class="p-2 ms-1 bg-transparent icono-nav"
+                  >
+                    <i class="bi bi-search text-light"></i>
+                  </button>
+                </form>
+              </div>
+
+              <a class="navbar-brand me-lg-4 icon-brand-lg" href="../index.html"
+                ><img class="icon-navbar" src="../assets/logo.png" alt="logo"
+              /></a>
+
+              <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3 nav-ul">
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./Error404.html"
+                    >Sobre nosotros</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-center" href="./product.html"
+                    >Productos</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="cart-user-lg">
+              <a
+                class="fs-3 mx-2 me-3 iconNav-navbar"
+                href="./Error404.html"
+                ><i class="bi bi-basket2-fill"></i
+              ></a>
+            </div>
           </div>
+        </nav>
+        <div>
+          <div class="container-fluid category-container text-light">
+            <div class="navbar-dark">
+              <div class="text-center py-1 btn-category-collapse">
+                <h5>
+                  Categorías
+                  <span class="ms-1">
+                    <i class="fa-solid fa-chevron-up"></i>
+                    <i class="fa-solid fa-chevron-down"></i
+                  ></span>
+                </h5>
+              </div>
+
+              <div class="category-collapse">
+                <div
+                  class="container my-2 my-lg-0 align-items-center category-list"
+                >
+                  <span class="nav-link text-center ciencias-tecnologia"
+                    >Ciencias y tecnología</span
+                  >
+                  <span class="nav-link text-center fantasia">Fantasía</span>
+                  <span class="nav-link text-center ciencia-ficcion"
+                    >Ciencia ficción</span
+                  >
+                  <span class="nav-link text-center terror">Terror</span>
+                  <span class="nav-link text-center misterio">Misterio</span>
+                  <span class="nav-link text-center espiritualidad"
+                    >Espiritualidad</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="modalLogin"
+        data-bs-theme="dark"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="modalLoginLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="img-brand-login">
+            <img src="../assets/logo.png" class="img-fluid" alt="logo" />
+          </div>
+          <div class="modal-content rounded-0">
+            <div class="modal-header border-0">
+              <h1
+                class="modal-title fs-5 fw-bold text-light"
+                id="modalLoginLabel"
+              >
+                INICIA SESION
+              </h1>
+              <button
+                type="button"
+                class="btn-close btn-close-modal"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="form-login" class="mt-5">
+                <div class="mb-4">
+                  <label for="userNameLogin" class="form-label label-login"
+                    >NOMBRE DE USUARIO</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control text-dark rounded-0 focus-ring focus-ring-light inputLogin"
+                    id="userNameLogin"
+                    placeholder="Juan@123"
+                    minlength="3"
+                    maxlength="50"
+                    required
+                  />
+                </div>
+                <div class="mb-4">
+                  <label for="userPasswordLogin" class="form-label label-login"
+                    >CONTRASEÑA</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
+                    id="userPasswordLogin"
+                    placeholder="Ejemplo1@"
+                    minlength="8"
+                    maxlength="20"
+                    required
+                  />
+                  <div id="password-help" class="form-text">
+                    Al menos 8 caracteres y máximo 20, una mayúscula, una
+                    minúscula, un número y un carácter especial (@$!%*?&)
+                  </div>
+                </div>
+                <div class="not-user-container my-2"></div>
+                <button
+                  type="submit"
+                  class="btn text-light rounded-0 btn-login"
+                >
+                  INGRESAR
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
-    <main>
-      <section class="row container-fluid m-auto text-center mt-3">
-        <div class="col-md-3">
+    <main class="main-detalle">
+      <section class="row container-fluid m-auto text-center">
+        <div class="col-md-3 img-container">
           <img
-            src="https://www.planetadelibros.com.ar/usuaris/libros/fotos/394/m_libros/393798_portada_la-materia-de-las-sombras_antonio-runa_202402271304.jpg"
-            class="img-fluid h-100"
-            alt="Producto"
+            src=""
+            class="img-fluid h-100 "
+            alt=""
           />
         </div>
 
         <!-- Información del producto -->
         <div class="col-lg-4 col-md-3 d-flex flex-column align-items-center">
-          <h2 >La Materia de Las Sombras</h2>
-          <p class="fs-5 text-muted pt-3">Terror</p>
-          <p class="fs-3 text-info-emphasis py-4">Antonio Runa</p>
-          <p class="fw-bold fs-4">$ 20.000</p>
+          <h2 ></h2>
+          <p class="fs-5 text-muted pt-3"></p>
+          <p class="fs-3 text-info-emphasis py-4"></p>
+          <p class="fw-bold fs-4"></p>
         
         <!-- Contador de cantidad -->
         <div class="input-group mb-3 my-5">
@@ -149,25 +261,17 @@
           <button class="btn btn-success" type="button" id="btn-sumar">
             +
           </button>
+          
           </div>
           <div class="text-md-center me-md-3">
-       <button class="btn btn-danger btn-lg mt-4">Comprar</button>
+            <p id="stockLibros" class="fs-6"></p>
+       <a href="./Error404.html" class="btn btn-danger btn-lg mt-4">Comprar</a>
      </div>
     </div>
-    <div class="m-auto col-12 col-md-6 col-lg-4 mt-lg-0">
+    <div class="m-auto mt-4 col-12 col-md-6 col-lg-4 mt-lg-0">
       <h3 class="mt-2 text-danger-emphasis">Sinopsis</h3>
       <p class="fw-semibold mt-4">
-        Una plaga de suicidios misteriosos está asolando la ciudad. La
-        policía se plantea varias hipótesis que van desde la influencia de
-        una secta peligrosa a un nuevo tipo de terrorismo. La investigación
-        está en un callejón sin salida.
-      </p>
-      <p class="fw-semibold text-dark mt-lg-5">
-        <strong>La materia de las sombras</strong> es una historia que se desarrolla en
-        varios frentes y que llevará a su protagonista a medirse a amenazas
-        que superarían a cualquiera, y que bien podrían servir para
-        destruirle desde dentro y convertirlo en aquello contra lo que lucha
-        incansablemente
+       
       </p>
     </div>
       </section>
@@ -183,7 +287,7 @@
               Tematica
             </th>
             <td class="text-info-emphasis">
-              Terror
+              
             </td>
           </tr>
           <tr>
@@ -191,7 +295,7 @@
               Editorial
             </th>
             <td class="text-info-emphasis">
-              Planeta
+              
             </td>
           </tr>
           <tr>
@@ -199,7 +303,7 @@
               ISBN
             </th>
             <td class="text-info-emphasis">
-              978-84-450-1680-0
+              
             </td>
           </tr>
       </tbody>
@@ -222,15 +326,15 @@
               Dimensiones
             </th>
             <td class="text-info-emphasis">
-              15 x 23 cm
+              
             </td>
           </tr>
           <tr>
             <th>
-              Tinta texto interior
+              Numero de Páginas
             </th>
             <td class="text-info-emphasis">
-              Blanco y Negro
+              
             </td>
           </tr>
       </tbody>
@@ -245,7 +349,7 @@
           <!-- Logo -->
           <div class="col-md-3 mb-4 text-center text-md-start">
             <img
-              src="../assets/logoIcon.png"
+              src="../assets/logo.png"
               alt="Logo"
               class="mb-3 footer-logo"
             />
@@ -266,11 +370,11 @@
           <div class="col-md-3 mb-4">
             <h5>Enlaces Rápidos</h5>
             <ul class="list-unstyled">
-              <li><a href="#" class="text-decoration-none">Inicio</a></li>
-              <li><a href="#" class="text-decoration-none">Ofertas</a></li>
-              <li><a href="#" class="text-decoration-none">Blog</a></li>
-              <li><a href="#" class="text-decoration-none">Contacto</a></li>
-              <li><a href="#" class="text-decoration-none">Catálogo</a></li>
+              <li><a href="../index.html" class="text-decoration-none">Inicio</a></li>
+              <li><a href="./product.html" class="text-decoration-none">Ofertas</a></li>
+              <li><a href="./Error404.html" class="text-decoration-none">Blog</a></li>
+              <li><a href="./Error404.html" class="text-decoration-none">Contacto</a></li>
+              <li><a href="./product.html" class="text-decoration-none">Catálogo</a></li>
             </ul>
           </div>
           <!-- Contacto -->
@@ -341,5 +445,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../js/main.js" type="module"></script>
+    <script src="../js/modules/detalle.js" type="module"></script>
   </body>
 </html>

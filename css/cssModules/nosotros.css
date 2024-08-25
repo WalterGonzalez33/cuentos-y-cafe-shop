@@ -1,0 +1,108 @@
+/* variables */
+
+:root {
+  --color-primary: #405d72;
+  --color-secondary: #758694;
+  --color-bg-primary: #f7e7dc;
+  --color-bg-secondary: #fff8f3;
+  --color-bg-tertiary: #f1f6fb;
+  --font-primary: "Playfair Display", serif;
+  --font-secondary: "Moderustic", sans-serif;
+}
+
+/* Estilos generales */
+main.sobre-nosotros-body {
+  background-color: var(--color-primary);
+  color: var(--color-bg-secondary);
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-primary);
+  background-image: url('../img/bg-img.jpg'); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Overlay oscuro para mejorar la legibilidad del texto */
+main.sobre-nosotros-body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay oscuro */
+  z-index: -1;
+}
+
+.sobre-nosotros-header {
+  text-align: center;
+  padding: 50px;
+  background-color: rgba(117, 134, 148, 0.9); /* Fondo semitransparente */
+  margin-bottom: 50px;
+  border-radius: 15px; /* Redondear esquinas */
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sobre-nosotros-header h1 {
+  margin: 0;
+  font-size: 2.5rem; /* Tamaño del título ajustado para mejor legibilidad */
+  font-family: var(--font-secondary);
+  color: var(--color-bg-primary); /* Texto blanco */
+}
+
+.sobre-nosotros-header p {
+  font-size: 1.1rem; /* Tamaño del texto ajustado */
+  max-width: 800px;
+  margin: 20px auto 0;
+  color: var(--color-bg-primary); /* Texto blanco */
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Alinea los miembros al centro */
+  padding: 20px;
+}
+
+.miembro-equipo {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo más opaco */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin: 10px; /* Espaciado entre los miembros */
+  width: calc(50% - 20px); /* Ajusta el ancho para el espaciado */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  transition: transform 0.3s ease;
+}
+
+.miembro-equipo:hover {
+  transform: translateY(-5px); /* Menos pronunciado para el hover */
+}
+
+.miembro-equipo img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid var(--color-secondary);
+}
+
+.miembro-equipo h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: var(--color-primary); /* Nombre en color primario */
+}
+
+.miembro-equipo h3 {
+  font-size: 1.2rem;
+  margin: 5px 0;
+  color: var(--color-secondary); /* Rol en color secundario */
+}
+
+.miembro-equipo p {
+  font-size: 1rem;
+}

@@ -15,11 +15,9 @@
       name="keywords"
       content="E-commerce libros cuentos historia romance acción cuentos y café"
     />
-    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/logoIcon.png" type="image/x-icon" />
     <link
-      href="
-https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
-"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css"
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -29,7 +27,9 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/cssModules/nosotros.css" />
+    <link rel="stylesheet" href="../css/cssModules/navbar.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Cuentos y Café</title>
   </head>
   <body>
@@ -40,14 +40,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
         >
           <div class="container-fluid flex-row-reverse flex-lg-row">
             <div class="card-user-mobile">
-              <a class="fs-3 mx-2 iconNav-navbar" href="./pages/error404.html"
+              <a class="fs-3 mx-2 iconNav-navbar" href="../pages/error404.html"
                 ><i class="bi bi-basket2-fill"></i
               ></a>
             </div>
 
             <a
               class="navbar-brand m-auto me-lg-4 icon-brand-mobile"
-              href="./index.html"
+              href="../index.html"
               ><img
                 class="icon-navbar ms-3"
                 src="../assets/logo.png"
@@ -76,14 +76,14 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                     class="form-control border-0 rounded-0 input-search-navbar"
                     type="search"
                     id="navBuscar"
-                    placeholder="¿Que estas buscando?"
+                    placeholder="¿Qué estás buscando?"
                     aria-label="Search"
                     minlength="5"
                     maxlength="50"
                     required
                   />
                   <button
-                    for="navBuscar"
+                    type="submit"
                     class="p-2 ms-1 bg-transparent icono-nav"
                   >
                     <i class="bi bi-search text-light"></i>
@@ -91,21 +91,23 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
                 </form>
               </div>
 
-              <a class="navbar-brand me-lg-4 icon-brand-lg" href="./index.html"
+              <a class="navbar-brand me-lg-4 icon-brand-lg" href="../index.html"
                 ><img class="icon-navbar" src="../assets/logo.png" alt="logo"
               /></a>
 
               <ul class="navbar-nav mb-2 mb-lg-0 me-lg-3 nav-ul">
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./index.html">Inicio</a>
+                  <a class="nav-link text-center" href="../index.html"
+                    >Inicio</a
+                  >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./pages/error404.html"
+                  <a class="nav-link text-center" href="../pages/error404.html"
                     >Sobre nosotros</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link text-center" href="./pages/product.html"
+                  <a class="nav-link text-center" href="../pages/product.html"
                     >Productos</a
                   >
                 </li>
@@ -114,129 +116,242 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.min.css
             <div class="cart-user-lg">
               <a
                 class="fs-3 mx-2 me-3 iconNav-navbar"
-                href="pages/error404.html"
+                href="../pages/error404.html"
                 ><i class="bi bi-basket2-fill"></i
               ></a>
             </div>
           </div>
         </nav>
-        <div>
-          <div class="container-fluid category-container text-light">
-            <div class="navbar-dark">
-              <div class="text-center py-1 btn-category-collapse">
-                <h5>
-                  Categorías
-                  <span class="ms-1">
-                    <i class="fa-solid fa-chevron-up"></i>
-                    <i class="fa-solid fa-chevron-down"></i
-                  ></span>
-                </h5>
-              </div>
 
-              <div class="category-collapse">
-                <div
-                  class="container my-2 my-lg-0 align-items-center category-list"
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="modalLogin"
+          data-bs-theme="dark"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="modalLoginLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+              <div class="modal-header border-0">
+                <h1
+                  class="modal-title fs-5 fw-bold text-light"
+                  id="modalLoginLabel"
                 >
-                  <span class="nav-link text-center ciencias-tecnologia"
-                    >Ciencias y tecnología</span
-                  >
-                  <span class="nav-link text-center fantasia">Fantasía</span>
-                  <span class="nav-link text-center ciencia-ficcion"
-                    >Ciencia ficción</span
-                  >
-                  <span class="nav-link text-center terror">Terror</span>
-                  <span class="nav-link text-center misterio">Misterio</span>
-                  <span class="nav-link text-center espiritualidad"
-                    >Espiritualidad</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Modal -->
-      <div
-        class="modal"
-        id="modalLogin"
-        data-bs-theme="dark"
-        data-bs-backdrop="static"
-        data-bs-keyboard="false"
-        tabindex="-1"
-        aria-labelledby="modalLoginLabel"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="img-brand-login">
-            <img src="../assets/logo.png" class="img-fluid" alt="logo" />
-          </div>
-          <div class="modal-content rounded-0">
-            <div class="modal-header border-0">
-              <h1
-                class="modal-title fs-5 fw-bold text-light"
-                id="modalLoginLabel"
-              >
-                INICIA SESION
-              </h1>
-              <button
-                type="button"
-                class="btn-close btn-close-modal"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <form id="form-login" class="mt-5">
-                <div class="mb-4">
-                  <label for="userNameLogin" class="form-label label-login"
-                    >NOMBRE DE USUARIO</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control text-dark rounded-0 focus-ring focus-ring-light inputLogin"
-                    id="userNameLogin"
-                    placeholder="Juan@123"
-                    minlength="3"
-                    maxlength="50"
-                    required
-                  />
-                </div>
-                <div class="mb-4">
-                  <label for="userPasswordLogin" class="form-label label-login"
-                    >CONTRASEÑA</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
-                    id="userPasswordLogin"
-                    placeholder="Ejemplo1@"
-                    minlength="8"
-                    maxlength="20"
-                    required
-                  />
-                  <div id="password-help" class="form-text">
-                    Al menos 8 caracteres y máximo 20, una mayúscula, una
-                    minúscula, un número y un carácter especial (@$!%*?&)
-                  </div>
-                </div>
-                <div class="not-user-container my-2"></div>
+                  INICIA SESIÓN
+                </h1>
                 <button
-                  type="submit"
-                  class="btn text-light rounded-0 btn-login"
-                >
-                  INGRESAR
-                </button>
-              </form>
+                  type="button"
+                  class="btn-close btn-close-modal"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="form-login" class="mt-5">
+                  <div class="mb-4">
+                    <label for="userNameLogin" class="form-label label-login">
+                      NOMBRE DE USUARIO
+                    </label>
+                    <input
+                      type="text"
+                      class="form-control text-dark rounded-0 focus-ring focus-ring-light inputLogin"
+                      id="userNameLogin"
+                      placeholder="Juan@123"
+                      minlength="3"
+                      maxlength="50"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label
+                      for="userPasswordLogin"
+                      class="form-label label-login"
+                    >
+                      CONTRASEÑA
+                    </label>
+                    <input
+                      type="password"
+                      class="form-control text-dark mb-2 rounded-0 focus-ring focus-ring-light inputLogin"
+                      id="userPasswordLogin"
+                      placeholder="Ejemplo1@"
+                      minlength="8"
+                      maxlength="20"
+                      required
+                    />
+                    <div id="password-help" class="form-text">
+                      Al menos 8 caracteres y máximo 20, una mayúscula, una
+                      minúscula, un número y un carácter especial (@$!%*?&)
+                    </div>
+                  </div>
+                  <div class="not-user-container my-2"></div>
+                  <button
+                    type="submit"
+                    class="btn text-light rounded-0 btn-login"
+                  >
+                    INGRESAR
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="sobre-nosotros-header">
-        <h1>Sobre Nosotros</h1>
-        <p>En Cuento y Café, somos un equipo apasionado por la literatura y la tecnología. Nos unimos con un objetivo común: crear un espacio donde los amantes de los libros puedan encontrar y compartir sus historias favoritas mientras disfrutan de una buena taza de café.</p>
       </div>
     </header>
-<main class="sobre-nosotros-body">
 
-</main>
+    <main class="sobre-nosotros-body">
+      <section class="sobre-nosotros-header">
+        <h1>Sobre Nosotros</h1>
+        <p>
+          En Cuento y Café, somos un equipo apasionado por la literatura y la
+          tecnología. Nos unimos con un objetivo común: crear un espacio donde
+          los amantes de los libros puedan encontrar y compartir sus historias
+          favoritas mientras disfrutan de una buena taza de café.
+        </p>
+      </section>
+
+      <section class="team">
+        <div class="miembro-equipo">
+          <img src="../assets/Fabricio Neme.jpg" alt="Fabricio Neme" />
+          <h2>Fabricio Neme</h2>
+          <h3>Estudiante</h3>
+        </div>
+
+        <div class="miembro-equipo">
+          <img src="../assets/Luis Avila.jpeg" alt="Luis" />
+          <h2>Luis</h2>
+          <h3>Estudiante</h3>
+        </div>
+
+        <div class="miembro-equipo">
+          <img
+            src="../assets/Augusto.jpeg "
+            alt="Augusto"
+          />
+          <h2>Augusto</h2>
+          <h3>Estudiante</h3>
+        </div>
+
+        <div class="miembro-equipo">
+          <img
+            src="../assets/Walter Gonzalez.jpeg"
+            alt="Walter"
+          />
+          <h2>Walter</h2>
+          <h3>Estudiante</h3>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pt-5 pb-3 footer-container">
+      <div class="container p-3 text-center text-md-start">
+        <div class="row">
+          <!-- Logo -->
+          <div class="col-md-3 mb-4 text-center text-md-start">
+            <img src="../assets/logo.png" alt="Logo" class="mb-3 footer-logo" />
+            <p>
+              Tu tienda de libros favorita. Ofrecemos una amplia variedad de
+              títulos para todos los gustos.
+            </p>
+          </div>
+          <!-- Sobre Nosotros -->
+          <div class="col-md-3 mb-4">
+            <h5>Sobre Nosotros</h5>
+            <p>
+              Somos apasionados por la lectura y queremos compartir esa pasión
+              con nuestros clientes.
+            </p>
+          </div>
+          <!-- Enlaces Rápidos -->
+          <div class="col-md-3 mb-4">
+            <h5>Enlaces Rápidos</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-decoration-none">Inicio</a></li>
+              <li><a href="#" class="text-decoration-none">Ofertas</a></li>
+              <li><a href="#" class="text-decoration-none">Blog</a></li>
+              <li><a href="#" class="text-decoration-none">Contacto</a></li>
+              <li><a href="#" class="text-decoration-none">Catálogo</a></li>
+            </ul>
+          </div>
+          <!-- Contacto -->
+          <div class="col-md-3 mb-4">
+            <h5>Contacto</h5>
+            <p>
+              <span
+                ><i class="bi bi-geo-alt-fill"></i> Calle Ficticia 123, Ciudad,
+                País</span
+              >
+            </p>
+            <p>
+              <span><i class="bi bi-telephone-fill"></i> +123 456 7890</span>
+            </p>
+            <p>
+              <span
+                ><i class="bi bi-envelope-fill"></i>
+                contacto@tiendalibros.com</span
+              >
+            </p>
+            <!-- Redes Sociales -->
+            <div class="ms-3">
+              <a href="#" class="me-3"><i class="bi bi-facebook fs-4"></i></a>
+              <a href="#" class="me-3"><i class="bi bi-twitter fs-4"></i></a>
+              <a href="#" class="me-3"><i class="bi bi-instagram fs-4"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Métodos de Pago -->
+        <div class="row mt-4">
+          <div class="col text-center">
+            <h5>Métodos de Pago</h5>
+            <img
+              src="../assets/Visa.png"
+              alt="Visa"
+              class="me-2"
+              style="max-width: 50px"
+            />
+            <img
+              src="../assets/Mastercard.png"
+              alt="MasterCard"
+              class="me-2"
+              style="max-width: 50px"
+            />
+            <img
+              src="../assets/PayPal.png"
+              alt="PayPal"
+              style="max-width: 50px"
+            />
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="row mt-4">
+          <div class="col text-center">
+            <p>&copy; 2024 Tienda de Libros. Todos los derechos reservados.</p>
+            <a href="#" class="text-decoration-none">Política de Privacidad</a>
+            |
+            <a href="#" class="text-decoration-none">Términos y Condiciones</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2@11.12.4/dist/sweetalert2.all.min.js
+    "></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/314c3815b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/main.js" type="module"></script>
+    <script src="../js/indexPag.js" type="module"></script>
+  </body>
+</html>
