@@ -39,7 +39,8 @@ export const validateLength = (
   input,
   minLength,
   maxLength,
-  requiredInput = false
+  requiredInput = false,
+  newClass = "not"
 ) => {
   const msjInvalid = `El ${nameInput} tiene que tener entre ${minLength} a ${maxLength} caracteres`;
   const msjRequiredInput = `El ${nameInput} es un campo requerido`;
@@ -47,7 +48,7 @@ export const validateLength = (
   if (requiredInput) {
     if (input.value.length === 0) {
       msjInvalidInput(msjRequiredInput, input);
-      input.className = "form-control";
+      input.className = newClass != "not" ? newClass : "form-control";
       input.classList.add("is-invalid");
       input.focus();
       return false;
@@ -56,11 +57,11 @@ export const validateLength = (
 
   if (input.value.length > 0) {
     if (input.value.length >= minLength && input.value.length <= maxLength) {
-      input.className = "form-control";
+      input.className = newClass != "not" ? newClass : "form-control";
       return true;
     } else {
       msjInvalidInput(msjInvalid, input);
-      input.className = "form-control";
+      input.className = newClass != "not" ? newClass : "form-control";
       input.classList.add("is-invalid");
       input.focus();
       return false;
@@ -68,7 +69,7 @@ export const validateLength = (
   }
 
   msjInvalidInput("N/D", input, false);
-  input.className = "form-control";
+  input.className = newClass != "not" ? newClass : "form-control";
   return true;
 };
 
@@ -224,7 +225,7 @@ export const setInputsValue = (bookData) => {
   inputDescription.value = bookData.description;
   inputEditorial.value = bookData.editorial;
   inputGenre.value = bookData.genre;
-}
+};
 export const getInputsValue = () => {
   return {
     fromBookUrl: inputFromBookUrl.value,
@@ -237,6 +238,6 @@ export const getInputsValue = () => {
     dimensions: inputDimensions.value,
     description: inputDescription.value,
     editorial: inputEditorial.value,
-    genre: inputGenre.value
-  }
-}
+    genre: inputGenre.value,
+  };
+};

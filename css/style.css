@@ -9,12 +9,13 @@
 
 /* módulos */
 
+@import url(./cssModules/error404.css);
 @import url(./cssModules/main.css);
 @import url(./cssModules/products.css);
 @import url(./cssModules/admin.css);
 @import url(./cssModules/customAlerts.css);
 @import url(./cssModules/navbar.css);
-@import url(./cssModules/detalle.css);
+@import url(./cssModules/detail.css);
 
 /* variables */
 
@@ -24,6 +25,7 @@
   --color-bg-primary: #f7e7dc;
   --color-bg-secondary: #fff8f3;
   --color-bg-tertiary: #f1f6fb;
+  --text-color-primary: #5d5d5d;
   --font-primary: "Playfair Display", serif;
   --font-secondary: "Moderustic", sans-serif;
 }
@@ -50,6 +52,7 @@ main {
 }
 
 .footer-container {
+  color: var(--text-color-primary);
   margin-top: 150px;
   background-color: var(--color-bg-tertiary);
 }
@@ -58,10 +61,10 @@ main {
   padding-bottom: 20px;
 }
 
-#img-Banner-2 {
+.img-Banner-2 {
   object-position: 80%;
 }
-#img-Banner-3 {
+.img-Banner-3 {
   object-position: 5%;
 }
 .color-Borde {
@@ -69,6 +72,16 @@ main {
 }
 .color-Fondo {
   background-color: transparent;
+}
+
+.link-footer{
+  color: var(--color-primary) !important;
+  font-weight: 700;
+  text-decoration: underline !important;
+
+  &:hover{
+    color: var(--color-secondary);
+  }
 }
 
 @media (max-width: 576px) {

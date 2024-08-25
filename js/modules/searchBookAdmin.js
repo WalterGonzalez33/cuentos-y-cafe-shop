@@ -30,4 +30,4 @@ const handlerSearch = (event) => {
 }
 
 formSearchAdmin.addEventListener('submit', handlerSearch)
-inputSearchAdmin.addEventListener('change', handlerSearch)
+inputSearchAdmin.addEventListener('input', handlerSearch)
