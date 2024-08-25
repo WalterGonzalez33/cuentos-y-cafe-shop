@@ -1,7 +1,7 @@
 "use strict";
 
 const formAdmin = document.querySelector("#formAdmin");
-const modalTitle = document.querySelector(".modal-title");
+const modalTitle = document.querySelector(".modal-title-admin");
 const btnModalSubmit = document.querySelector(".btn-submit-admin");
 const modal = document.querySelector("#createBook");
 const modalCreateBook = new bootstrap.Modal(modal);

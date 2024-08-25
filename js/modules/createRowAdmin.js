@@ -1,6 +1,10 @@
 "use strict";
 
-import { renderQuantityBooks, renderRowsAdmin, showResetBooksList } from "../admin.js";
+import {
+  renderQuantityBooks,
+  renderRowsAdmin,
+  showResetBooksList,
+} from "../admin.js";
 import { books } from "../main.js";
 import { hideModal, showModalEdit } from "./modalAdmin.js";
 import { setScrollTableTop } from "./searchBookAdmin.js";
@@ -13,14 +17,14 @@ import {
 export const tbodyTableAdmin = document.querySelector(".tbody-table-admin");
 const formAdmin = document.querySelector("#formAdmin");
 
-let indexRendering = 0
+let indexRendering = 0;
 let isEditBook = false;
 let currentBookId = null;
 let currentBtnEdit = null;
 
 const redirectionDetailProduct = (id) => {
-  window.location.href = `/pages/detalle.html?id=${id}`
-}
+  window.location.href = `/pages/detalle.html?id=${id}`;
+};
 
 // fn --> elimina un libro de la lista y los vuelve a renderizar
 const deleteBook = (bookParam) => {
@@ -31,10 +35,10 @@ const deleteBook = (bookParam) => {
     localStorage.setItem("books", JSON.stringify(books));
 
     // renderizar la tabla
-    tbodyTableAdmin.innerHTML = ''
-    indexRendering = renderRowsAdmin(books,indexRendering, indexRendering)
+    tbodyTableAdmin.innerHTML = "";
+    indexRendering = renderRowsAdmin(books, indexRendering, indexRendering);
     indexRendering = 0;
-    setScrollTableTop()
+    setScrollTableTop();
   };
 
   Swal.fire({
@@ -51,7 +55,7 @@ const deleteBook = (bookParam) => {
     if (result.isConfirmed) {
       deleteDateBook();
       renderQuantityBooks();
-      showResetBooksList()
+      showResetBooksList();
       Swal.fire({
         title: "Libro borrado correctamente",
         text: "",
@@ -91,7 +95,29 @@ const editAllDataBook = (indexBook) => {
   books[indexBook].dimensions = dimensions;
   books[indexBook].description = description;
   books[indexBook].editorial = editorial;
-  books[indexBook].genre = genre;
+  switch (genre) {
+    case "1":
+      books[indexBook].genre = "Ciencias y tecnología";
+      break;
+    case "2":
+      books[indexBook].genre = "Fantasía";
+      break;
+    case "3":
+      books[indexBook].genre = "Ciencia ficción";
+      break;
+    case "4":
+      books[indexBook].genre = "Terror";
+      break;
+    case "5":
+      books[indexBook].genre = "Misterio";
+      break;
+    case "6":
+      books[indexBook].genre = "Espiritualidad";
+      break;
+    default:
+      books[indexBook].genre = "No especificado";
+      break;
+  }
 
   localStorage.setItem("books", JSON.stringify(books));
 };
@@ -173,9 +199,9 @@ const tdActionsBtn = (book) => {
   divContainer.appendChild(buttonDeleteBook);
   td.appendChild(divContainer);
 
-  buttonViewBook.addEventListener('click', () => {
-    redirectionDetailProduct(book.id)
-  })
+  buttonViewBook.addEventListener("click", () => {
+    redirectionDetailProduct(book.id);
+  });
   buttonEditBook.addEventListener("click", () => {
     isEditBook = true;
     editBook(book, buttonEditBook);

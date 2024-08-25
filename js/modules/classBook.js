@@ -141,8 +141,30 @@ class Book {
   set pagNumbers(newPagNumbers) {
     this.#pagNumbers = newPagNumbers;
   }
-  set genre(newGenre) {
-    this.#genre = newGenre;
+  set genre(newGenre) { 
+    switch (newGenre) {
+      case "1":
+        this.#genre = "Ciencias y tecnología";
+        break;
+      case "2":
+        this.#genre = "Fantasía";
+        break;
+      case "3":
+        this.#genre = "Ciencia ficción";
+        break;
+      case "4":
+        this.#genre = "Terror";
+        break;
+      case "5":
+        this.#genre = "Misterio";
+        break;
+      case "6":
+        this.#genre = "Espiritualidad";
+        break;
+      default:
+        this.#genre = 'no funca';
+        break;
+    }
   }
 
   toJSON() {

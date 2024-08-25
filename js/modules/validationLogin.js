@@ -18,12 +18,12 @@ const validatePassword = (inputPassword, minLength, maxLength) => {
       inputPassword.value.length <= maxLength
     ) {
       if (regexPassword.test(inputPassword.value)) {
-        inputPassword.className = "form-control";
+        inputPassword.className = "form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin";
         textHelpPassword.style.color = "#b6bcc5";
         return true;
       } else {
         msjInvalidInput("N/D", inputPassword, false);
-        inputPassword.className = "form-control";
+        inputPassword.className = "form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin";
         inputPassword.classList.add("is-invalid");
         inputPassword.focus();
         textHelpPassword.style.color = "#ea868f";
@@ -31,7 +31,7 @@ const validatePassword = (inputPassword, minLength, maxLength) => {
       }
     } else {
       msjInvalidInput("N/D", inputPassword, false);
-      inputPassword.className = "form-control";
+      inputPassword.className = "form-control form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin";
       inputPassword.classList.add("is-invalid");
       inputPassword.focus();
       textHelpPassword.style.color = "#ea868f";
@@ -39,7 +39,7 @@ const validatePassword = (inputPassword, minLength, maxLength) => {
     }
   }
 
-  inputPassword.className = "form-control";
+  inputPassword.className = "form-control form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin";
   return true;
 };
 const handlerValidationLogin = () => {
@@ -48,7 +48,8 @@ const handlerValidationLogin = () => {
     inputUserName,
     3,
     30,
-    true
+    true,
+    "form-control form-control form-control-navbar text-dark rounded-0 focus-ring focus-ring-light inputLogin"
   );
   const validateUserPassword = validatePassword(inputUserPassword, 8, 20);
 
