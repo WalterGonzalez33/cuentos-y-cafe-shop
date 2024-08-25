@@ -2,6 +2,8 @@
 .main-detail{
     margin-top: 130px;
     font-family: var(--font-secondary);
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .img-book-detail-container{
@@ -61,9 +63,11 @@
     color: var(--text-color-primary);
 }
 .description-title-detail{
+    user-select: none;
     color: var(--text-color-primary);
 }
 .description-detail{
+    transition: all 1s ease;
     color: var(--text-color-primary);
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -102,6 +106,7 @@
     justify-content: space-between;
 
     .title-list-detail-product{
+        user-select: none;
         color: var(--text-color-primary);
     }
     .value-list-detail-product{
@@ -109,7 +114,13 @@
     }
 }
 
+.section-other-books{
+    margin-top: 180px;
+}
 
+.title-other-books{
+    color: var(--text-color-primary);
+}
 
 
 @media (max-width: 576px){
