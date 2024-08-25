@@ -162,7 +162,7 @@ class Book {
         this.#genre = "Espiritualidad";
         break;
       default:
-        this.#genre = 'no funca';
+        this.#genre = newGenre;
         break;
     }
   }
