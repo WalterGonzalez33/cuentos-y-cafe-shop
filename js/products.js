@@ -98,14 +98,22 @@ const filterBooks = () => {
   setCurrentParamURL();
 
   const booksInstanceFilter = JSON.parse(localStorage.getItem("books"));
+  console.log(currentFilter);
+  console.log(booksInstanceFilter);
+
+  
   const filterBooks = booksInstanceFilter.filter((book) => {
     if (book.genre.toLowerCase() === currentFilter.toLowerCase()) {
       return book;
     }
   });
+  console.log(filterBooks);
+  
 
   if (currentFilter != "default" && filterBooks.length > 0) {
     booksFilter = filterBooks;
+    console.log(booksFilter);
+    
   } else booksFilter = books;
 };
 
