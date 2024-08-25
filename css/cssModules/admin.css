@@ -2,11 +2,28 @@
   background-color: var(--color-bg-tertiary);
   background-size: cover;
   backdrop-filter: blur(0px);
+  overflow: hidden;
+  overflow-y: scroll;
 }
 .main-container {
   margin-top: 110px;
   background-color: var(--color-bg-tertiary);
   min-height: 100vh;
+}
+
+.tbody-table-admin{
+  & tr:nth-child(odd) > td{
+    background-color: var(--color-secondary);
+  }
+
+  & tr:nth-child(even) > td{
+    background-color: #334959;
+  }
+
+  & tr > th {
+    background-color: var(--color-primary);
+    border-right: 1px solid #00000046;
+  }
 }
 
 .input-search-admin {
@@ -28,16 +45,28 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .btn-search-admin {
+
+  &:active{
+    background-color: var(--color-secondary) !important;
+  }
   &:hover {
     background-color: var(--color-primary);
   }
 }
 .btn-add-admin {
+  color: rgb(0, 0, 0);
+  border: 1px solid var(--color-secondary);
+
+  &:active{
+    background-color: var(--color-secondary) !important;
+  }
   &:hover {
     background-color: var(--color-secondary);
+    border: 1px solid var(--color-secondary);
   }
 }
 .table-container-admin {
+  background-color: var(--color-primary);
   max-height: 550px;
   font-size: 0.83rem;
   position: relative;
@@ -80,8 +109,14 @@
 
 .img-product-admin {
   max-width: 88px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
 }
 
+.txt-admin-products{
+  color: var(--color-primary) !important;
+  font-weight: 900;
+}
 .isbn {
   min-width: 200px;
 }
@@ -103,8 +138,11 @@
 }
 
 .btn-table-admin {
-  color: var(--color-secondary);
+  color: var(--color-bg-tertiary);
 
+  &:hover{
+    opacity: .7;
+  }
   &.btn-trash:hover {
     color: #ef5353;
   }
@@ -125,6 +163,7 @@
   background-color: var(--color-bg-tertiary);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
+
 .modal-header-custom {
   background-color: var(--color-primary);
 }
@@ -163,9 +202,22 @@
   }
 }
 
-@media (min-width: 577px) and (max-width: 992px) {
+@media (min-width: 577px) and (max-width: 1400px) {
   .table-container-admin {
     max-height: 800px;
     overflow-x: scroll;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+  .table-container-admin {
+    max-height: 800px;
+    overflow-x: scroll;
+  }
+
+  .modal-dialog-admin{
+    max-height: 100vh;
+    overflow-y: scroll;
+    margin: auto;
   }
 }

@@ -19,8 +19,63 @@ const btnAddBook = document.querySelector(".btn-add-admin");
 const formAdmin = document.querySelector("#formAdmin");
 const viewMoreContainer = document.querySelector(".viewMoreContainer");
 
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+const users = JSON.parse(localStorage.getItem("users"));
+
 let isCreateBook = false;
 let indexRenderRows = 0;
+
+const currentUserIsAdmin = () => {
+  if (currentUser === null) {
+    return false;
+  }
+  const isAdmin = users.find((user) => {
+    if (
+      user.userName === currentUser.userName &&
+      user.userPassword === currentUser.userPassword
+    ) {
+      return user;
+    }
+  });
+
+  if (isAdmin.isAdmin) {
+    return true;
+  }
+
+  return false;
+};
+
+const redirectionToHome = () => {
+  let timerInterval;
+
+  if (!currentUserIsAdmin()) {
+    Swal.fire({
+      title: "No estas registrado como administrador",
+      html: "Te vamos a dirigir al inicio <b></b> segundos.",
+      timer: 5000,
+      timerProgressBar: true,
+      customClass: {
+        popup: "custom-alert",
+        confirmButton: "btn-confirm",
+      },
+      didOpen: () => {
+        Swal.showLoading();
+        const timer = Swal.getPopup().querySelector("b");
+        timerInterval = setInterval(() => {
+          timer.textContent = `${Math.floor(Swal.getTimerLeft() / 1000)}`;
+        }, 1000);
+      },
+      willClose: () => {
+        clearInterval(timerInterval);
+      },
+    }).then((result) => {
+      /* Read more about handling dismissals below */
+      if (result.dismiss === Swal.DismissReason.timer) {
+        window.location.href = "/index.html";
+      }
+    });
+  }
+};
 
 const resetBooksList = () => {
   localStorage.setItem("setLocalData", true);
@@ -127,7 +182,7 @@ export const renderQuantityBooks = () => {
   const quantityStock = books.reduce((stock, book) => {
     return stock + parseInt(book.stock);
   }, 0);
-  textQuantityBooks.innerHTML = `Libros: ${books.length + 1}`;
+  textQuantityBooks.innerHTML = `Libros: ${books.length}`;
   textQuantityStock.innerHTML = `Stock: ${quantityStock} ud`;
 };
 // fn --> renderiza 5 libros en la tabla
@@ -152,10 +207,18 @@ const handlerClickAddBook = () => {
   showModal();
 };
 
-btnAddBook.addEventListener("click", handlerClickAddBook);
-formAdmin.removeEventListener("submit", handlerSubmit);
-formAdmin.addEventListener("submit", handlerSubmit);
-renderQuantityBooks();
-indexRenderRows = renderRowsAdmin(books, indexRenderRows, indexRenderRows);
-btnReset.addEventListener("click", resetBooksList);
-showResetBooksList();
+redirectionToHome();
+
+if (currentUserIsAdmin()) {
+  btnAddBook.addEventListener("click", handlerClickAddBook);
+  formAdmin.removeEventListener("submit", handlerSubmit);
+  formAdmin.addEventListener("submit", handlerSubmit);
+  renderQuantityBooks();
+  indexRenderRows = renderRowsAdmin(books, indexRenderRows, indexRenderRows);
+  btnReset.addEventListener("click", resetBooksList);
+  showResetBooksList();
+} else {
+  setTimeout(() => {
+    window.location.href = "/index.html";
+  }, "5000");
+}
