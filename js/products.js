@@ -17,29 +17,6 @@ const renderCardsContainer = document.querySelector(".render-cards-container");
 let booksFilter = [];
 let currentFilter = "default";
 
-const setCurrentParamURL = () => {
-  const filterParam = new URLSearchParams(window.location.search).get("filter");
-
-  if (filterParam === "ciencias-y-tecnologia") {
-    currentFilter = "ciencias y tecnología";
-  }
-  if (filterParam === "fantasia") {
-    currentFilter = "fantasía";
-  }
-  if (filterParam === "ciencia-ficcion") {
-    currentFilter = "ciencia ficción";
-  }
-  if (filterParam === "terror") {
-    currentFilter = "terror";
-  }
-  if (filterParam === "misterio") {
-    currentFilter = "misterio";
-  }
-  if (filterParam === "espiritualidad") {
-    currentFilter = "espiritualidad";
-  }
-}
-
 const activeFilter = () => {
   if (inputMaxFilter.value.length === 0 && inputMinFilter.value.length === 0) {
     renderCardsContainer.innerHTML = "";
@@ -94,8 +71,35 @@ const changeTitleFilter = () => {
   renderCardsContainer.append(nodeTitle);
 };
 const filterBooks = () => {
-  const filterBooks = books.filter((book) => {
-    if (book.genre.toLowerCase() === currentFilter) {
+  const setCurrentParamURL = () => {
+    const filterParam = new URLSearchParams(window.location.search).get(
+      "filter"
+    );
+
+    if (filterParam === "ciencias-y-tecnologia") {
+      currentFilter = "ciencias y tecnología";
+    }
+    if (filterParam === "fantasia") {
+      currentFilter = "fantasía";
+    }
+    if (filterParam === "ciencia-ficcion") {
+      currentFilter = "ciencia ficción";
+    }
+    if (filterParam === "terror") {
+      currentFilter = "terror";
+    }
+    if (filterParam === "misterio") {
+      currentFilter = "misterio";
+    }
+    if (filterParam === "espiritualidad") {
+      currentFilter = "espiritualidad";
+    }
+  };
+  setCurrentParamURL();
+
+  const booksInstanceFilter = JSON.parse(localStorage.getItem("books"));
+  const filterBooks = booksInstanceFilter.filter((book) => {
+    if (book.genre.toLowerCase() === currentFilter.toLowerCase()) {
       return book;
     }
   });
@@ -121,7 +125,6 @@ const handlerSubmitFilter = (event) => {
   }
 };
 
-setCurrentParamURL()
 filterBooks();
 changeTitleFilter();
 renderAllProducts(booksFilter);

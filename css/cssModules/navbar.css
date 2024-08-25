@@ -118,6 +118,10 @@
   display: none;
   position: relative;
   z-index: 9;
+
+  & h5{
+    user-select: none;
+  }
 }
 .category-collapse{
   position: static;
