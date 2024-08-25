@@ -63,7 +63,7 @@ class Book {
         this.#genre = "Espiritualidad";
         break;
       default:
-        this.#genre = "No especificado";
+        this.#genre = genre;
         break;
     }
   }
