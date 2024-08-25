@@ -14,27 +14,30 @@ const inputMaxFilter = document.querySelector("#max-price");
 
 const renderCardsContainer = document.querySelector(".render-cards-container");
 
-const filterParam = new URLSearchParams(window.location.search).get("filter");
 let booksFilter = [];
 let currentFilter = "default";
 
-if (filterParam === "ciencias-y-tecnologia") {
-  currentFilter = "ciencias y tecnología";
-}
-if (filterParam === "fantasia") {
-  currentFilter = "fantasía";
-}
-if (filterParam === "ciencia-ficcion") {
-  currentFilter = "ciencia ficción";
-}
-if (filterParam === "terror") {
-  currentFilter = "terror";
-}
-if (filterParam === "misterio") {
-  currentFilter = "misterio";
-}
-if (filterParam === "espiritualidad") {
-  currentFilter = "espiritualidad";
+const setCurrentParamURL = () => {
+  const filterParam = new URLSearchParams(window.location.search).get("filter");
+
+  if (filterParam === "ciencias-y-tecnologia") {
+    currentFilter = "ciencias y tecnología";
+  }
+  if (filterParam === "fantasia") {
+    currentFilter = "fantasía";
+  }
+  if (filterParam === "ciencia-ficcion") {
+    currentFilter = "ciencia ficción";
+  }
+  if (filterParam === "terror") {
+    currentFilter = "terror";
+  }
+  if (filterParam === "misterio") {
+    currentFilter = "misterio";
+  }
+  if (filterParam === "espiritualidad") {
+    currentFilter = "espiritualidad";
+  }
 }
 
 const activeFilter = () => {
@@ -118,6 +121,7 @@ const handlerSubmitFilter = (event) => {
   }
 };
 
+setCurrentParamURL()
 filterBooks();
 changeTitleFilter();
 renderAllProducts(booksFilter);
