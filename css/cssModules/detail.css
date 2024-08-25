@@ -1,0 +1,140 @@
+
+.main-detail{
+    margin-top: 130px;
+    font-family: var(--font-secondary);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.img-book-detail-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: 90vh;
+
+
+    .img-book-detail{
+        object-fit: contain;
+    }
+}
+
+.stock-btn-container{
+
+    width: 25%;
+    max-width: 120px;
+    .btn-stock-detail{
+        border: none;
+    
+        &:focus{
+            border: none;
+        }
+    }
+}
+
+.btn-buy-detail{
+    width: 60%;
+    max-width: 220px;
+    color: #f0f8ff;
+    background-color: var(--color-primary);
+
+    &:active{
+        color: #f0f8ff !important;
+        background-color: var(--color-primary) !important;
+    }
+    &:hover{
+        color: #f0f8ff;
+        background-color: var(--color-secondary);
+    }
+}
+
+.editorial-detail{
+    color: var(--color-secondary);
+}
+
+.title-detail{
+    color: var(--color-primary);
+}
+
+.author-detail{
+    color: var(--text-color-primary);
+}
+
+.price-detail{
+    color: var(--text-color-primary);
+}
+.description-title-detail{
+    user-select: none;
+    color: var(--text-color-primary);
+}
+.description-detail{
+    transition: all 1s ease;
+    color: var(--text-color-primary);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    text-align: start;
+
+    &.readMore-description-detail{
+        -webkit-box-orient: unset;
+        -webkit-line-clamp: unset;
+        overflow: auto;
+    }
+}
+.btn-readMore{
+    background-color: transparent;
+    color: var(--color-primary);
+    border: none;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.btn-moreDetailProduct-container{
+    border-top: 1px solid var(--text-color-primary);
+    border-bottom: 1px solid var(--text-color-primary);
+    cursor: pointer;
+}
+.btn-moreDetailProduct{
+    color: var(--text-color-primary);
+}
+
+.li-list-detail-product{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    .title-list-detail-product{
+        user-select: none;
+        color: var(--text-color-primary);
+    }
+    .value-list-detail-product{
+        color: var(--color-secondary);
+    }
+}
+
+.section-other-books{
+    margin-top: 180px;
+}
+
+.title-other-books{
+    color: var(--text-color-primary);
+}
+
+
+@media (max-width: 576px){
+    .editorial-detail{
+        position: relative !important;
+        text-align: end;
+        color: var(--color-secondary);
+    }
+
+    .stock-btn-container{
+        width: 30%;
+        max-width: 140px;
+    }
+    .btn-buy-detail{
+        max-width: 250px;
+    }
+  }

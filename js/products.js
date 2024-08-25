@@ -98,6 +98,7 @@ const filterBooks = () => {
   setCurrentParamURL();
 
   const booksInstanceFilter = JSON.parse(localStorage.getItem("books"));
+
   const filterBooks = booksInstanceFilter.filter((book) => {
     if (book.genre.toLowerCase() === currentFilter.toLowerCase()) {
       return book;

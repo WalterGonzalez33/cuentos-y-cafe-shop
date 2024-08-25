@@ -69,6 +69,11 @@ const createLiIsAdmin = () => {
   const textNode = document.createTextNode("Administrador");
   nodeA.appendChild(textNode);
 
+  if (window.location.href.includes("/pages/admin.html")) {
+    nodeA.classList.add("active");
+    nodeA.setAttribute("aria-current", "page");
+  }
+
   nodeA.addEventListener("click", () => {
     redirectAdmin();
   });
@@ -77,12 +82,21 @@ const createLiIsAdmin = () => {
 };
 
 const createLiIsFavorite = () => {
+  const navProduct = document.querySelector(".nav-product-select");
+
   const nodeLi = document.createElement("li");
   nodeLi.classList = "nav-item";
   const nodeA = document.createElement("a");
   nodeA.className = "nav-link text-center nav-custom";
   const textNode = document.createTextNode("Favoritos");
   nodeA.appendChild(textNode);
+
+  if (window.location.search.includes("?filter=favorites-books")) {
+    navProduct.classList.remove("active");
+    navProduct.removeAttribute("aria-current");
+    nodeA.classList.add("active");
+    nodeA.setAttribute("aria-current", "page");
+  }
 
   nodeA.addEventListener("click", () => {
     redirectFavorite();
@@ -100,7 +114,7 @@ const createLiIsLogin = () => {
   nodeA.appendChild(textNode);
 
   nodeA.addEventListener("click", () => {
-    showModalLogin()
+    showModalLogin();
   });
   nodeLi.appendChild(nodeA);
   return nodeLi;
@@ -133,7 +147,7 @@ if (currentUser) {
     ulNavbar.appendChild(createLiIsFavorite());
   }
 } else {
-  ulNavbar.appendChild(createLiIsLogin())
+  ulNavbar.appendChild(createLiIsLogin());
   cartUserMobile.prepend(createIconLogin());
   cartUserDesktop.prepend(createIconLogin());
 }
