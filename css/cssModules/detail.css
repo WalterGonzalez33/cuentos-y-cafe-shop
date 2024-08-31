@@ -122,6 +122,13 @@
     color: var(--text-color-primary);
 }
 
+@media (max-width: 992px){
+    .editorial-detail{
+        position: relative !important;
+        text-align: end;
+        color: var(--color-secondary);
+    }
+}
 
 @media (max-width: 576px){
     .editorial-detail{

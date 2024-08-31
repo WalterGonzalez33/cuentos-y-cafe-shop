@@ -166,6 +166,104 @@
   display: block;
 }
 
+.container-search-product-navbar{
+  position: absolute;
+  background-color: #f0f8ff;
+  width: 100%;
+  max-width: 450px;
+  padding: 10px;
+  border: 1px solid var(--color-secondary);
+  font-family: var(--font-secondary);
+  z-index: 10;
+  & :first-child{
+    border-top: none;
+  }
+}
+
+.not-search-products-navbar{
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0px 15px 0px;
+
+  & span{
+    & .search-input-txt{
+      color: var(--color-primary);
+    }
+  }
+}
+.row-search-product-navbar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 100px;
+  cursor: pointer;
+  padding: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-secondary);
+  &:hover{
+    background-color: rgba(116, 116, 116, 0.1);
+  }
+}
+
+.titleAndPrice-search-product{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+
+
+  & .title-search-container{
+    width: 90%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    text-align: start;
+    & h5{
+      user-select: none;
+      margin: 2px;
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+  }
+
+  & span{
+    user-select: none;
+    color: var(--color-secondary);
+  }
+}
+.search-product-container{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  z-index: 999;
+}
+.description-container-search-product{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 8px;
+  align-items:start;
+}
+
+.icon-search-product-navbar{
+  color: var(--color-secondary);
+  font-size: 1.2rem;
+}
+
+.img-container-search-product{
+  width: 70px;
+  max-width: 70px;
+  overflow: hidden;
+
+  & img{
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
 @media (max-width: 1000px) {
   .navbar-container{
     box-shadow: none;
@@ -177,6 +275,7 @@
   }
   .btn-category-collapse{
     display: block;
+    z-index: 8;
   }
   .category-collapse{
     display: none;
@@ -207,6 +306,12 @@
   .cart-user-lg{
     display: none;
   }
+
+  .container-search-product-navbar{
+    position: absolute;
+    left: 49%;
+    transform: translate(-49%);
+  }
 }
 
 @media (max-width: 576px){
@@ -221,5 +326,11 @@
   }
   .input-search-navbar{
     width: 100%;
+  }
+
+  .container-search-product-navbar{
+    position: absolute;
+    left: 0;
+    transform: none;
   }
 }
