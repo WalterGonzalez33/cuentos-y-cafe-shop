@@ -65,26 +65,25 @@
               class="collapse navbar-collapse justify-content-between"
               id="navbarContentCollapse"
             >
-              <div class="input-search-navbar-container">
-                <form class="d-flex my-3 my-lg-0 ms-lg-2" role="search">
-                  <input
-                    class="form-control border-0 rounded-0 input-search-navbar"
-                    type="search"
-                    id="navBuscar"
-                    placeholder="¿Que estas buscando?"
-                    aria-label="Search"
-                    minlength="5"
-                    maxlength="50"
-                    required
-                  />
-                  <button
-                    for="navBuscar"
-                    class="p-2 ms-1 bg-transparent icono-nav"
-                  >
-                    <i class="bi bi-search text-light"></i>
-                  </button>
-                </form>
-              </div>
+            <div class="input-search-navbar-container">
+              <form class="d-flex my-3 my-lg-0 ms-lg-2 form-search-navbar" role="search">
+                <input
+                  class="form-control border-0 rounded-0 input-search-navbar focus-ring focus-ring-secondary"
+                  type="search"
+                  id="navBuscar"
+                  placeholder="¿Que estas buscando?"
+                  aria-label="Search"
+                  autocomplete="off"
+                />
+                <button
+                  for="navBuscar"
+                  class="p-2 ms-1 bg-transparent icono-nav"
+                >
+                  <i class="bi bi-search text-light"></i>
+                </button>
+              </form>
+              <div class="search-product-container"></div>
+            </div>
 
               <a class="navbar-brand me-lg-4 icon-brand-lg" href="../index.html"
                 ><img class="icon-navbar" src="../assets/logo.png" alt="logo"

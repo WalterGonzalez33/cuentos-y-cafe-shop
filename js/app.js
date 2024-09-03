@@ -1,5 +1,6 @@
 "use strict";
 
+import './modules/searchProducts.js'
 import "./modules/renderUIuserLogin.js";
 import "./modules/validationLogin.js";
 import "./modules/filtersNav.js";
