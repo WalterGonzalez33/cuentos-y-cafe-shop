@@ -1,9 +1,7 @@
 "use strict";
 
 const inputSearchNavbar = document.querySelector(".input-search-navbar");
-const formSearchNavbar = document.querySelector(
-  ".input-search-navbar-container"
-).firstChild;
+const formSearchNavbar = document.querySelector('.form-search-navbar');
 const booksSearch = JSON.parse(localStorage.getItem("books"));
 const searchBookContainer = document.querySelector(".search-product-container");
 
@@ -111,10 +109,13 @@ const createContainerResultSearch = (booksList) => {
 
   divContainer.addEventListener('mouseenter', () => {
     inputSearchNavbar.removeEventListener("blur", resetSearchInput );
+    window.removeEventListener('scroll', resetSearchInput);
   })
   divContainer.addEventListener('mouseleave', () => {
     inputSearchNavbar.addEventListener("blur", resetSearchInput );
+    window.addEventListener('scroll', resetSearchInput);
   })
+
 
 
   return divContainer;
@@ -145,10 +146,17 @@ const handlerEventSearchProduct = () => {
   }
 };
 
+const handleMaxCharacter = () => {
+  if(inputSearchNavbar.value.length > 25){
+    inputSearchNavbar.value = inputSearchNavbar.value.replace(/^(.{25}).*$/, '$1');
+  }
+}
 inputSearchNavbar.addEventListener("input", () => {
+  handleMaxCharacter()
   handlerEventSearchProduct();
 });
 formSearchNavbar.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 inputSearchNavbar.addEventListener("blur", resetSearchInput);
+window.addEventListener('scroll', resetSearchInput);

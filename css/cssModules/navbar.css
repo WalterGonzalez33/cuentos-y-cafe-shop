@@ -12,6 +12,11 @@
   background-color: var(--color-secondary);
 }
 
+.input-search-navbar::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none !important;
+}
+
 /* modal login */
 
 .modal-dialog-navbar{
@@ -169,12 +174,15 @@
 .container-search-product-navbar{
   position: absolute;
   background-color: #f0f8ff;
+  background-color: var(--color-bg-tertiary);
   width: 100%;
   max-width: 450px;
   padding: 10px;
   border: 1px solid var(--color-secondary);
   font-family: var(--font-secondary);
+  overflow: hidden;
   z-index: 10;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   & :first-child{
     border-top: none;
   }
@@ -224,6 +232,7 @@
     overflow: hidden;
     text-align: start;
     & h5{
+      font-size: 1.1rem;
       user-select: none;
       margin: 2px;
       color: var(--color-primary);
@@ -232,6 +241,8 @@
   }
 
   & span{
+    margin-top: 5px;
+    font-size: .9rem;
     user-select: none;
     color: var(--color-secondary);
   }
@@ -250,17 +261,21 @@
 
 .icon-search-product-navbar{
   color: var(--color-secondary);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .img-container-search-product{
-  width: 70px;
-  max-width: 70px;
+  flex-grow:2;
+  width: 3rem;
+  min-width: 3rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 
   & img{
-    width: 100%;
-    object-fit: contain;
+    width: 120%;
   }
 }
 
